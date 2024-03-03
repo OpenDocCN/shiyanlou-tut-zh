@@ -1,0 +1,152 @@
+# 第 2 节 GCC 的使用
+
+## 一、实验说明
+
+### 1\. 课程说明
+
+工欲善其事, 必先利其器，因此会从编程工具 gcc，gdb 入手逐步讲解 Linux 系统编程。本节课程讲解 gcc 编译器的使用。
+
+### 2\. 如果首次使用 Linux，建议首先学习：
+
+1.  [Linux 基础入门](http://www.shiyanlou.com/courses/1)
+2.  [Vim 编辑器](http://www.shiyanlou.com/courses/2)
+
+### 3\. 环境介绍
+
+本实验环境采用带桌面的 Ubuntu Linux 环境，实验中会用到桌面上的程序： 1.命令行终端: Linux 命令行终端，打开后会进入 Bash 环境，可以使用 Linux 命令
+
+2.Firefox 及 Opera：浏览器，可以用在需要前端界面的课程里，只需要打开环境里写的 HTML/JS 页面即可
+
+3.gvim：非常好用的 Vim 编辑器，最简单的用法可以参考课程[Vim 编辑器](http://www.shiyanlou.com/courses/2)
+
+4.gedit 及 Brackets：如果您对 gvim 的使用不熟悉，可以用这两个作为代码编辑器，其中 Brackets 非常适用于前端代码开发
+
+## 二、 编译器 gcc 的使用
+
+### 1\. gcc 支持编译的一些源文件后缀名
+
+```
+| 后缀    | 源文件      |
+| :------ | -------:    |
+|.c       | C 语言源文件 |
+|.C .cc .cxx | C++源文件|
+|.m     | Object-C 源文件|
+|.i     | 经过预处理后的 C 源文件|
+|.ii    | 经过预处理后的 C++源文件|
+|.s .S  | 汇编语言源文件|
+|.h     | 预处理文件(头文件)|
+|.o     | 目标文件|
+|.a     | 存档文件|
+```
+
+### 2\. gcc 编译程序的流程
+
+![图片描述信息](img/10)
+
+> Tips：
+
+1.  Linux 的可执行文件并没有像 Windows 那样有明显的.exe 后缀名, 只需向其分配 x(可执行)权限即可 `sudo chmod u+x excutefile`
+2.  作为 Linux 程序员，我们可以让 gcc 在编译的任何阶段结束，以便检查或使用该阶段的输出(这个很重要)
+
+### 3\. 用 gcc 编译一个经典 C 程序
+
+> 注意：可以使用 GVim 编辑器进行代码输入，代码块中的注释可以不需输入。
+
+打开的 gvim 环境中输入 i 进入编辑模式，输入以下代码
+
+```
+// filename: hello.c
+#include <stdio.h>
+int main(int argc, char **argv)
+{
+    printf("Hello, Shi-Yan-Lou!");
+}
+
+/**
+  *在 XfceTerminal 打开后的界面中输入：$gcc hello.c -o hello
+  *如果没有 error，说明编译成功，将会在当前目录生成一个可执行文件 hello
+  *继续输入：./hello 就会运行该程序，在 bash 上打印出 Hello, Shi-Yan-Lou!
+ **/ 
+```
+
+保存为 hello.c 文件 > Tips； > 1\. `gcc hello.c -o hello` --- 第二个 hello 为文件名，名字任意取定(但是不能违反 bash 的规则) `gcc hello.c -o "(-_-|||)"`, 但是作为一名优秀的程序员还是取个有意义的名字吧！ > 2\. 从程序员的角度来看，一个简单的-o 选项可以省略很多中间步骤一次性输出可执行文件; 但从编译器的角度来看，这条命令的背后是一系列的繁杂的工作。
+
+### 4\. gcc 到底背着我们做了什么
+
+首先 gcc 会调用预处理程序 cpp，由它负责展开在源程序中定义的宏(上例：#include <stdio.h>)，向其中插入#include 语句所包含的内容(原地展开 stdio.h 包含的代码)
+
+在 Xfce 终端中输入
+
+```
+$ gcc -E hello.c -o hello.i 
+```
+
+还记得.i 后缀吗？hello.i 这是一个经过预处理器处理之后的 C 源文件，在 bash 试试这个命令，然后用 vim 打开它。
+
+gcc 的-E 参数可以让 gcc 在预处理结束后停止编译过程。
+
+第二步，将 hello.i 编译为目标代码，gcc 默认将.i 文件看成是预处理后的 C 语言源代码，因此它会直接跳过预处理，开始编译过程。
+
+```
+$ gcc -c hello.i -o hello.o 
+```
+
+同样，用 vim 打开.o 文件看看和.i .c 文件有什么不同？应该是一片乱码，是吧?(它已经是二进制文件了)
+
+> Tips: > 1\. 请记住，gcc 预处理源文件的时候(第一步)，不会进行语法错误的检查 > 2\. 语法检查会在第二步进行，比如花括号不匹配、行末尾没有分号、关键字错误......
+
+第三步，gcc 连接器将目标文件链接为一个可执行文件，一个大致的编译流程结束
+
+```
+gcc hello.o -o hello 
+```
+
+### 三、gcc 编译模块化的程序
+
+现在很多软件都是采用的模块化开发，通常一个程序都是有很多个源文件组成，相应的就形成了多个编译单元。gcc 能够很好的处理这些编译单元，最终形成一个可执行程序
+
+代码编辑和输入参考上述使用 gvim 程序输入，并在 XfceTerminal 界面使用 gcc 进行编译。
+
+```
+// hello.h
+extern void print(); 
+```
+
+这是个头文件，将会在 hello_main.c 中调用
+
+```
+// hello_print.c
+#include <stdio.h>
+
+void print()
+{
+    printf ("Hello, Shi-Yan-Lou\n");
+} 
+```
+
+```
+// hello_main.c
+#include "hello.h"
+void print();
+int main(int argc, char **argv)
+{
+    print();
+}
+
+// XfceTerminal 中 $gcc hello_print.c hello_main.c -o hello 进行编译
+// 将会打印出 Hello, Shi-Yan-Lou 
+```
+
+> Tips: > 以上的`gcc hello_print.c hello_main.c -o hello`可以看成是执行了一下 3 条命令
+
+```
+$ gcc -c hello_print.c -o hello_print.o
+$ gcc -c hello_main.c -o hello_main.o
+$ gcc hello_print.o hello_main.o -o hello 
+```
+
+gcc 的使用就先讲解到这里，下一节将介绍 gdb 的使用。
+
+## 四、作业思考
+
+修改上面的例子，使之从控制台输入接收参数，然后把输入的参数打印出来。
