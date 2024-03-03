@@ -12,7 +12,7 @@
 
 工具函数是指在 jQuery 对象(即变量"\$")上定义的函数，这些函数都是工具类函数，比如 C#中最常用的 trim()函数：
 
-```
+```js
 $.trim("  text   "); 
 ```
 
@@ -20,7 +20,7 @@ $.trim("  text   ");
 
 "\$"其实是"window"对象的属性，所以下面几句话是等价的：
 
-```
+```js
  $.trim("  text   ");
 window.$.trim("  text   ");
 window.jQuery("  text   ");
@@ -111,7 +111,7 @@ jQuery.support 主要包括以下测试：
 
 假设如下元素：
 
-```
+```js
 <style type="text/css">
 .boxModel
 {
@@ -155,7 +155,7 @@ http://www.cnblogs.com/zhangziqiu/archive/2009/01/15/doctype.html
 
 通过 javascript 脚本设置元素的 float 样式时，IE 和 FireFox 存在不同，IE 使用 style.styleFloat，FireFox 使用 style.cssFloat：
 
-```
+```js
 div.style.styleFloat = "left"; //IE
 div.stlye.cssFloat = "left"; //FF 
 ```
@@ -164,7 +164,7 @@ div.stlye.cssFloat = "left"; //FF
 
 注意，我们可以通过 CSS()方法设置 float 样式，jQuery 内部会自动帮我们判断是使用 styleFloat 还是 cssFloat：
 
-```
+```js
 $("#divResult").css("float","left"); //兼容 IE 和 FF 
 ```
 
@@ -190,7 +190,7 @@ $("#divResult").css("float","left"); //兼容 IE 和 FF
 
 对于 jQuery 包装集我们可以使用 each(callback) 方法迭代包装集中的每一个元素。 callback 是一个会函数，接受一个参数表示当前访问对象的索引。
 
-```
+```js
 $("img").each(function(i){
    this.src = "test" + i + ".jpg";
  }); 
@@ -200,7 +200,7 @@ $("img").each(function(i){
 
 注意传入的第一个参数可以是数组或者对象。如果数组，则遍历数组中的每一个对象。第一个参数表示索引,第二个参数表示值，this 表示当前遍历的元素，可以通过返回 false 终止迭代，比如下面的示例遍历到第二个元素后会终止：
 
-```
+```js
  $.each(["a", "b", "c"], function(i, n)
                 {
                     alert("Item #" + i + ": " + n);//可以获取到 i 值
@@ -225,7 +225,7 @@ $("img").each(function(i){
 
 如果传递的是对象，则遍历对象的每一个属性，即使函数返回 false 也依然会遍历完所有的属性，**第一个参数表示属性 key(属性名称,是 obejct 类型)，第二个参数表示值，this 表示当前属性的值：**
 
-```
+```js
  $("#iterateObject").click(function(event)
             {
                 $.each({ name: "ziqiu.zhang", sex: "male", status: "single" }, function(i, n)
@@ -259,7 +259,7 @@ each 将是我们最常使用的函数，特别注意 each 虽然迭代每一个
 
 下面的示例演示如何过滤数组中索引小于 0 的元素：
 
-```
+```js
 $.grep( [0,1,2], function(n,i){
   return n > 0;
 }); 
@@ -285,7 +285,7 @@ $.grep( [0,1,2], function(n,i){
 
 下面是几个例子：
 
-```
+```js
  var arr = [ "a", "b", "c", "d", "e" ]
     $("div").text(arr.join(", "));
 
@@ -318,7 +318,7 @@ $.grep( [0,1,2], function(n,i){
 
 合并 settings 和 options，修改并返回 settings:
 
-```
+```js
 var settings = { validate: false, limit: 5, name: "foo" }; 
 var options = { validate: true, name: "bar" }; 
 jQuery.extend(settings, options); 
@@ -326,7 +326,7 @@ jQuery.extend(settings, options);
 
 结果：
 
-```
+```js
 settings == { validate: true, limit: 5, name: "bar" } 
 ```
 
@@ -342,7 +342,7 @@ settings == { validate: true, limit: 5, name: "bar" }
 
 将 DOM 对象集合转换为数组:
 
-```
+```js
 var arr = jQuery.makeArray(document.getElementsByTagName("div")); 
 ```
 
@@ -356,7 +356,7 @@ var arr = jQuery.makeArray(document.getElementsByTagName("div"));
 
 查看对应元素的位置：
 
-```
+```js
 var arr = [ 4, "Pete", 8, "John" ];
 jQuery.inArray("John", arr);  //3
 jQuery.inArray(4, arr);  //0
@@ -375,13 +375,13 @@ jQuery.inArray("David", arr);  //-1
 
 合并两个数组到第一个数组上：
 
-```
+```js
 $.merge( [0,1,2], [2,3,4] ) 
 ```
 
 结果：
 
-```
+```js
 [0,1,2,2,3,4] 
 ```
 
@@ -395,7 +395,7 @@ $.merge( [0,1,2], [2,3,4] )
 
 删除重复 div 标签:
 
-```
+```js
 $.unique(document.getElementsByTagName("div")); 
 
 [<div>, <div>, ...] 
@@ -405,7 +405,7 @@ $.unique(document.getElementsByTagName("div"));
 
 首先是[jQuery.merge(first,second)](http://api.jquery.com/jQuery.merge/#firstsecond)，将两个数组合并。下面这个示例说明如何使用此函数：
 
-```
+```js
 <html >
 <head>
     <title>jQuery Utilities - jQuery.merge</title>
@@ -459,7 +459,7 @@ merge 函数会改变第一个合并的数组，如果是我设计我就不会�
 
 下面是 fancybox 插件获取 options 的代码：
 
-```
+```js
 settings = $.extend({}, $.fn.fancybox.defaults, settings); 
 ```
 
@@ -467,7 +467,7 @@ settings = $.extend({}, $.fn.fancybox.defaults, settings);
 
 看一个完整的示例：
 
-```
+```js
 var empty = {}
 var defaults = { validate: false, limit: 5, name: "foo" };
 var options = { validate: true, name: "bar" };
@@ -476,14 +476,14 @@ var settings = jQuery.extend(empty, defaults, options);
 
 结果：
 
-```
+```js
 settings == { validate: true, limit: 5, name: "bar" }
 empty == { validate: true, limit: 5, name: "bar" } 
 ```
 
 target 参数要传递一个空对象是因为 target 的值最后将被改变。比如：
 
-```
+```js
 var defaults = { validate: false, limit: 5, name: "foo" };
 var options = { validate: true, name: "bar" };
 var settings = jQuery.extend(defaults, options); 
@@ -493,7 +493,7 @@ var settings = jQuery.extend(defaults, options);
 
 下面是我的完整示例和结果：
 
-```
+```js
 <html >
 <head>
     <title>jQuery Utilities - jQuery.extend</title>
@@ -584,7 +584,7 @@ var settings = jQuery.extend(defaults, options);
 
 同时别忘记了 javascript 中自带的 isNaN 和 isFinite：
 
-```
+```js
 var test = "123";
 alert(isNaN(test));
 alert(isFinite(test)); 
@@ -608,13 +608,13 @@ isFinite 函数检查其参数是否是无穷大。如果参数是 NaN（非数�
 
 去掉字符串起始和结尾的空格：
 
-```
+```js
 $.trim("  hello, how are you?  "); 
 ```
 
 结果：
 
-```
+```js
 "hello, how are you?" 
 ```
 
@@ -632,7 +632,7 @@ $.trim("  hello, how are you?  ");
 
 **举例：**
 
-```
+```js
  var params = { width:1680, height:1050 };
     var str = jQuery.param(params);
     $("#results").text(str); 
@@ -640,7 +640,7 @@ $.trim("  hello, how are you?  ");
 
 结果：
 
-```
+```js
 width=1680&height=1050 
 ```
 
@@ -650,7 +650,7 @@ jQuery 将其归为 Urls 分类，因为此方法通常用于发送 GET 请求�
 
 扩展工具函数只需要对 jQuery(即"\$")进行扩展。通常开发工具函数或者插件的人希望在开发时使用"\$"，但因为"\$"有可能和其他脚本库冲突，所以通常我们使用下面的语法开发工具函数：
 
-```
+```js
  (function($)
         {
             $.myExtendMethod = function(o)
@@ -666,7 +666,7 @@ jQuery 将其归为 Urls 分类，因为此方法通常用于发送 GET 请求�
 
 下面这个示例演示如何添加自定义的 jQuery 工具方法和 jQuery 包装集方法：
 
-```
+```js
 /// <reference path="jquery-1.3.2-vsdoc2.js" />
 jQuery.myExtendMethod = function(o)
 {

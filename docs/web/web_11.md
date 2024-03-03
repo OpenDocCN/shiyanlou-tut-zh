@@ -14,7 +14,7 @@ JavaScript 的所有数据都可以被视为对象，而每个对象都有其 **
 
 比如当申请一个变量的时候：
 
-```
+```js
 var my_var="shiyanlou"; 
 ```
 
@@ -28,7 +28,7 @@ JavaScript 提供了一些常用的内置对象（稍后介绍），但是有些
 
 比如我们创建一个“student”对象，并为其指定几个 **属性** 和 **方法**：
 
-```
+```js
 student = new Object();  // 创建对象“student”
 
 student.name = "Tom";   // 对象属性 名字
@@ -45,7 +45,7 @@ student.eat =function() {     // 对象方法 吃
 
 此外，你也可以这样创建对象：
 
-```
+```js
 var student = {};
 student.name = "Tom";
 …… 
@@ -53,7 +53,7 @@ student.name = "Tom";
 
 或者这样：
 
-```
+```js
 var student = {
     name:"Tom";
      age:"19";
@@ -63,7 +63,7 @@ var student = {
 
 但是以上方法在创建多个对象时，会产生大量重复代码，所以我们也可以采用函数的方式新建对象：
 
-```
+```js
 function student(name,age) {
 
     this.name = name;
@@ -81,7 +81,7 @@ function student(name,age) {
 
 然后通过 new 创建 student 对象的实例：
 
-```
+```js
 var student1 = new student('Tom','19');
 
 var student2 = new student('Jack','20'); 
@@ -93,7 +93,7 @@ var student2 = new student('Jack','20');
 
 比如我们刚才新建的 student1 对象，可以这样使用：
 
-```
+```js
 <script>
 var x = student1.name;  // 访问对象的属性
 var y = student1.age;
@@ -109,7 +109,7 @@ student1.study();     // 调用对象的方法
 
 当我们需要 **反复访问** 某对象的时候，可以使用 with 语句简化操作，而不需要反复地用“.”符号，比如：
 
-```
+```js
 with(student1) {
 var x = name;
 var y= age;
@@ -132,7 +132,7 @@ JavaScript 为我们提供了一些非常有用的常用内置对象，这样我
 
 该对象只有一个属性，即 length，表示字符串中的字符个数，包括所有的空格和符号：
 
-```
+```js
 var test_var = "I love You!";
 document.write(test_var.length); 
 ```
@@ -227,19 +227,19 @@ Math 的内置方法，是一些数学上常用的数学运算：
 
 数组下标表示方法是用方括号括起来，比如：
 
-```
+```js
 myArray[2]="hello" 
 ```
 
 > 注意：JavaScript 只有一维数组，要使用多维数组，请用这种虚拟法：
 
-```
+```js
 var myArray = new Array(new Array(), new Array(), new Array(), ...); 
 ```
 
 其实这是一个一维数组，里边的每一个元素又是一个数组。调用这个“二维数组”的元素时：
 
-```
+```js
 myArray[2][3] = ...; 
 ```
 

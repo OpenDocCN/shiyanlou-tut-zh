@@ -2,7 +2,7 @@
 
 提供工作或动作的实时反馈，只用简单且灵活的进度条。
 
-```
+```js
 跨浏览器兼容性
 
 进度条使用了 CSS3 的 transition 和 animation 属性来完成一些效果。这些特性在 Internet Explorer 9 或以下版本中、Firefox 的老版本中没有被支持。Opera 12 不支持 znimation 属性。 
@@ -12,7 +12,7 @@
 
 默认的进度条。
 
-```
+```js
 <div class="progress">
    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
      <span class="sr-only">60% Complete</span>
@@ -24,7 +24,7 @@
 
 ## 2\. 有意义的替换
 
-```
+```js
 <div class="progress">
   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
     <span class="sr-only">40% Complete (success)</span>
@@ -53,7 +53,7 @@
 
 用一个渐变可以创建条纹效果，在 IE8 中不可用。
 
-```
+```js
 <div class="progress progress-striped">
   <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
     <span class="sr-only">40% Complete (success)</span>
@@ -82,7 +82,7 @@
 
 给.progress-striped 加上.active 使它由右向左运动。
 
-```
+```js
 <div class="progress progress-striped active">
   <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
     <span class="sr-only">45% Complete</span>
@@ -96,7 +96,7 @@
 
 把多个进度条放入同一个.progress，使它们堆叠。
 
-```
+```js
 <div class="progress">
   <div class="progress-bar progress-bar-success" style="width: 35%">
     <span class="sr-only">35% Complete (success)</span>
@@ -120,7 +120,7 @@
 
 默认的媒体允许在一个内容块的左边或右边浮动一个媒体对象（图像，视频，音频）
 
-```
+```js
 <div class="media">
   <a class="pull-left" href="#">
     <img class="media-object" src="http://placehold.it/64x64" alt="...">
@@ -138,7 +138,7 @@
 
 用一点点额外的标记，就能在列表内使用媒体（对评论或文章列表很有用）。
 
-```
+```js
 <ul class="media-list">
   <li class="media">
     <a class="pull-left" href="#">
@@ -193,7 +193,7 @@
 
 最简单的列表只是无顺序列表，列表条目和正确的类。
 
-```
+```js
 <ul class="list-group">
   <li class="list-group-item">Cras justo odio</li>
   <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -209,7 +209,7 @@
 
 给列表组加入徽章，它会自动地放在右面。
 
-```
+```js
 <ul class="list-group">
   <li class="list-group-item"><span class="badge">14</span>Cras justo odio</li>
   <li class="list-group-item"><span class="badge">33</span>Dapibus ac facilisis in</li>
@@ -225,7 +225,7 @@
 
 用< a>标签而不是< li>标签（也就是说父元素是< div>而不是< ul>）。没必要给每个元素都加一个父元素。
 
-```
+```js
 <div class="list-group">
   <a href="#" class="list-group-item active">
     Cras justo odio
@@ -243,7 +243,7 @@
 
 在里面可以加几乎任何 HTML，甚至是像下面的带链接的列表组。
 
-```
+```js
 <div class="list-group">
   <a href="#" class="list-group-item active">
     <h4 class="list-group-item-heading">List group item heading</h4>
@@ -270,7 +270,7 @@
 
 默认的.panel 所做的只是提供基本的边界和内部，来包含内容。
 
-```
+```js
 <div class="panel panel-default">
   <div class="panel-body">
     Basic panel example
@@ -284,7 +284,7 @@
 
 用.panel-heading 可以简单地加入一个标题容器。您也可以用< h1>-< h6>和.panel-title 类加入预定义样式的标题。
 
-```
+```js
 <div class="panel panel-default">
   <div class="panel-heading">Panel heading without title</div>
   <div class="panel-body">
@@ -299,7 +299,7 @@
 
 把按钮或次要的文本放入.panel-footer。注意面版的脚注不会从带意义的替换中继承颜色，因为它不是在前面的内容。
 
-```
+```js
 <div class="panel panel-default">
   <div class="panel-body">
     Panel content
@@ -314,7 +314,7 @@
 
 像其它组件一样，可以简单地通过加入有意义的状态类，给特定的内容使用更有意义的面版。
 
-```
+```js
 <div class="panel panel-primary">
   <div class="panel-heading">Panel heading without title</div>
   <div class="panel-body">
@@ -347,7 +347,7 @@
 
 为了无缝的设计，在面版中加入.table。如果有.panel-body，就在表格的上方加上一个用于分割的边界。
 
-```
+```js
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">Panel heading</div>
@@ -385,7 +385,7 @@
 
 ## 6\. 带列表组的面版
 
-```
+```js
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">Panel heading</div>

@@ -32,7 +32,7 @@
 
 **2\. html+css 部分** 可以用 div+css 布局来实现别踩白块的静态效果展示，直接上 HTML 代码，我来简要说下 HTML 思路，将主界面分解成一个 4x4 的大矩形格子，每一个方块代表其中一个小的矩形格，其中每一行的四个白块中有一个黑块，每一行中黑块位于那一列是随机生成的，但是我们这里现在是静态页面就自己确定了，然后通过 css 控制样式。
 
-```
+```js
  <div id="main">
         <div id="con">
             <div class="row">
@@ -65,7 +65,7 @@
 
 下面是 css 代码，这里有一个要注意的地方，我将 div#con 块级元素向上提了 100px，这样在游戏的开始就出现了最底一行的空白，隐藏最上面那行，为什么要这样呢，继续往下看就知道了。
 
-```
+```js
  #main {
         width: 400px;
         height: 400px;
@@ -111,7 +111,7 @@
 
 根据前面的 HTML 部分我们可以知道，每个`<div class="cell">`就代表一个白块，`<div class="cell black">`就代表一个黑块，每点击一个黑块消失其实是删除了一个`<div class="row">` 然后从上面添加一个新的`<div class="row">`所以我们首先要通过 js 来控制`<div class="row">`的创造和生成（记得删除在编写静态页面时候指定生成的 4 个`div.row`）。具体方法如下：
 
-```
+```js
  //创建 div, 参数 className 是其类名
     function creatediv(className){
         var div = document.createElement('div');
@@ -159,7 +159,7 @@
 
 在可以通过 js 来创造和销毁`div`后，我们就要让黑块动起来，这个时候我们就用到了之前 css 提到的设定`<div id="con">`隐藏了一行的`<div id="row">`，我们通过 js 的 DOM 操作使其向下方移动，并设置定时器每 30 毫秒移动一次，这样就实现了黑块的平滑移动，在黑块移动的同时，我们要判断黑块是否已经触底，触底则游戏失败，停止调用`move()`，触底后调用函数`fail()`游戏失败，具体方法如下
 
-```
+```js
  //使黑块向下移动   
     function move(){
         var con = $('con');
@@ -196,7 +196,7 @@
 
 让黑块动起来之后呢，我们就来考虑怎么判断用户有没有点击到黑块呢，同时用户若点击到黑块我们要让所在那一行消失，那么我们需要一个`judge`方法，具体如下
 
-```
+```js
 //判断用户是否点击到了黑块，
 function judge(ev){
     if(ev.target.className.indexOf('black') == -1){
@@ -217,7 +217,7 @@ function judge(ev){
 
 **源代码**
 
-```
+```js
 <!DOCTYPE html>
 <html>
 <head>

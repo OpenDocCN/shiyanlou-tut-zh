@@ -18,7 +18,7 @@
 
 本课程中的所有源码可以通过 Git 方式下载：
 
-```
+```js
 http://git.shiyanlou.com/shiyanlou/play 
 ```
 
@@ -37,19 +37,19 @@ http://git.shiyanlou.com/shiyanlou/play
 
 首先，把项目 clone 下来，终端下输入：
 
-```
+```js
 git clone http://git.shiyanlou.com/shiyanlou/play 
 ```
 
 然后打开桌面上的 Xfce 终端，输入如下的命令，开启 Apache2 服务器
 
-```
+```js
 sudo /etc/init.d/apache2 start 
 ```
 
 获取 html 文件夹的权限，使得我们能把网页部署到服务器
 
-```
+```js
 sudo chmod 777 /var/www/html/ 
 ```
 
@@ -61,7 +61,7 @@ sudo chmod 777 /var/www/html/
 
 然后依次新建如下几个文件：
 
-```
+```js
 index.html
 play.css
 play.js
@@ -92,7 +92,7 @@ get_lrc.php
 
 **index.html**
 
-```
+```js
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -143,7 +143,7 @@ get_lrc.php
 
 **play.css**
 
-```
+```js
 *{
     border: 0;
     padding: 0;
@@ -167,7 +167,7 @@ body{
 
 然后我们再为播放器边框编写样式，就是下面这部分：
 
-```
+```js
 #play_border{
             position: absolute;
             width: 73%;
@@ -251,7 +251,7 @@ body{
 
 好了，我们显示歌词部分的做好了，还有一个显示歌曲列表的：
 
-```
+```js
 #list{
     position: absolute;
     overflow: auto;
@@ -284,7 +284,7 @@ body{
 
 最后，我们再给进度条设置一下样式，就大功告成了：
 
-```
+```js
 #process_img{
     position: absolute;
     bottom: 0px;
@@ -313,7 +313,7 @@ body{
 
 **play.js**
 
-```
+```js
 /*这里我们为了代码简洁，清晰明了，也为了提高移植性，方便以后修改，我们把所有的向服务器获取信息
 的操作进行封装。method 是要调用的函数名称，lyric_name 是歌词名或歌曲名，ob 是元素的 ID，表示获取的信息要显示在哪里
 $.ajax({})是 jquery 的函数，我们可以直接使用它来产生一个 Ajax 请求，既异步加载数据，不必刷新页面就可以想服务器请求数据。
@@ -364,7 +364,7 @@ function get_lyric(method,lyric_name,ob)
 
 第一个函数封装好了，接下来我们编写处理结果的函数：
 
-```
+```js
 //处理歌曲列表函数
 function deal_music_list(music_list_data,music_list_object)
 {
@@ -441,7 +441,7 @@ function init_lrc()
 
 好了，获取歌曲信息的写好了，获取歌词并显示歌词的也写好了，并且对时间做了处理，全都 HTML 格式化好了。现在我们要做的就是判断当前播放的是哪句歌词，并让他高亮，移到布局的中间来。
 
-```
+```js
 function lrc_animate()
 {
     if(lrc_data.length != 0)
@@ -493,7 +493,7 @@ function lrc_animate()
 
 上面就是判断当前播放歌词并且让歌词一直居中显示的所有代码了，这是本播放器的重点代码，这个效果实现了，其他一些效果都非常容易，可以自己定制其他的功能，让播放器实现更多功能。下面我们再写一个播放，暂停，处理一下时间进度函数就可以了。
 
-```
+```js
 //处理进度条函数
 function deal_process_time()
 {
@@ -551,7 +551,7 @@ window.onload=function()
 
 **get_lrc.php**
 
-```
+```js
 <?php
 
 //首先就要记得写好这个标记，因为它告诉 Apache 这是动态脚本，要不然就无法执行了
@@ -655,7 +655,7 @@ if($method == "get_lyric_data"){                //获取指定歌词名的歌词
 
 就可以看到播放器了。点击右边的歌曲列表可以切换歌曲。把 mp3 和 lrc 文件一起放到 mp3/ 目录下，可以自动识别歌曲。lrc 文件名要和歌曲名一模一样，注意 lrc 歌词文件内容格式要一致， 格式是 ：
 
-```
+```js
 [00:01.12] 歌词内容 
 ```
 

@@ -23,7 +23,7 @@
 
 本课程中的所有源码可以通过以下方式下载:
 
-```
+```js
 $ git clone http://git.shiyanlou.com/shiyanlou/jquery-learning 
 ```
 
@@ -81,7 +81,7 @@ https://github.com/shiyanlou/jQuery-base-code
 
 创建一个 html 页面，引入 jQuery 类库并且编写如下代码：
 
-```
+```js
 <!doctype html>
 <html lang="zh">
   <head>

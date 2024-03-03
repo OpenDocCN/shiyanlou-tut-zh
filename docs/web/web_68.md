@@ -10,7 +10,7 @@
 
 css 文件可以这样实现:
 
-```
+```js
 h1{
   color: cadetblue;  
 } 
@@ -22,7 +22,7 @@ h1{
 
 在原来的基础上我们想将下面 html 文件中的文件都设置成一样的颜色,我们可以这么干: html:
 
-```
+```js
 <h1>shiyanlou</h1>
 <h2>shiyanlou</h2>
 <h3>shiyanlou</h3>
@@ -31,7 +31,7 @@ h1{
 
 css:
 
-```
+```js
 h1{
   color: cadetblue;
 
@@ -56,7 +56,7 @@ h4{
 
 但是我们一般会这样写 css:
 
-```
+```js
 h1,h2,h3,h4{
   color: cadetblue;
 } 
@@ -68,7 +68,7 @@ h1,h2,h3,h4{
 
 这样是不是减少了不少代码,这就叫做选择器的分组. 下面我们要补充的知识就是通配符*. 要想达到与前面相同的效果,还有一种方式就是,用通配符.
 
-```
+```js
 *{
   color: cadetblue;
 } 
@@ -78,7 +78,7 @@ h1,h2,h3,h4{
 
 解决这个问题我们就只需要进行覆盖就好.如果我们想让最后一个标题变成黑灰色,那么在后面加上下面这句就好:
 
-```
+```js
 h4{
     color: darkslategray;
 } 
@@ -90,7 +90,7 @@ h4{
 
 但是一般我们使用通配符的时候就是设置整个页面的那边据和外边距.就像这样
 
-```
+```js
 *{
     padding: 0px;
     margin: 0px;
@@ -109,7 +109,7 @@ h4{
 
 html 文件:
 
-```
+```js
 <div class="div">
     shiyanlou is my home
 </div> 
@@ -117,7 +117,7 @@ html 文件:
 
 css 文件:
 
-```
+```js
 .div{
 color: cadetblue;
 
@@ -130,13 +130,13 @@ color: cadetblue;
 
 前面我们还接触过,将类选择器结合元素选择器来使用.下面再添加一个:
 
-```
+```js
 <h1 class="div">shiyanlou is my home</h1> 
 ```
 
 下面我们将 css 文件如下修改:
 
-```
+```js
 h1.div{
 color: cadetblue;
 } 
@@ -150,7 +150,7 @@ color: cadetblue;
 
 下面我们要讲的就是多类选择器:.class.class{} 这个在先前我们没有接触过.下面我们就来边写边感受: html 文件列出几个 p 字段,到时好比较:
 
-```
+```js
 <p class="p1">shiyanlou is my home</p>
 <p class="p2">shiyanlou is my home</p>
 <p class="p3">shiyanlou is my home</p> 
@@ -158,7 +158,7 @@ color: cadetblue;
 
 css 文件没一个选择器修改一处设置,地一个颜色蓝黑,第二个字体大小 20px,第三个字体样式斜体:
 
-```
+```js
 .p1{
     color: cadetblue;
 }
@@ -178,7 +178,7 @@ css 文件没一个选择器修改一处设置,地一个颜色蓝黑,第二个�
 
 这里就只需要将 css 文件中 p3 改为 .p1.p2 就好,另外在 html 引用时将第三个 p 标签 class 进行修改: css:
 
-```
+```js
 .p1.p2{
     font-style: italic;
 } 
@@ -186,7 +186,7 @@ css 文件没一个选择器修改一处设置,地一个颜色蓝黑,第二个�
 
 html:
 
-```
+```js
 <p class="p1 p2">shiyanlou is my home</p> 
 ```
 
@@ -202,13 +202,13 @@ id 选择器类似于类选择器,当然还是有很多不同的地方
 
 id 选择器的引入是用"#",就和类选择器的"."是一样的效果.示例:#div{} 下面我们就来具体实验一把: html:
 
-```
+```js
 <p id="div">shiyanlou is my home</p> 
 ```
 
 css:
 
-```
+```js
 div{
     color: cadetblue;
 } 
@@ -228,7 +228,7 @@ id 顾名思义只能在文档中使用一次,而类可以使用多次 id 选择
 
 下面我们先来看看最简单的属性选择器的是怎样实现的: html: 在 head 中添加
 
-```
+```js
  [title]{
 
         color: cadetblue;
@@ -239,7 +239,7 @@ id 顾名思义只能在文档中使用一次,而类可以使用多次 id 选择
 
 在后面加入一个 p 标签:
 
-```
+```js
 <p title="li">shiyanlou is my home</p> 
 ```
 
@@ -253,14 +253,14 @@ id 顾名思义只能在文档中使用一次,而类可以使用多次 id 选择
 
 我们在 head 中添加 a 属性选择器,使其变色,在 body 中设立两个 a 标签来对比,一个 href 是和上面的属性选择器相等,后面一个与属性选择器不相等:
 
-```
+```js
 a[href="http://www.shiyanlou.com"]{
         color: cornflowerblue;
 
         } 
 ```
 
-```
+```js
 <a href="http://www.shiyanlou.com">shiyanlou right</a>
 <a href="http://www.baidu.com">baidu</a> 
 ```
@@ -275,13 +275,13 @@ a[href="http://www.shiyanlou.com"]{
 
 后代选择其可以选择作为某元素后代的元素 首先我么在 body 中加入一个 p 标签,并且在里面嵌套一个 strong 子标签:
 
-```
+```js
 <p>shiyanlou is <strong>my</strong> home</p> 
 ```
 
 然后我们希望将 my 这个单词设置颜色.其余的不动,这样我们就要在 css 中使用后代选择器来设置: css:
 
-```
+```js
 p strong{
     color: cadetblue;
 } 
@@ -299,13 +299,13 @@ p strong{
 
 html:
 
-```
+```js
 <h1>shiyanlou is my <strong>home</strong></h1> 
 ```
 
 css:
 
-```
+```js
 h1 > strong{
     color: cadetblue;
     font-size: 60px;
@@ -322,7 +322,7 @@ h1 > strong{
 
 兄弟选择器多用于列表,具有相同的父级元素 ul,下面我们就来写一个实例: html:
 
-```
+```js
 <ul>
     <li>shiyanlou</li>
     <li>shiyanlou</li>
@@ -332,7 +332,7 @@ h1 > strong{
 
 css:
 
-```
+```js
 li+li{
     color: cadetblue;
     font-size: 40px;

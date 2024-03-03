@@ -6,7 +6,7 @@
 
 通过添加 data-loading-text="正在加载..."可以使按钮呈现加载状态。
 
-```
+```js
 <button type="button" id="fat-btn" data-loading-text="正在加载..." class="btn btn-primary">
   Loading state
 </button> 
@@ -14,7 +14,7 @@
 
 不过如果想启用加载的状态，还需要在点击按钮的时候进行手动启动。
 
-```
+```js
 <script type="text/javascript">
     $('#fat-btn').click(function () {
         var btn = $(this)
@@ -36,7 +36,7 @@
 
 通过添加 data-toggle="button"可以让按钮能够切换状态。
 
-```
+```js
 <button type="button" class="btn btn-primary" data-toggle="button">Single toggle</button> 
 ```
 
@@ -46,7 +46,7 @@
 
 通过向按钮组添加 data-toggle="buttons"可以使按钮组具有类似选择框的选择/取消功能。
 
-```
+```js
 <div class="btn-group" data-toggle="buttons">
   <label class="btn btn-primary">
     <input type="checkbox"> Option 1
@@ -66,7 +66,7 @@
 
 通过向按钮组添加 data-toggle="buttons"可以让按钮组具有单选框的功能。
 
-```
+```js
 <div class="btn-group" data-toggle="buttons">
   <label class="btn btn-primary">
     <input type="radio" name="options" id="option1"> Option 1
@@ -86,14 +86,14 @@
 
 ## 5\. 用法
 
-```
+```js
 <button class="btn btn-primary" id="btn" data-toggle="button">单独开关</button>
 <a href="javascript:void(0)" class="btn btn-success"  onClick="_switch()">切换</a> 
 ```
 
 上面我们只是通过 data 属性来切换按钮的状态，现在我们来用 JavaScript 来实现。
 
-```
+```js
  <script type="text/javascript">
       function Switch()
       {
@@ -108,54 +108,54 @@
 
 ## 7\. 方法
 
-```
+```js
 $().button('toggle') 
 ```
 
 切换按钮状态。赋予按钮被激活时的状态和外观。
 
-```
+```js
 自动切换
 
 可以使用 data-toggle 属性让按钮具有自动切换状态的能力。 
 ```
 
-```
+```js
 <button type="button" class="btn" data-toggle="button">...</button> 
 ```
 
 上面已经有实例了，在此就简单的举个例子。
 
-```
+```js
 $().button('loading') 
 ```
 
 设置按钮状态为 loading - 即将按钮置为禁用状态并将文字内容切换为 loading。通过使用 data-loading-text 可以在按钮元素上定义 loading 文本。
 
-```
+```js
 <button type="button" class="btn" data-loading-text="loading stuff...">...</button> 
 ```
 
 这个效果上面也有了。
 
-```
+```js
 跨浏览器兼容性
 Firefox 会在多个页面加载之间保持按钮的禁用状态。可以通过添加 autocomplete="off"来解决提到的问题。 
 ```
 
-```
+```js
 $().button('reset') 
 ```
 
 重置按钮状态 - 并将按钮上的文本还原为原始值。
 
-```
+```js
 $().button(string) 
 ```
 
 重置按钮状态 - 并将按钮上的文本重置为传入的值。
 
-```
+```js
 <button type="button" class="btn" data-complete-text="finished!" >...</button>
 <script>
   $('.btn').button('complete')

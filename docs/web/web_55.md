@@ -8,7 +8,7 @@
 
 主要实现了按钮的上下左右的 ToolTip，然后是文本框和链接的 ToolTip。
 
-```
+```js
 <div class="container" style="margin-top:40px;">
     <div class="bs-example tooltip-demo">
       <div class="bs-example-tooltips">
@@ -25,7 +25,7 @@
 
 在按钮上添加 data-toggle="tooltip"的属性来开启它的工具提示功能，然后指定 data-placement=”left“工具提示的位置，可以是上下左右（top、bottom、left、right）。
 
-```
+```js
 选择性加入的功能
 
 出于性能方面的考虑，工具提示和弹框组件的 data 属性 api 是选择性加入的，也就是说你必须自己初始化他们。 
@@ -33,7 +33,7 @@
 
 因此针对上述六个控件，我们需要初始化它们，我们是通过 jQuery 的初始化事件进行的
 
-```
+```js
 <script type="text/javascript">
 $(function() {
  $('.tooltip-demo').tooltip({
@@ -48,7 +48,7 @@ $('a').tooltip()
 
 按钮、文本框、链接三种不同的控件的实现初始化稍微有点不同。
 
-```
+```js
 工具提示与按钮组和输入框组联合使用时需要一些特殊设置
 
 在.btn-group 或 .input-group 内的元素上使用工具提示时，你需要指定 container: 'body'选项以避免不需要的副作用（例如，当工具提示显示之后，与其合作的页面元素可能变得更宽或是去圆角）。
@@ -62,7 +62,7 @@ $('a').tooltip()
 
 通过 JavaScript 激活工具提示：上面也已经使用过了
 
-```
+```js
 $('#example').tooltip(options) 
 ```
 
@@ -70,7 +70,7 @@ $('#example').tooltip(options)
 
 ![](img/147.jpg)
 
-```
+```js
 对单个工具提示使用 data 属性
 
 使用 data 属性可以为单个工具提示指定额外选项，如下所示。 
@@ -78,7 +78,7 @@ $('#example').tooltip(options)
 
 ## 3\. 标记
 
-```
+```js
 <a href="#" data-toggle="tooltip" title="first tooltip">Hover over me</a> 
 ```
 
@@ -86,25 +86,25 @@ $('#example').tooltip(options)
 
 $().tooltip(options)——为一组元素应用工具提示。 .tooltip('show')——展示工具提示。
 
-```
+```js
 $('#element').tooltip('show') 
 ```
 
 .tooltip('hide')——隐藏工具提示。
 
-```
+```js
 $('#element').tooltip('hide') 
 ```
 
 .tooltip('toggle')——展示或隐藏工具提示。
 
-```
+```js
 $('#element').tooltip('toggle') 
 ```
 
 .tooltip('destroy')——隐藏并销毁工具提示。
 
-```
+```js
 $('#element').tooltip('destroy') 
 ```
 
@@ -112,7 +112,7 @@ $('#element').tooltip('destroy')
 
 ![](img/148.jpg)
 
-```
+```js
 $('.tooltip-demo').on('hidden.bs.tooltip', function () {
     alert(1);
 }) 

@@ -2,7 +2,7 @@
 
 插件可以单个引入（使用 Bootstrap 提供的单个*.js 文件），或一次性全部引入（使用 bootstrap.js 或压缩版的 bootstrap.min.js）。
 
-```
+```js
 不要将两份文件全部引入
 
 bootstrap.js 和 bootstrap.min.js 同样是包含了所有插件。区别是：一个没有压缩，一个进行了压缩。
@@ -18,13 +18,13 @@ bootstrap.js 和 bootstrap.min.js 同样是包含了所有插件。区别是：�
 
 话又说回来，在某些情况下可能需要将此功能关闭。因此，我们还提供了关闭 data 属性 API 的方式，即解除绑定到文档命名空间上的所有事件 data-api。就像下面这样：
 
-```
+```js
 $(document).off('.data-api') 
 ```
 
 另外，如果是针对某个特定的插件，只需在 data-api 前面添加那个插件的名称作为命名空间，如下：
 
-```
+```js
 $(document).off('.alert.data-api') 
 ```
 
@@ -32,13 +32,13 @@ $(document).off('.alert.data-api')
 
 我们还提供了所有 Bootstrap 插件的纯 JavaScript API。所有公开的 API 都是支持单独或链式调用的，并且返回其所操作的元素集合（注：和 jQuery 的调用形式一致）。
 
-```
+```js
 $(".btn.danger").button("toggle").addClass("fat") 
 ```
 
 所有方法都可以接受一个可选的 option 对象作为参数，或者一个代表特定方法的字符串，或者什么也不提供（在这种情况下，插件将会以默认值初始化）：
 
-```
+```js
 $("#myModal").modal()                      // 使用默认值初始化
 $("#myModal").modal({ keyboard: false })  
 $("#myModal").modal('show') 
@@ -50,7 +50,7 @@ $("#myModal").modal('show')
 
 某些时候可能需要将 Bootstrap 插件与其他 UI 框架共同使用。在这种情况下，命名空间冲突随时可能发生。如果不行发生了这种情况，你可以通过调用插件的.noConflict 方法恢复原始值。
 
-```
+```js
 var bootstrapButton = $.fn.button.noConflict() 
 $.fn.bootstrapBtn = bootstrapButton 
 ```
@@ -63,13 +63,13 @@ Bootstrap 为大部分插件所具有的动作提供了自定义事件。一般�
 
 所有以不定式形式的动词命名的事件都提供了 preventDefault 功能。这就赋予你在动作开始执行前将其停止的能力。
 
-```
+```js
 $('#myModal').on('show.bs.modal', function (e) {
   if (!data) return e.preventDefault() 
 }) 
 ```
 
-```
+```js
 第三方工具库
 
 Bootstrap 官方不提供对第三方 JavaScript 工具库的支持，例如 Prototype 或 jQuery UI。除了.noConflict 和采用命名空间的事件，还可能会有兼容性方面的问题，这就需要你自己来处理了 
@@ -81,7 +81,7 @@ Bootstrap 官方不提供对第三方 JavaScript 工具库的支持，例如 Pro
 
 模态框经过了优化，更加灵活，以弹出对话框的形式出现，具有最小和最实用的功能集。
 
-```
+```js
 不支持模态框重叠
 
 千万不要在一个模态框上重叠另一个模态框。要想同时支持多个模态框，需要自己写额外的代码来实现。 
@@ -91,7 +91,7 @@ Bootstrap 官方不提供对第三方 JavaScript 工具库的支持，例如 Pro
 
 以下模态框包含了模态框的头、体和一组在放置于底部的按钮。
 
-```
+```js
 <div class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -117,7 +117,7 @@ Bootstrap 官方不提供对第三方 JavaScript 工具库的支持，例如 Pro
 
 点击下面的按钮即可通过 JavaScript 启动一个模态框。此模态框将从上到下、逐渐浮现到页面前。
 
-```
+```js
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Launch demo modal
 </button>
@@ -144,7 +144,7 @@ Bootstrap 官方不提供对第三方 JavaScript 工具库的支持，例如 Pro
 
 然后下面最大的是一个 modal，并且给与属性 id 赋值为上面 button 中的 data-target ，进行交互。
 
-```
+```js
 增强模态框的可访问性
 
 请确保为.modal 添加了 role="dialog"；aria-labelledby="myModalLabel"属性指向模态框标题；aria-hidden="true"告诉辅助性工具略过模态框的 DOM 元素。
@@ -158,7 +158,7 @@ Bootstrap 官方不提供对第三方 JavaScript 工具库的支持，例如 Pro
 
 不需写 JavaScript 代码也可激活模态框。通过在一个起控制器作用的页面元素（例如，按钮）上设置 data-toggle="modal"，并使用 data-target="#foo"或 href="#foo"指向特定的模态框即可。就像本例中的
 
-```
+```js
 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   Launch demo modal
 </button> 
@@ -168,7 +168,7 @@ Bootstrap 官方不提供对第三方 JavaScript 工具库的支持，例如 Pro
 
 只需一行 JavaScript 代码，即可通过 id myModal 调用模态框：
 
-```
+```js
 $('#myModal').modal(options) 
 ```
 
@@ -184,7 +184,7 @@ $('#myModal').modal(options)
 
 将你指定的内容作为模态框启动。其接受一个可选的 object 类型的参数。
 
-```
+```js
 $('#myModal').modal({
   keyboard: false
 }) 
@@ -194,25 +194,25 @@ $('#myModal').modal({
 
 手动启动或隐藏模态框。
 
-```
+```js
 $('#myModal').modal('toggle') 
 ```
 
 手动打开一个模态框。
 
-```
+```js
 $('#myModal').modal('show') 
 ```
 
 手动隐藏一个模态框。
 
-```
+```js
 $('#myModal').modal('hide') 
 ```
 
 将上面的示例代码进行修改，其主要变化在于按钮上
 
-```
+```js
  <script type="text/javascript">
     function test()
     {
@@ -250,7 +250,7 @@ Bootstrap 的模态框类暴露了一些事件用于截获并执行自己的代�
 
 ![](img/136.jpg)
 
-```
+```js
 <script type="text/javascript">
     $('#myModal').on('hide.bs.modal', function () {
         alert(11);
@@ -262,7 +262,7 @@ Bootstrap 的模态框类暴露了一些事件用于截获并执行自己的代�
 
 最后把所有代码代码贴出来
 
-```
+```js
 <!DOCTYPE html>
  <html lang="zh-CN">
  <head>

@@ -4,7 +4,7 @@
 
 通过使用一个象征关闭的图标，可以用来让模式对话框和警告框消失。
 
-```
+```js
 <button type="button" class="close" aria-hidden="true">&times;</button> 
 ```
 
@@ -14,7 +14,7 @@
 
 使用插入符表示下拉的功能和方向。请注意，默认插入符会自动反转在 dropup 菜单。
 
-```
+```js
  <span class="caret"></span> 
 ```
 
@@ -24,12 +24,12 @@
 
 过这两个 class 让页面元素左右浮动。 !important 被用来避免某些问题。也可以像 mixin 一样使用这两个 class。
 
-```
+```js
 <div class="pull-left">...</div>
 <div class="pull-right">...</div> 
 ```
 
-```
+```js
 // Classes
 .pull-left {
   float: left !important;
@@ -47,7 +47,7 @@
 } 
 ```
 
-```
+```js
 不要用于导航条
 
 如果是用于对齐导航条上的组件，请务必使用.navbar-left 或 .navbar-right。查看导航条文档以获取详情。 
@@ -57,11 +57,11 @@
 
 将页面元素设置为 display: block 并通过设置 margin 使其居中。可以作为 mixin 或 class 使用。
 
-```
+```js
 <div class="center-block">...</div> 
 ```
 
-```
+```js
 // 作为 classe 使用
 .center-block {
   display: block;
@@ -79,11 +79,11 @@
 
 使用.clearfix 清除任意页面元素的浮动。我们使用了 Nicolas Gallagher 的 the micro clearfix。也可以像 mixin 一样使用。
 
-```
+```js
 <div class="clearfix">...</div> 
 ```
 
-```
+```js
 // Mixin itself
 .clearfix() {
   &:before,
@@ -110,12 +110,12 @@
 
 此外，可以使用.invisible 切换只有一个元素的可见性，这意味着它的显示不被修改，仍然可以影响文档流中的元素。
 
-```
+```js
 <div class="show">...</div>
 <div class="hidden">...</div> 
 ```
 
-```
+```js
 // Classes
 .show {
   display: block !important;
@@ -141,11 +141,11 @@
 
 使用.sr-only 可以针对除了屏幕阅读器之外的所有设备隐藏一个元素。此 class 还可以作为 mixin 使用。
 
-```
+```js
 <a class="sr-only" href="#content">Skip to main content</a> 
 ```
 
-```
+```js
 // Usage as a Mixin
 .skip-navigation {
   .sr-only();
@@ -156,11 +156,11 @@
 
 使用.text-hide class（也可作为 mixin 使用）可以将页面元素所包含的文本内容替换为背景图。
 
-```
+```js
 <h1 class="text-hide">Custom heading</h1> 
 ```
 
-```
+```js
 // Usage as a Mixin
 .heading {
   .text-hide();

@@ -16,7 +16,7 @@ Bootstrap 内置了一套响应式、移动设备优先的流式栅格系统，�
 
 先来个简单的例子：
 
-```
+```js
 <!DOCTYPE html>
 <html>
 
@@ -82,7 +82,7 @@ Bootstrap 内置了一套响应式、移动设备优先的流式栅格系统，�
 
 **优化一：可以发现上图的页面效果占满全屏，我们可以通过 Bootstrap 样式类对上面的内容进行居中。**
 
-```
+```js
 <div class="container">
 .........之前上面添加在 body 标签下的代码
 </div> 
@@ -102,7 +102,7 @@ Bootstrap 内置了一套响应式、移动设备优先的流式栅格系统，�
 
 简单代码实现如下
 
-```
+```js
 <div class="container">
     <h1>
         Hello, world!

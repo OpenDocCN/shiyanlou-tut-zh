@@ -10,7 +10,7 @@
 
 效果比较简单主要就是静态的弹出的小窗体，分为窗体标题和窗体内容。
 
-```
+```js
 <div class="bs-example bs-example-popover">
   <div class="popover top">
     <div class="arrow"></div>
@@ -51,7 +51,7 @@
 
 但是我们还是需要给元素设置简单的基本布局
 
-```
+```js
 <style type="text/css">
  .bs-example-popover .popover {
       position: relative;
@@ -73,7 +73,7 @@
 
 看代码，其实也很简单。
 
-```
+```js
 <a id="a2" class="btn btn-lg btn-danger" data-placement="right" data-content="即对拥有矮、胖、穷、丑、矬、呆、撸等属性特征的各种雷人行径及想法表示轻蔑。屌丝（或写作“吊丝”）可以说是由骂人话“屌死”、“吊死”、“叼死”演变而来。“屌丝男”主要是指大多出身清贫之家，如乡村或许多城市底层小市民家庭，没有更多的背景，许多初中即停学，进城务工，或成了餐厅服务员，或成了网吧网管，在城市的富贵之中分得一杯苦羹；或是宅男、无业游民，可是通常又不肯承认，个人一般自称为自由职业者。" title=""  href="#" data-original-title="屌丝本义">Please Click to toggle popover
 </a> 
 ```
@@ -90,7 +90,7 @@
 
 只需要添加简单的 JavaScript 代码就可以了。
 
-```
+```js
  <script type="text/javascript">
      $("#a1").popover();
  </script> 
@@ -100,7 +100,7 @@
 
 ![](img/151.jpg)
 
-```
+```js
 <div  style="margin-left:200px;margin-top:100px;margin-bottom:200px;" class="bs-example tooltip-demo">
   <div  class="bs-example-tooltips">
     <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
@@ -121,14 +121,14 @@
 
 然后用 JavaScript 来激活
 
-```
+```js
 <script type="text/javascript">
     $("#a1").popover();
     $("[data-toggle=popover]").popover();
 </script> 
 ```
 
-```
+```js
 选择性加入的功能
 
 出于性能方面的考虑，工具提示和弹框组件的 data 属性 api 是选择性加入的，也就是说你必须自己初始化他们。
@@ -146,7 +146,7 @@
 
 通过 JavaScript 启用弹出框：
 
-```
+```js
 $('#example').popover(options) 
 ```
 
@@ -158,31 +158,31 @@ $('#example').popover(options)
 
 ## 6\. 方法
 
-```
+```js
 $().popover(options) 
 ```
 
 为一组元素初始化弹出框。
 
-```
+```js
 $('#element').popover('show') 
 ```
 
 显示弹出框。
 
-```
+```js
 $('#element').popover('hide') 
 ```
 
 隐藏弹出框。
 
-```
+```js
 $('#element').popover('toggle') 
 ```
 
 展示或隐藏弹出框。
 
-```
+```js
 $('#element').popover('destroy') 
 ```
 

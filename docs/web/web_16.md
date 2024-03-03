@@ -54,7 +54,7 @@
 
 在这张图中，展示的是 html 文件简单的结构图（各个部分我们会一一讲解），我们可以对比看，一般的 html 文件结构就是下面这样
 
-```
+```js
 <html>
     <head>
             <title>.....</title>
@@ -74,7 +74,7 @@ HTML 文档也被称为网页 HTML 文档包含 HTML 标签和纯文本 Web 浏�
 
 下面我们具体来看一看对应的解释：
 
-```
+```js
 <html>
     <body>
 
@@ -110,7 +110,7 @@ HTML 网页实际上就是由许许多多各种各样的 HTML 元素构成的文
 
 *   HTML 标题 Heading 是通过 < h1> - < h6> 等标签进行定义的。 示例：
 
-```
+```js
 <h1>This is first heading</h1>
 <h2>This is second heading</h2>
 <h3>This is third heading</h3>
@@ -120,7 +120,7 @@ HTML 网页实际上就是由许许多多各种各样的 HTML 元素构成的文
 
 *   HTML 段落 paragraph 是通过 < p> 标签进行定义的。 示例：
 
-```
+```js
 <p>This is a paragraph.</p>
 <p>This is another paragraph.</p>
 ...
@@ -129,13 +129,13 @@ HTML 网页实际上就是由许许多多各种各样的 HTML 元素构成的文
 
 *   HTML 链接 链接 是通过 < a> 标签进行定义的。 示例：
 
-```
+```js
 <a href="http://shiyanlou.com">This is a link</a> 
 ```
 
 *   HTML 图像 image 是通过 <img> 标签进行定义的。 示例：
 
-```
+```js
 <img src="shiyanlou.jpg" width="100" height="142" /> 
 ```
 

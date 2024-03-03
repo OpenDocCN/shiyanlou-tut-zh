@@ -8,7 +8,7 @@
 
 根据你所放在导航条上的内容的长度，也许你需要调整导航条进入折叠模式和水平模式的阈值。通过改变@grid-float-breakpoint 变量的值或加入您自己的媒体查询 CSS 代码均可实现你的需求。
 
-```
+```js
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -71,7 +71,7 @@
 
 然后在浏览器放缩到一定程度的时候，可以看到的 Header。
 
-```
+```js
 <div class="navbar-header">
   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
       <span class="sr-only">Toggle navigation</span>
@@ -89,7 +89,7 @@
 
 再接下来就比较简单，嵌套了下拉菜单、form 表单、再是下拉菜单。
 
-```
+```js
 增强导航条的可访问性
 
 要增强可访问性，一定要给每个导航条加上 role="navigation"。 
@@ -101,7 +101,7 @@
 
 通过使用.navbar-form 和 .form-inline 共享了很多代码。
 
-```
+```js
 <nav class="navbar navbar-default" role="navigation">
 <form class="navbar-form navbar-left" role="search">
   <div class="form-group">
@@ -114,7 +114,7 @@
 
 ![](img/96.jpg)
 
-```
+```js
 为输入框添加 label 标签
 
 如果你没有为输入框添加 label 标签，屏幕阅读器将会遇到问题。对于导航条内的表单，可以通过.sr-only class 隐藏 label 标签。 
@@ -124,7 +124,7 @@
 
 对于不包含在< form>中的< button>元素，加上.navbar-btn 这个 class 后可以让它在导航条里垂直居中。
 
-```
+```js
 <button type="button" class="btn btn-default navbar-btn">Sign in</button> 
 ```
 
@@ -134,7 +134,7 @@
 
 把文本包裹在.navbar-text 中时，为了有正确的行距和颜色，通常使用< p>标签。
 
-```
+```js
 <p class="navbar-text">Signed in as Mark Otto</p> 
 ```
 
@@ -142,7 +142,7 @@
 
 或许你希望在标准的导航组件之外添加标准链接，那么，使用.navbar-link class 可以让链接有正确的默认颜色和反色。
 
-```
+```js
 <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p> 
 ```
 
@@ -156,7 +156,7 @@
 
 添加.navbar-fixed-top 可以让导航条固定在顶部。
 
-```
+```js
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 <form class="navbar-form navbar-left" role="search">
   <div class="form-group">
@@ -168,7 +168,7 @@
 </nav> 
 ```
 
-```
+```js
 需要为 body 标签设置内补（padding）
 
 这个固定的导航条会遮住页面上的其它内容，除非你给<body>的上方设置了 padding。用你自己的值，或用下面给出的代码都可以。提示：导航条的默认高度是 50px。
@@ -182,7 +182,7 @@ body { padding-top: 70px; }
 
 用.navbar-fixed-bottom 代替。
 
-```
+```js
  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
     <form class="navbar-form navbar-left" role="search">
       <div class="form-group">
@@ -194,7 +194,7 @@ body { padding-top: 70px; }
  </nav> 
 ```
 
-```
+```js
 需要为 body 标签设置内部（padding）
 
 这个固定的导航条会遮住页面上的其它内容，除非你给<body>底部设置了 padding。用你自己的值，或用下面给出的代码都可以。提示：导航条的默认高度是 50px。
@@ -208,7 +208,7 @@ body { padding-bottom: 70px; }
 
 通过添加.navbar-static-top 即可创建一个与页面的导航条。它会随着页面向下滚动而消失。和.navbar-fixed-*类不同的是，你不用给 body 添加 padding。
 
-```
+```js
  <nav class="navbar navbar-default navbar-static-top" role="navigation">
     <form class="navbar-form navbar-left" role="search">
       <div class="form-group">
@@ -224,7 +224,7 @@ body { padding-bottom: 70px; }
 
 通过添加.navbar-inverse 类可以改变导航条的外观。
 
-```
+```js
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
 <form class="navbar-form navbar-left" role="search">
   <div class="form-group">

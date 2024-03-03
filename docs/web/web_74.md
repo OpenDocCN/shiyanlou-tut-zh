@@ -17,7 +17,7 @@
 
 本课程中的所有源码可以通过以下方式下载：
 
-```
+```js
 http://git.shiyanlou.com/shiyanlou/puzzle 
 ```
 
@@ -47,7 +47,7 @@ http://git.shiyanlou.com/shiyanlou/puzzle
 
 **puzzle.html**
 
-```
+```js
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -97,7 +97,7 @@ http://git.shiyanlou.com/shiyanlou/puzzle
 
 **puzzle.css**
 
-```
+```js
 *{
     padding: 0;
     margin: 0;
@@ -233,7 +233,7 @@ body{
 
 **puzzle.js**
 
-```
+```js
 var time=0;
 //保存定时时间
 var pause=true;

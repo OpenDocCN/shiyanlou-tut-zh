@@ -4,7 +4,7 @@
 
 实验中如需使用 jQuery，可以直接引入：
 
-```
+```js
 http://labfile.oss.aliyuncs.com/jquery/1.11.1/jquery.min.js 
 ```
 
@@ -14,7 +14,7 @@ HTML5 中，新标准把文本框提示信息、表单校验、日期选择控�
 
 ### 1\. Number 类型 input 标签
 
-```
+```js
 <input type="number" name="demoNumber" min="1" max="100" step="1"/> 
 ```
 
@@ -24,7 +24,7 @@ HTML5 中，新标准把文本框提示信息、表单校验、日期选择控�
 
 ### 2\. Email 类型 input 标签
 
-```
+```js
 <input type="email" name="email" placeholder="请输入注册邮箱"/> 
 ```
 
@@ -34,7 +34,7 @@ HTML5 中，新标准把文本框提示信息、表单校验、日期选择控�
 
 ### 3\. URL 类型的 input 标签
 
-```
+```js
 <input type="url" placeholder="请输入网址" name="url"/> 
 ```
 
@@ -42,7 +42,7 @@ HTML5 中，新标准把文本框提示信息、表单校验、日期选择控�
 
 ### 4\. Tel 类型的 input 标签
 
-```
+```js
 <input type="tel" placeholder="输入电话" name="phone"/> 
 ```
 
@@ -50,13 +50,13 @@ HTML5 中，新标准把文本框提示信息、表单校验、日期选择控�
 
 ### 5\. range 类型的 input 标签
 
-```
+```js
 <input type="range" min="0" max="50" step="5" name="rangedemo" value="0"/> 
 ```
 
 此类型标签的加入，输入范围内的数据变得非常简单容易，而且非常标准，用户输入可感知体验非常好。另外此标签可以跟表单新增加的 output 标签一块使用，达到一个联动的效果。
 
-```
+```js
 <form oninput="output.value=parseInt(range.value)"/>
     <input type="range" min="0" max="100" step="5" name="range" value="0"/>
     <output name="output">0<output/>
@@ -69,7 +69,7 @@ HTML5 中，新标准把文本框提示信息、表单校验、日期选择控�
 
 Web 项目开发，一定会遇到相关的 js 日期控件，在 HTML5 中新加入的表单属性将会使 Web 开发变得更加简洁。
 
-```
+```js
 <input type="date" name="datedemo"/> 
 ```
 
@@ -79,7 +79,7 @@ Web 项目开发，一定会遇到相关的 js 日期控件，在 HTML5 中新�
 
 ### 7\. 颜色选择 input 标签
 
-```
+```js
 <input type="color" name="colordemo"/> 
 ```
 
@@ -87,7 +87,7 @@ Web 项目开发，一定会遇到相关的 js 日期控件，在 HTML5 中新�
 
 有的项目会要求实现自动完成或者输入提示功能，在 HTML5 的支持下将变得简单。
 
-```
+```js
 <input type="text" autocomplete="on" name="demoAutoComplete" list="autoNames" />
 <datalist id="autoNames">
        <option  value="实验楼" ></option>
@@ -110,13 +110,13 @@ Web 项目开发，一定会遇到相关的 js 日期控件，在 HTML5 中新�
 
 *   校验属性：设置了`required`属性后预示着当前文本框在提交前必须有数据输入，而这一切都是由浏览器自动完成。还添加了`pattern`正则表达式校验：
 
-```
+```js
 <input type="text" autofocus="autofocus" required pattern="\d+"/> 
 ```
 
 *   另外一个较大的改进就是增加了`form`属性，也就是说，任何一个标签都可以指定它所属于一个表单，而不是必须在<form></form>中进行包裹了。
 
-```
+```js
 <input type="text" form="demoform" name="demo"/> 
 ```
 
@@ -124,7 +124,7 @@ Web 项目开发，一定会遇到相关的 js 日期控件，在 HTML5 中新�
 
 *   `novalidate`属性规定在提交表单时不应该验证 `form`或`input`域
 
-```
+```js
 <form action="" method="POST" novalidate="true"></form> 
 ```
 
@@ -132,7 +132,7 @@ Web 项目开发，一定会遇到相关的 js 日期控件，在 HTML5 中新�
 
 ## 三、综合实例
 
-```
+```js
 <fieldset>
     <legend>表单演示：最新 Opera 浏览器支持效果良好</legend>
     <form action="" method="POST" id="form1" oninput="output.value=parseInt(range.value)">
@@ -168,7 +168,7 @@ Web 项目开发，一定会遇到相关的 js 日期控件，在 HTML5 中新�
 
 它是 File 对象的一个集合，在 HTML4 标准中文件上传控件只接受一个文件，而在新标准中，只需要设置`multiple`，就支持多文件上传，所以从此标签中获取的`files`属性就是`FileList`对象实例。 demo：`<input type="file" multiple="multiple" name="fileDemo" id="fileDemo" />`; 下面是关于`FileList`对象的 API 的原型：
 
-```
+```js
 interface FileList {
       getter File? item(unsigned long index);
       readonly attribute unsigned long length;
@@ -179,7 +179,7 @@ interface FileList {
 
 其实就是一个原始数据对象，它提供了`slice`方法可以读取原始数据中的某块数据。另外有两个属性：`size`（数据的大小），`type`（数据的 MIME 类型; 看下面的是 W3C 的 API 原型:
 
-```
+```js
 interface Blob {
     readonly attribute unsigned long long size;
     readonly attribute DOMString type;
@@ -196,7 +196,7 @@ interface Blob {
 
 继承自 Blob 对象，指向一个具体的文件，它还有两个属性：`name`（文件名）,`lastModifiedDate`（最后修改时间）; W3C 的标准：
 
-```
+```js
 interface File : Blob {
     readonly attribute DOMString name;
     readonly attribute Date lastModifiedDate;
@@ -207,7 +207,7 @@ interface File : Blob {
 
 设计用来读取文件里面的数据，提供三个常用的读取文件数据的方法，另外读取文件数据使用了异步的方式，非常高效。 W3C 的标准：
 
-```
+```js
 [Constructor]
 interface FileReader: EventTarget {
     // async read methods
@@ -253,7 +253,7 @@ interface FileReader: EventTarget {
 
 实例一：获取上传文件的文件名（注：需要引入 jQuery）
 
-```
+```js
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html >
 <head>
@@ -288,7 +288,7 @@ interface FileReader: EventTarget {
 
 实例二：读取上传文件内容，然后将文件内容直接读取到浏览器上（注：需要引入 jQuery）
 
-```
+```js
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html >
 <head>
@@ -361,7 +361,7 @@ Canvas 就是一个画布，可以进行画任何的线、图形、填充等一�
 
 1.  要使用 Canvas 来绘制图形必须在页面中添加 Canvas 的标签
 
-```
+```js
 <canvas id="demoCanvas" width="500" height="500">
     <p>
       请使用支持 HTML5 的浏览器查看本实例
@@ -371,7 +371,7 @@ Canvas 就是一个画布，可以进行画任何的线、图形、填充等一�
 
 1.  只有上面的标签，只能是创建好了一个画布，其中 width 和 height 属性就是设置画布的大小。Id 属性也是必须的，后面要用 Id 来拿到当前的 Canvas 的 Dom 对象。通过此 Canvase 的 Dom 对象就可以获取他的上下文（Context）了，Canvas 绘制图形都是靠着 Canvas 对象的上下文对象
 
-```
+```js
 <script type="text/javascript">
     //第一步：获取 canvas 元素
     var canvasDom = document.getElementById("demoCanvas");
@@ -394,7 +394,7 @@ Canvas 就是一个画布，可以进行画任何的线、图形、填充等一�
 
 代码如下：
 
-```
+```js
 <body>
     <canvas id="demoCanvas" width="500" height="500">
         <p>请使用支持 HTML5 的浏览器查看本实例</p>
@@ -424,7 +424,7 @@ Context 对象的 beginPath 方法表示开始绘制路径，moveTo(x, y)方法�
 
 代码如下：
 
-```
+```js
 <body>
     <canvas id="demoCanvas" width="500" height="600">
     </canvas>
@@ -453,7 +453,7 @@ Context 上下文对象的 fillText(string, x, y)方法是用来绘制文本，�
 
 代码如下：
 
-```
+```js
 <canvas id="demoCanvas" width="500" height="600"></canvas>
 <script type="text/javascript">
     //通过 id 获得当前的 Canvas 对象
@@ -480,7 +480,7 @@ Context 上下文的 arc 方法就是绘制圆形或者椭圆，arc 方法的 x 
 
 代码如下：
 
-```
+```js
 <canvas id="demoCanvas" width="500" height="600"></canvas>
 <script type="text/javascript">
     //通过 id 获得当前的 Canvas 对象
@@ -504,7 +504,7 @@ Canvas 绘制图片应该是他的一大特点或者是亮点吧。当然配合 
 
 代码如下：
 
-```
+```js
 <canvas id="demoCanvas" width="500" height="600"></canvas>
 <script type="text/javascript">
     //通过 id 获得当前的 Canvas 对象
@@ -562,7 +562,7 @@ Canvas 总算介绍了最基本的用法了。当然本文大量借鉴了其他�
 
 代码如下：
 
-```
+```js
 <script type="text/javascript">
     //添加 key-value 数据到 sessionStorage
     localStorage.setItem("demokey", "http://www.shiyanlou.com");
@@ -590,7 +590,7 @@ Canvas 总算介绍了最基本的用法了。当然本文大量借鉴了其他�
 
 代码如下：
 
-```
+```js
 <script type="text/javascript">
     //添加 key-value 数据到 sessionStorage
     sessionStorage.setItem("demokey", "http://blog.itjeek.com");
@@ -619,7 +619,7 @@ Canvas 总算介绍了最基本的用法了。当然本文大量借鉴了其他�
 
 ### 1\. openDatabase 方法
 
-```
+```js
 //Demo：获取或者创建一个数据库，如果数据库不存在那么创建之
 var dataBase = openDatabase("student", "1.0", "学生表", 1024 * 1024, function () { }); 
 ```
@@ -640,7 +640,7 @@ var dataBase = openDatabase("student", "1.0", "学生表", 1024 * 1024, function
 
 ### 3\. executeSql 方法执行查询
 
-```
+```js
 ts.executeSql(sqlQuery,[value1,value2..],dataHandler,errorHandler) 
 ```
 
@@ -653,7 +653,7 @@ ts.executeSql(sqlQuery,[value1,value2..],dataHandler,errorHandler)
 
 ## 综合实例
 
-```
+```js
 <head>
  <script src="Scripts/jquery-1.5.1.js" type="text/javascript"></script>
     <script type="text/javascript">

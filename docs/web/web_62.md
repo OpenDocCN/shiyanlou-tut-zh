@@ -22,7 +22,7 @@ CSS 指的是层叠样式表（Cascading StyleSheet）。在网页制作时采�
 
 CSS 规则由两个主要的部分构成：选择器，以及一条或多条声明。
 
-```
+```js
 selector {
     declaration1; 
     declaration2;
@@ -33,13 +33,13 @@ selector {
 
 选择器通常是您需要改变样式的 HTML 元素。 每条声明由一个属性和一个值组成。每个属性有一个值。属性和值被冒号分开。
 
-```
+```js
 selector {property: value} 
 ```
 
 例如：
 
-```
+```js
 h1{
    color:red;
    font-size:14px;
@@ -54,7 +54,7 @@ h1{
 
 **注意**：如果值大于 1 个单词，则需要加引号,如下：
 
-```
+```js
 p{font-family:"sans serif"} 
 ```
 
@@ -66,7 +66,7 @@ p{font-family:"sans serif"}
 
 两个文件分别输入以下代码（brackets 支持代码补全哦）： index.html
 
-```
+```js
 <!doctype html>
 <html>
     <head>
@@ -85,7 +85,7 @@ p{font-family:"sans serif"}
 
 MyCss.css
 
-```
+```js
 h1{
     color: red;font-size: 50px;
 } 
@@ -103,7 +103,7 @@ Ctrl+s 保存两个文件，点击 index.html 查看运行效果：
 
 你可以对选择器进行分组，这样被分组的选择器就可以分享相同的声明。用逗号将需要分组的选择器分开。在下面的例子中，我们对所有的标题元素进行了分组。所有的标题元素都是红色的。
 
-```
+```js
 h1，h2，h3，h4，h5，h6{
       color：red;
    } 
@@ -113,7 +113,7 @@ h1，h2，h3，h4，h5，h6{
 
 根据 CSS，子元素从父元素继承属性。看看下面这条规则：
 
-```
+```js
 body{
      color：green;
 } 
@@ -125,7 +125,7 @@ body{
 
 index.html
 
-```
+```js
 <!doctype html>
 <html>
     <head>
@@ -147,7 +147,7 @@ index.html
 
 mycss.css
 
-```
+```js
 h1,a,h2{
     color: red;font-size: 50px;
 }

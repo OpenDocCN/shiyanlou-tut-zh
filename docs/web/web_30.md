@@ -12,7 +12,7 @@
 
 首先看一下我们经常使用的添加事件的方式:
 
-```
+```js
 <!doctype html>
 <html lang="zh">
 <head>
@@ -44,7 +44,7 @@
 
 **请注意, 虽然效果相同, 但是并不等效** `document.getElementById("testDiv2").onclick = showMsg;` 等效于： `<div id="testDiv1" onclick="alert('!!!');">click event 2</div>` 注意两者的区别了吗?我们常用的修改元素属性添加事件的方式,实际上是建立了一个匿名函数:
 
-```
+```js
 document.getElementById("testDiv1").onclick = function(event) {
     alert("!!!");
 }; 
@@ -60,7 +60,7 @@ document.getElementById("testDiv1").onclick = function(event) {
 
 IE 中，事件对象是 window 对象的一个属性。事件处理函数必须这样访问事件对象：
 
-```
+```js
 obj.onclick=function() {
     var oEvent = window.event;
 } 
@@ -68,7 +68,7 @@ obj.onclick=function() {
 
 在 DOM 标准中,事件对象必须作为唯一参数传给事件处理函数:
 
-```
+```js
 obj.onclick=function() {
     var oEvent = arguments[0];
 } 
@@ -76,7 +76,7 @@ obj.onclick=function() {
 
 除了使用 argument[0]访问此参数, 我们也可以指定参数名称,上面的代码等同于:
 
-```
+```js
 obj.onclick=function(oEvent) {
     ...
 } 
@@ -86,7 +86,7 @@ obj.onclick=function(oEvent) {
 
 下面是兼容多浏览器添加多播委托的方法：
 
-```
+```js
 //统一的为对象添加多播事件委托的方法
 /*  
     参数说明:
@@ -120,7 +120,7 @@ scriptHelper.prototype.addEventListener = function(oTarget, sEventType, fnHandle
 
 **1\. 添加的是多播事件委托，也就是为 click 事件又添加了一个方法，不会覆盖对象的 click 事件原有的事件处理函数。**
 
-```
+```js
 $("#testDiv4").bind("click", function(event) { alert("one"); });
 $("#testDiv4").bind("click", function(event) { alert("two"); }); 
 ```

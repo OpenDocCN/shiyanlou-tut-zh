@@ -48,7 +48,7 @@ Hello World 已经成为编程界的鼻祖级的口号了，我们要进行的�
 
 首先我们在 `~/Code/` 目录下创建 `electron-learn` 目录，然后创建自己的 `package.json`：
 
-```
+```js
 npm init 
 ```
 
@@ -62,7 +62,7 @@ npm init
 
 接下来就是安装 `electron` 框架：
 
-```
+```js
 npm install electron-prebuilt --save-dev 
 ```
 
@@ -82,13 +82,13 @@ npm install electron-prebuilt --save-dev
 
 首先我们创建一个 main.html 来显示应用的主界面：
 
-```
+```js
 echo 'hello electron!' > main.html 
 ```
 
 再编写 `main.js`：
 
-```
+```js
 // 启用 JavaScript 严格模式
 'use strict';
 
@@ -128,7 +128,7 @@ app.on('ready', () => {
 
 首先我们删除之前创建的`main.html`然后修改`main.js`文件如下：
 
-```
+```js
 'use strict';
 let {app, BrowserWindow} = require('electron');
 
@@ -150,7 +150,7 @@ app.on('ready', () => {
 
 这时候我们可以运行一下程序：
 
-```
+```js
 npm start 
 ```
 
@@ -162,7 +162,7 @@ npm start
 
 现在的窗口只显示了一个页面，完全没有任何与用户交互的动画，这不是体验友好的。下面我们来添加交互效果，在 `app/js/index.js` 中：
 
-```
+```js
 'use strict';
 
 // 查询所有的按钮
@@ -190,7 +190,7 @@ function prepareButton(buttonEl, soundName) {
 
 首先我们要修改 main.js 文件中的代码，在 loadURL 代码的后面添加一句：
 
-```
+```js
 mainWindow.webContents.openDevTools(); 
 ```
 
@@ -224,7 +224,7 @@ Electron 提供了 `ipcRenderer` 和 `ipcMain` 两个模块来实现这类通信
 
 在 main.js 中代码修改如下：
 
-```
+```js
 'use strict';
 let {app, BrowserWindow, ipcMain} = require('electron');
 
@@ -240,7 +240,7 @@ ipcMain.on('close-main-window', () => {
 
 相应的，渲染进程于鏊发送相关消息，再编辑 `app/js/index.js` ：
 
-```
+```js
 let {ipcRenderer} = require('ipcRenderer');
 
 let closeEl = document.querySelector('.close');
@@ -262,7 +262,7 @@ Electron 提供了一个全局快捷键模块，它允许你监听自定义的�
 
 下面我们再来修改 main.js：
 
-```
+```js
 var {app, BrowserWindow, ipcMain, globalShortcut} = require('electron');
 
 app.on('ready', () => {
@@ -281,7 +281,7 @@ app.on('ready', () => {
 
 在上面的代码中，两组快捷键都会触发一个 `global-shortcut` 的带参数消息。我们在渲染进程中还需要接收这个消息，下面修改 `app/js/index.js`：
 
-```
+```js
 ipcRenderer.on('global-shortcut', (arg) => {
     console.log('shortcut clicked');
 }); 
@@ -344,13 +344,13 @@ Electron 提供了一个 `electron-packager` 的工具包，方便用于完成�
 
 它可以作为 CLI 应用或构建过程的一部分，Electron 的构建可以很复杂，我们先来考虑最简单的情况。 `electron-packager` 的打包命令为：
 
-```
+```js
 electron-packager <项目路径> <项目名> <打包平台> <平台架构> <electron 版本> <其他选项> 
 ```
 
 我们现在项目中安装这个 package：
 
-```
+```js
 npm install electron-packager --save-dev 
 ```
 
@@ -358,7 +358,7 @@ npm install electron-packager --save-dev
 
 现在我们来打包编写的应用。我们把下面的命令写到 `package.json` 中：
 
-```
+```js
 electron-packager . SoundMachine --platform=linux --arch=x64 --overwrite --out=./dist --icon=app/img/app-icon.icns 
 ```
 
@@ -374,7 +374,7 @@ electron-packager . SoundMachine --platform=linux --arch=x64 --overwrite --out=.
 
 那么，接下来我们可以开始构建了：
 
-```
+```js
 npm run build 
 ```
 

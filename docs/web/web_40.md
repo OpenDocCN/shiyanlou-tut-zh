@@ -4,7 +4,7 @@
 
 Html 中的所有标题标签，从< h1>到< h6>均可使用。另外还提供了.h1 到.h6 的 class,为的是给 inline 属性的文本赋予标题的样式。
 
-```
+```js
 <div class="container"> 
  <h1 class="page-header">标题</h1>
  <h1>h1\. Bootstrap heading</h1>
@@ -22,7 +22,7 @@ Html 中的所有标题标签，从< h1>到< h6>均可使用。另外还提供�
 
 在标题内还可以包含< small>标签或.small 元素，可以用来标记副标题。
 
-```
+```js
 <div class="container"> 
  <h1 class="page-header">标题</h1>
  <h1>h1\. Bootstrap heading<small>Secondary text</small></h1>
@@ -40,7 +40,7 @@ Html 中的所有标题标签，从< h1>到< h6>均可使用。另外还提供�
 
 Bootstrap 将全局 font-size 设置为 14px，line-height 为 1.428 。这些属性直接赋给< body>和所有段落元素。另外，< p>（段落）还被设置了等于 1/2 行高的底部外边距（margin）（即 10px）。
 
-```
+```js
 <h1  class="page-header">页面主体</h1>
 <div  style="border:1px solid ">
  <p style="border:1px solid ">Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
@@ -59,7 +59,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 通过添加.lead 可以让段落突出显示。
 
-```
+```js
 <h1  class="page-header">Lead Body Copy</h1>
 <div  style="border:1px solid ">
  <p class="lead" style="border:1px solid ">Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
@@ -83,7 +83,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 你还可以为行内元素赋予.small 以代替任何< small>标签。
 
-```
+```js
 <small>This line of text is meant to be treated as fine print.</small> 
 ```
 
@@ -91,7 +91,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 通过增加 font-weight 强调一段文本。
 
-```
+```js
 <strong>rendered as bold text</strong> 
 ```
 
@@ -99,7 +99,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 用斜体强调一段文本。
 
-```
+```js
 <em>rendered as italicized text</em> 
 ```
 
@@ -107,7 +107,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 通过文本对齐 class，可以简单方便的将文字重新对齐。
 
-```
+```js
 <p class="text-left">Left aligned text.</p>
 <p class="text-center">Center aligned text.</p>
 <p class="text-right">Right aligned text.</p> 
@@ -117,7 +117,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 这些 class 通过颜色来表示强调。也可以应用于链接，当鼠标盘旋于链接上时，其颜色会变深，就像默认的链接样式。
 
-```
+```js
 <h1>强调 Class</h1>
 <p class="text-muted">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 <p class="text-primary">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
@@ -136,7 +136,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 如想看完整的内容可把鼠标悬停在缩略语上, 但需要包含 title 属性。
 
-```
+```js
 <abbr title="attribute">attr</abbr> 
 ```
 
@@ -144,7 +144,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 为缩略语添加.initialism 可以将其 font-size 设置的更小些。
 
-```
+```js
 <abbr title="HyperText Markup Language" class="initialism">HTML</abbr> 
 ```
 
@@ -154,7 +154,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 让联系信息以最接近日常使用的格式呈现。在每行结尾添加<br>可以保留需要的样式。
 
-```
+```js
 <address>
   <strong>Twitter, Inc.</strong><br>
   795 Folsom Ave, Suite 600<br>
@@ -174,7 +174,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 将任何 HTML 裹在< blockquote>之中即可表现为引用。对于直接引用，我们建议用<p>标签。
 
-```
+```js
 <blockquote>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
 </blockquote> 
@@ -188,7 +188,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 命名来源:添加< small>标签来注明引用来源。来源名称可以放在<cite>标签里面。
 
-```
+```js
 <blockquote>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
   <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
@@ -201,7 +201,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 使用.pull-right 可以让引用展现出向右侧移动、对齐的效果。
 
-```
+```js
 <blockquote class="pull-right">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
 </blockquote> 
@@ -217,7 +217,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 顺序无关紧要的一列元素。
 
-```
+```js
 <ul>
     <li>Lorem ipsum dolor sit amet</li>
     <li>Lorem ipsum dolor sit amet</li>
@@ -231,7 +231,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 顺序至关重要的一组元素。
 
-```
+```js
 <ol>
     <li>Lorem ipsum dolor sit amet</li>
     <li>Lorem ipsum dolor sit amet</li>
@@ -245,7 +245,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 移除了默认的 list-style 样式和左侧外边距的一组元素（只针对直接子元素）。这这是针对直接子元素，也就是说，你需要对所有嵌套的列表都添加此 class 才能具有同样的样式。
 
-```
+```js
 <ul class="list-unstyled">
     <li>Lorem ipsum dolor sit amet</li>
     <li>Lorem ipsum dolor sit amet</li>
@@ -261,7 +261,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 通过设置 display: inline-block;并添加少量的内补，将所有元素放置于同一列。
 
-```
+```js
 <ul class="list-inline">
     <li>Lorem ipsum dolor sit amet</li>
     <li>Lorem ipsum dolor sit amet</li>
@@ -275,7 +275,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 带有描述的短语列表。
 
-```
+```js
 <dl>
   <dt>.Lorem ipsum dolor sit amet</dt>
   <dd>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet</dd>
@@ -286,7 +286,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 .dl-horizontal 可以让< dl>内短语及其描述排在一行。开始是像< dl>默认样式堆叠在一起，随着导航条逐渐展开而排列在一样。
 
-```
+```js
 <dl class="dl-horizontal">
   <dt>.Lorem ipsum dolor sit amet</dt>
   <dd>Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet</dd>
@@ -297,7 +297,7 @@ Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit no
 
 **内联代码**：在正文中通过< code>标签包裹内联样式的代码片段。
 
-```
+```js
 For example, <code>&lt;section&gt;</code> should be wrapped as inline. 
 ```
 
@@ -307,7 +307,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 
 **基本代码快**：多行代码可以使用< pre>标签。为了正确的展示代码，注意将尖括号做转义处理。
 
-```
+```js
 <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre> 
 ```
 

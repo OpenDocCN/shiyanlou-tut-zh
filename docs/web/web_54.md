@@ -6,7 +6,7 @@
 
 先把实现的代码上了，你可以通过测试代码先来看看效果。
 
-```
+```js
 <!DOCTYPE html>
  <html>
  <head>
@@ -83,13 +83,13 @@
 
 通过为需要监听的页面元素（一般是<body>）不过在上面添加在了 Div 上面，你可以自己看看代码就明白了。然后给 div 添加属性 data-spy="scroll"就可很轻松的为顶部导航条添加滚动监听功能。然后为其添加 data-target 属性，此属性的值为任何 Bootstrap 中.nav 组件的父元素的 ID 或 class。
 
-```
+```js
 <div data-offset="0" class="scrollspy-example" data-spy="scroll" data-target="#navbar-example">
 ........
 </div> 
 ```
 
-```
+```js
 导航链接地址必须有对应的目标
 
 导航条内的链接地址必须有对应的页面元素具有同样的 ID 值。例如，<a href="#home">home</a>必须对应 DOM 中例如<div id="home"></div>。 
@@ -99,7 +99,7 @@
 
 通过 JavaScript 启动滚动监听：
 
-```
+```js
 <script type="text/javascript">
   $(function () {
     $('.scrollspy-example').scrollspy({ target:'#navbar-example' });
@@ -115,7 +115,7 @@
 
 使用滚动监听插件时，每当页面中从 DOM 中增加或删除页面元素时，都需要调用此方法以，如下：
 
-```
+```js
 $('[data-spy="scroll"]').each(function () {
   var $spy = $(this).scrollspy('refresh')
 }) 
@@ -131,7 +131,7 @@ $('[data-spy="scroll"]').each(function () {
 
 ![](img/145.jpg)
 
-```
+```js
 <script type="text/javascript">
     $('#navbar-example').on('activate.bs.scrollspy', function () {
           alert(1);
@@ -141,7 +141,7 @@ $('[data-spy="scroll"]').each(function () {
 
 最后注意:针对滚动监听的内容当然要添加滚动条，也就是要预先添加样式
 
-```
+```js
 <style type="text/css">
 .scrollspy-example 
 { 

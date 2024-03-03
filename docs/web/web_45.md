@@ -4,7 +4,7 @@
 
 通过在基于文本的输入框前面，后面或是两边加上文字或按钮，可以扩展对表单的控制。用带有.input-group-addon 的.input-group，可以给.form-control 前面或后面追加元素。
 
-```
+```js
 跨浏览器兼容性
 
 这里请避免使用 <select> 元素，因为 WebKit 浏览器不能完全支持它的样式。
@@ -14,7 +14,7 @@
 不要直接将.input-group 和.form-group 混合使用，因为.input-group 是一个独立的组件。 
 ```
 
-```
+```js
 <div class="input-group">
   <span class="input-group-addon">@</span>
   <input type="text" class="form-control" placeholder="Username">
@@ -40,7 +40,7 @@
 
 给.input-group 添加标明尺寸的 class，它自己和其中的内容都会自动调整尺寸。没必要给每个元素都重复添加尺寸 class。
 
-```
+```js
 <div class="input-group input-group-lg">
   <span class="input-group-addon">@</span>
   <input type="text" class="form-control" placeholder="Username">
@@ -63,7 +63,7 @@
 
 可以把复选框或单选框放在输入组里而不是文本前。
 
-```
+```js
 <div class="row">
   <div class="col-lg-6">
     <div class="input-group">
@@ -94,7 +94,7 @@
 
 输入组里的有点不同，它需要多加一层元素。 你要用 .input-group-btn 包住按钮而不是 .input-group-addon。这是因为默认的浏览器样式不能被覆盖。
 
-```
+```js
 <div class="row">
   <div class="col-lg-6">
     <div class="input-group">
@@ -119,7 +119,7 @@
 
 ## 5\. 带下拉菜单的按钮
 
-```
+```js
 <div class="row">
   <div class="col-lg-6">
     <div class="input-group">
@@ -158,7 +158,7 @@
 
 ## 6\. 分段按钮
 
-```
+```js
 <div class="row">
   <div class="col-lg-6">
     <div class="input-group">

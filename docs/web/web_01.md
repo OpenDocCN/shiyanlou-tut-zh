@@ -10,13 +10,13 @@ SCSS（SASS）画小黄人，学习 CSS3。
 
 安装 SASS 需要 Ruby 支持，环境中已经安装了 Ruby，直接安装 SASS：
 
-```
+```js
 $ sudo gem install sass 
 ```
 
 创建项目：
 
-```
+```js
 $ mkdir minion
 $ cd minion
 $ touch minion.html
@@ -29,7 +29,7 @@ $ touch minion.scss
 
 打开`minion.html`文件，输入如下代码：
 
-```
+```js
 <!doctype html>
 <html>
 <head>
@@ -50,7 +50,7 @@ $ touch minion.scss
 
 首先打开 HTML 文件，在`body`中添加如下代码：
 
-```
+```js
 <body>
     <section class="content">
     </section>
@@ -61,7 +61,7 @@ $ touch minion.scss
 
 我们可以看到，小黄人有 8 根头发，我们在`section`中添加两个列表，分别表示小黄人左边的四根头发和右边的四根头发，再加一个 div 表示身体：
 
-```
+```js
 <body>
     <section class="content">
         <ul class="hair hair-left">
@@ -84,7 +84,7 @@ $ touch minion.scss
 
 然后在 sass 文件夹中创建`_body.scss`文件，输入如下代码：
 
-```
+```js
 body {
     overflow: hidden;
 }
@@ -111,13 +111,13 @@ body {
 
 然后在`minion.scss`文件中引入`_body.scss`：
 
-```
+```js
 @import 'body'; 
 ```
 
 编译 SASS，打开终端，进入 minion 目录输入如下命令：
 
-```
+```js
 $ sass minion.scss minion.css 
 ```
 
@@ -133,7 +133,7 @@ $ sass minion.scss minion.css
 
 第二个参数和第三个参数就是颜色了，表示从第二个参数颜色渐变到第三个参数的颜色，当然也可以传递两个以上的颜色，比如传递三个颜色，那么就需要指定什么时候渐变到第二个颜色，比如
 
-```
+```js
 /* 这两条效果一样 */
 /* 所以 0 度是从底部开始的 */
 background:  linear-gradient(to top, blue, green 40%, red);
@@ -144,7 +144,7 @@ background:  linear-gradient(0deg, blue, green 40%, red);
 
 下面我们来处理头发，创建`_hair.scss`文件：
 
-```
+```js
 .hair {
     padding: 0;
 
@@ -165,7 +165,7 @@ background:  linear-gradient(0deg, blue, green 40%, red);
 
 把头发定位到小黄人头部上方，然后设置圆角和边框使头发看起来是弯曲的，设置`z-index`使头发显示在头部前面。现在所有头发在一起，是一个椭圆，下面我们来把头发一根根分开：
 
-```
+```js
 // 左边的头发
 .hair-left {
     li {
@@ -201,7 +201,7 @@ background:  linear-gradient(0deg, blue, green 40%, red);
 
 根据情况设置头发的不同长度，然后通过边距设置头发的位置，在通过旋转设置头发的方向，`tranform`属性可以向元素应用 2D 或者 3D 转换，`rotate`则是定义 2D 旋转。同样，设置右边的四根头发：
 
-```
+```js
 // 右边的头发
 .hair-right {
     li {
@@ -237,7 +237,7 @@ background:  linear-gradient(0deg, blue, green 40%, red);
 
 头发展出出来了，现在我们来画小黄人的眼镜，在`div.body`中添加 HTML：
 
-```
+```js
  <div class="body">
         <div class="glasses">
             <span class="band band-left"></span>
@@ -256,7 +256,7 @@ background:  linear-gradient(0deg, blue, green 40%, red);
 
 `.band-left`和`.band-right`分别是眼镜左边和右边的眼镜带子，两个`.glass`分别是左右两个镜框，`iris`是眼球。下面我们来画眼镜带子，创建`_glasses.scss`文件：
 
-```
+```js
 .glasses {
     width: 180px;
 }
@@ -304,7 +304,7 @@ background:  linear-gradient(0deg, blue, green 40%, red);
 
 下面来画眼镜：
 
-```
+```js
 .glass {
     float: left;
     width: 85px;
@@ -322,7 +322,7 @@ background:  linear-gradient(0deg, blue, green 40%, red);
 
 通过`:before`属性去掉镜框中间部分，通过`:after`属性添加眼睛白色部分：
 
-```
+```js
 .glass {
     float: left;
     width: 85px;
@@ -371,7 +371,7 @@ background:  linear-gradient(0deg, blue, green 40%, red);
 
 然后画眼球：
 
-```
+```js
 .iris {
     width: 23px;
     height: 23px;
@@ -414,7 +414,7 @@ background:  linear-gradient(0deg, blue, green 40%, red);
 
 用法和`linear-gradient()`类似，第一个参数表示圆的直径和圆心位置(不设置的话，默认为当前元素的背景大小，圆心即为背景中心)或者直接设置形状（比如 circle 等），后面的参数表示渐变的颜色，如：
 
-```
+```js
 /* 渐变的圆心坐标为（100px, 100px），圆的直径为 100px */
 /* 颜色渐变从圆心到圆边缘开始，红色、绿色、蓝色，所以圆心为红色，圆边缘为蓝色 */
 background: radial-gradient(100px at 100px 100px, red, green, blue);
@@ -426,7 +426,7 @@ background: radial-gradient(100px at 100px 100px, red 10%, green, blue);
 
 在`section.content`中添加嘴巴的 HTML 代码：
 
-```
+```js
  <div class="mouth">
         <ul class="teeth">
             <li></li>
@@ -439,7 +439,7 @@ background: radial-gradient(100px at 100px 100px, red 10%, green, blue);
 
 其中的列表表示牙齿，然后添加嘴的 SCSS 代码，创建`_mouth.scss`文件：
 
-```
+```js
 .mouth {
     width: 70px;
     height: 30px;
@@ -475,7 +475,7 @@ background: radial-gradient(100px at 100px 100px, red 10%, green, blue);
 
 添加牙齿的 SCSS 代码：
 
-```
+```js
 .teeth {
     width: 90px;
     padding: 0 5px;
@@ -507,7 +507,7 @@ background: radial-gradient(100px at 100px 100px, red 10%, green, blue);
 
 在`section.content`中添加裤子的 HTML：
 
-```
+```js
  <div class="pants">
             <div class="belt belt-left"></div>
             <div class="belt belt-right"></div>
@@ -516,7 +516,7 @@ background: radial-gradient(100px at 100px 100px, red 10%, green, blue);
 
 然后添加 SCSS 代码，创建`_pants.scss`文件：
 
-```
+```js
 .pants {
     width: 180px;
     height: 50px;
@@ -600,7 +600,7 @@ background: radial-gradient(100px at 100px 100px, red 10%, green, blue);
 
 在`section.content`中添加手臂的 HTML：
 
-```
+```js
  <div class="arm arm-left">
         <div class="hand">
             <ul class="fingers fingers-left">
@@ -622,7 +622,7 @@ background: radial-gradient(100px at 100px 100px, red 10%, green, blue);
 
 添加肩膀的 SCSS，创建`_arm.scss`文件：
 
-```
+```js
 .arm {
     width: 20px;
     height: 100px;
@@ -708,7 +708,7 @@ background: radial-gradient(100px at 100px 100px, red 10%, green, blue);
 
 添加手臂的 SCSS：
 
-```
+```js
 .hand {
     height: 40px;
     width: 35px;
@@ -778,7 +778,7 @@ background: radial-gradient(100px at 100px 100px, red 10%, green, blue);
 
 添加手指的 SCSS：
 
-```
+```js
 .fingers {
     list-style: none;
     position: relative;
@@ -869,7 +869,7 @@ background: radial-gradient(100px at 100px 100px, red 10%, green, blue);
 
 添加脚的 HTML：
 
-```
+```js
  <div class="legs">
             <div class="leg"></div>
             <div class="leg"></div>
@@ -878,7 +878,7 @@ background: radial-gradient(100px at 100px 100px, red 10%, green, blue);
 
 添加脚的 SCSS，创建`_legs.scss`文件：
 
-```
+```js
 .legs {
     width: 120px;
     margin: 0 auto;
@@ -900,14 +900,14 @@ background: radial-gradient(100px at 100px 100px, red 10%, green, blue);
 
 添加鞋子 HTML：
 
-```
+```js
  <div class="shoes shoes-left"></div>
         <div class="shoes shoes-right"></div> 
 ```
 
 添加鞋子的 SCSS，创建`_shoes.scss`文件：
 
-```
+```js
 .shoes {
     position: relative;
     margin: 0 auto;

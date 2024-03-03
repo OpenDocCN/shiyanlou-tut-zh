@@ -42,7 +42,7 @@ http://docs.jquery.com/Plugins/Validation/validate#options
 
 **实例代码：**
 
-```
+```js
 <%@ Page Language="C#" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -155,7 +155,7 @@ http://docs.jquery.com/Plugins/Validation/validate#options
 
 验证方法是验证某一个控件是否满足某些规则的方法， 返回一个 boolean 值。 比如 email( ) 方法验证内容是否符合 email 格式， 符合则返回 true。 下面是类库中 email 方法的源代码：
 
-```
+```js
  // http://docs.jquery.com/Plugins/Validation/Methods/email
         email: function(value, element) {
             // contributed by Scott Gonzalez: http://projects.scottsplayground.com/email_address_validation/
@@ -175,7 +175,7 @@ http://docs.jquery.com/Plugins/Validation
 
 默认的 validate 类库自带英文验证消息：
 
-```
+```js
  messages: {
         required: "This field is required.",    
         //...    
@@ -186,13 +186,13 @@ http://docs.jquery.com/Plugins/Validation
 
 在下载文件的 localization 文件夹中， 包含了各国语言的基本验证消息， 如同本实例一样引入不同的语言文件即可实现语言切换：
 
-```
+```js
 <script type="text/javascript" src="<% =WebConfig.ResourceServer %>/JsLib/jquery/plugin/jquery.validate/localization/messages_cn.js"></script> 
 ```
 
 语言文件的内容举例：
 
-```
+```js
 jQuery.extend(jQuery.validator.messages, {
         required: "必选字段",
         //...
@@ -203,7 +203,7 @@ jQuery.extend(jQuery.validator.messages, {
 
 除了全局默认的验证消息， 也可以为某一个表单元素设置特有的验证消息， 比如本文实例中， 为 email 元素设置了特有的验证消息：
 
-```
+```js
  messages: {
                    //为 name 为 email 的控件的 required()和 email()验证方法设置验证失败的消息内容
                    email: {required:"需要输入电子邮箱", email:"电子邮箱格式不正确"} 
@@ -221,7 +221,7 @@ options 的 messages 属性可以针对某一个表单元素设置验证消息�
 
 本实例的"姓名"元素使用了 CSS 样式规则和元素属性规则：
 
-```
+```js
 <input id="cname" name="name" size="25" class="required" minlength="2" /> 
 ```
 
@@ -231,7 +231,7 @@ minlength 元素属性也会自动和 minlength()验证函数关联， 这种规
 
 另外还可以通过编程的方式进行关联：
 
-```
+```js
  rules: {
                    //为 name 为 email 的控件添加两个验证方法:required()和 email()
                    email: { required: true, email: true }
@@ -246,13 +246,13 @@ minlength 元素属性也会自动和 minlength()验证函数关联， 这种规
 
 但是可以通过添加 **class="cancel"** 的方式让提交按钮跳过验证：
 
-```
+```js
 <input type="submit" class="cancel" name="cancel" value="Cancel" /> 
 ```
 
 当表单提交时， 会触发 options 中 submitHandler 属性设置的函数：
 
-```
+```js
  submitHandler: function(form)
                {
                    //如果想提交表单, 需要使用 form.submit()而不要使用$(form).submit()
@@ -270,7 +270,7 @@ minlength 元素属性也会自动和 minlength()验证函数关联， 这种规
 
 在开发阶段我们通常不希望表单被真正提交， 虽然可以通过本实例中重写 submitHandler 函数来实现， 但是还有更好的方式， 我们可以在 submitHandler 函数完成正式提交的逻辑， 然后通过设置 options 的 debug 属性， 来达到即使验证通过也不会提交表单的目的：
 
-```
+```js
 $(".selector").validate({
    debug: true
 }) 
@@ -282,7 +282,7 @@ $(".selector").validate({
 
 同时为了方便一次设置页面上所有的应用了 validate 控件的 form 对象， 提供了 jQuery.validator.setDefaults 函数让我们可以一次设置所有的默认值：
 
-```
+```js
 jQuery.validator.setDefaults({ 
     debug: true 
 }); 
@@ -314,7 +314,7 @@ http://docs.jquery.com/Plugins/Autocomplete/autocomplete#toptions
 
 **实例代码：**
 
-```
+```js
 <%@ Page Language="C#" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -450,13 +450,13 @@ function(row, rowNum, rowCount, searchItem)
 
 对每一行数据使用此函数格式化需要查询的数据格式. 返回值是给内部搜索算法使用的. 实例中用户看到的匹配结果是 formatItem 中设置的格式， 但是程序内部其实只搜索城市的英文和中文名称， 搜索数据在 formatMatch 中定义：
 
-```
+```js
 return row.CityNameEn + " " + row.CityName; 
 ```
 
 **函数签名：**
 
-```
+```js
 function(row, rowNum, rowCount,) 
 ```
 
@@ -466,13 +466,13 @@ function(row, rowNum, rowCount,)
 
 此函数是用户选中后返回的数据格式. 比如实例中只返回城市名给 input 控件：
 
-```
+```js
 return row.CityName; 
 ```
 
 **函数签名：**
 
-```
+```js
 function(row, rowNum, rowCount,) 
 ```
 
@@ -484,7 +484,7 @@ function(row, rowNum, rowCount,)
 
 所以 autocomplete 控件提供了 result 事件函数， 此事件会在用户选中某一项后触发：
 
-```
+```js
  $("#inputCityName").result(function(event, data, formatted)
             {
                 $("#inputCityId").val(data.ElongCityId);
@@ -493,7 +493,7 @@ function(row, rowNum, rowCount,)
 
 **函数签名：**
 
-```
+```js
 function(event, data, formatted) 
 ```
 

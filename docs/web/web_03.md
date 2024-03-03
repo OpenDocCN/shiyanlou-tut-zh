@@ -26,7 +26,7 @@
 
 知道我们的实现目标之后，我们需要来整理一下整个即时搜索的思路：
 
-```
+```js
 用户输入关键字 -->  通过监听用户输入获取关键字 --> 将关键字发送到服务器端 --> 服务器端根据关键字进行查询 --> 将查到的数据返回给客户端 --> 将数据展示给用户 
 ```
 
@@ -48,7 +48,7 @@
 
 以 Hadoop 为例， 它在 Mongodb 中的一条记录大概是这样的：
 
-```
+```js
 { 
     "_id" : "1430277742.791925", 
     "prj" : "hadoop-common.git",   
@@ -69,7 +69,7 @@
 
 准备数据： 获取我们需要的数据：
 
-```
+```js
 cd Desktop
 
 wget http://labfile.oss.aliyuncs.com/courses/386/Search.zip 
@@ -77,7 +77,7 @@ wget http://labfile.oss.aliyuncs.com/courses/386/Search.zip
 
 然后解压，并进入到项目目录之下：
 
-```
+```js
 unzip Search.zip
 
 cd Search/ 
@@ -87,7 +87,7 @@ cd Search/
 
 启动 MongoDB，在命令行执行：
 
-```
+```js
 sudo mkdir -p /data/db
 sudo mongod 
 ```
@@ -96,7 +96,7 @@ sudo mongod
 
 启动 MongoDB 之后，就可以插入相应的数据，在项目目录之下`(Search/)`命令行执行：
 
-```
+```js
 mongoimport -h localhost:27017 --db meteor --collection log_info --type json --file mongo.json --jsonArray 
 ```
 
@@ -104,7 +104,7 @@ mongoimport -h localhost:27017 --db meteor --collection log_info --type json --f
 
 之后你大概会看到下面的信息
 
-```
+```js
 connected to: localhost:27017
 imported 10 documents 
 ```
@@ -117,13 +117,13 @@ imported 10 documents
 
 既然是做搜索，其实就是搜索我们存在数据库里面的内容，所以我们首先来获取 Mongodb 中存储元数据的 `collection`:
 
-```
+```js
 Items = new Mongo.Collection("log_info"); 
 ```
 
 没错，就是这样简单的一行代码，我们就可以获取到`log_info`（就是上面插入数据时候制定的 collection）这个`collection`里面的所有数据记录了。这里需要说明的是，这个对象既可在客户端代码中使用，也可在服务器端代码使用， `Meteor` 会基于 DDP 协议帮我们搞定数据在服务器、客户端之间的传输问题。获取到这些数据`(Items)`之后，我们首先实现的是：在服务器端根据用户输入的关键字对数据`(Items)`进行查询
 
-```
+```js
 if (Meteor.isServer) {
   Meteor.publish('items', function (queryString) {
       return query(Items, queryString)
@@ -135,7 +135,7 @@ if (Meteor.isServer) {
 
 服务端代码写好之后，我们就可以编写客户端的代码了：
 
-```
+```js
 if (Meteor.isClient) {
   Session.set('queryString', '')
   Meteor.subscribe('items', '')
@@ -156,7 +156,7 @@ Template.body.events({
 
 这时候，其实在客户端与服务端的通道已将打通了。不过这时候我们还不能看到数据，因为我们并没有使用模板将他们展示出来。所以，实现之：
 
-```
+```js
 Template.body.helpers({
     items: function () {
       return query(Items, Session.get('queryString'))
@@ -172,7 +172,7 @@ Template.body.helpers({
 2.  对数据库进行查询
 3.  返回查询结果
 
-```
+```js
 function query(collections, queryString){
   var limit = 40 //限制搜索结果返回最多 40 个
   var query = queryString.split(' ') // split 将用户输入的 queryString 分成一个个字母
@@ -206,7 +206,7 @@ function query(collections, queryString){
 
 `query`函数接受两个参数，一个是`collections`，一个是`queryString`，我们在前面通过 `query(Items, Session.get('queryString'))`传入了对应的参数。具体的详解可以参考代码的注释，接下来就是实现一下`isSpecial`函数了，就是判断用户输入的关键字是否存在`< = >`等字符
 
-```
+```js
 function isSpecial(str){
   var relation
   var result = {}
@@ -240,7 +240,7 @@ function isSpecial(str){
 
 SRsearch.html 的代码内容：
 
-```
+```js
 <head>
   <title>SRSearch</title>
   <link rel="stylesheet" href="bootstrap.min.css">
@@ -255,7 +255,7 @@ SRsearch.html 的代码内容：
 
 基本架构有了，我门需要一个表单来提交用户输入的内容：
 
-```
+```js
  <div class="container">
     <h1>Source Repo Search</h1>
       <form class="form-horizontal" onsubmit="return false;">
@@ -275,7 +275,7 @@ SRsearch.html 的代码内容：
 
 在上面的 form 中，我们首先指定`onsubmit="return false;"`不让 form 执行默认提交。然后在 form 里面，我们给用户一个 input 输入框，这里需要注意的是，这个 input 的 id 必须和`Template.body.events({"keyup #search-box"})`中的选择器一致，不然就触发不了事件啦。而 id 为`help`的 div 里面，我们的目的只是给用户一些提示。表单写完之后，我们需要将搜索结果实时反馈出来：
 
-```
+```js
  <small>RegEx supported.</small>
       </div>
       {{#each items}}
@@ -287,7 +287,7 @@ SRsearch.html 的代码内容：
 
 在上面的代码中，我们需要关注的是下面这个部分：
 
-```
+```js
  {{#each items}}
      {{> item}}
 {{/each}} 
@@ -295,7 +295,7 @@ SRsearch.html 的代码内容：
 
 还记得我们在`Template.body.helpers({})`指定的变量`items`么，这里的{`{#each items}}`就是循环输出那个 items 里面的每一个搜索结果。然后`{{> item}}`指定输出的模板，这里的`item` 为模板的名字，我们需要创建一个`name="item"`的模板：
 
-```
+```js
 <template name="item">
     <dl class="dl-horizontal">
     <dt>Project</dt>            <dd>{{prj}}</dd>
@@ -315,7 +315,7 @@ SRsearch.html 的代码内容：
 
 到这里，全部的代码就编写完成了。现在就可以在项目的根目录执行`meteor run`，
 
-```
+```js
 => Started proxy.
 => Started MongoDB.
 => Started your app.

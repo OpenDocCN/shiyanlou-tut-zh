@@ -24,7 +24,7 @@ DOM 的最小组成单位叫做 **节点**（node），一个文档的树形结�
 
 对于 HTML 文档，节点主要有以下六种类型：
 
-```
+```js
 节点|名称|含义
 ----|----|----
 Document | 文档节点 | 整个文档（window.document）
@@ -41,7 +41,7 @@ DocumentFragment | 文档碎片节点 | 文档的片段
 
 我们可以使用方法 getElementByID() 通过元素的 ID 而选取元素，并对其做操作，比如：
 
-```
+```js
 <html>
 <body>
 <div id="my_div"></div>
@@ -63,7 +63,7 @@ DocumentFragment | 文档碎片节点 | 文档的片段
 
 除了通过 ID 选择元素，我们还可以使用 getElementByName() 方法或者 getElementsByTagName() 方法找到元素，不过如果有多个同类型标签，那我们需要以下标来确认：
 
-```
+```js
 <html>
 <body>
 <input type="text" />
@@ -88,7 +88,7 @@ document.getElementsByTagName("input")[1].value="shiyanlou"; // 下标为 [1] �
 
 可以通过 getAttribute() 和 setAttribute() 查询和设置元素的属性：
 
-```
+```js
 <html>
 <head>
 <style>
@@ -136,7 +136,7 @@ document.write(document.getElementById("div_1").getAttribute("class")); // 再�
 
 通过 parentNode() 方法可以查看并操作一个节点的父节点，示例：找到 id 为 demo 的元素的父节点，并输出其 class 的名称：
 
-```
+```js
 <html>
 <body>
 <div class="demo-parent">
@@ -159,7 +159,7 @@ document.write(document.getElementById("div_1").getAttribute("class")); // 再�
 
 比如：创建一个 div 并为其设置高度（100px）和背景色（red），并追加到 body 后面：
 
-```
+```js
 <html>
 <body>
 <div style="background:#00F; height:100px"></div>
@@ -177,7 +177,7 @@ document.write(document.getElementById("div_1").getAttribute("class")); // 再�
 
 除了创建，我们还可以删除一个节点，通过 removeChild() 方法：
 
-```
+```js
 <html>
 <head>
 <body>

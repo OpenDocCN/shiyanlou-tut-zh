@@ -10,7 +10,7 @@
 
 内边距、边框和外边距都是可选的，默认值是零。但是，许多元素将由用户代也可以使用通用选择器对所有元素进行设置，就相当与是一个初始化：
 
-```
+```js
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +21,7 @@
 
 可以如下设置这几个属性：
 
-```
+```js
 box {
   width: 70px;
   margin: 10px;
@@ -41,13 +41,13 @@ CSS padding 属性定义元素的内边距。padding 属性接受长度值或百
 
 你可以进行统一的内边距设置，也可以进行单边的那边据设置： 例如，如果您希望所有 h1 元素的各边都有 10 像素的内边距，只需要这样：
 
-```
+```js
 h1 {padding: 10px;} 
 ```
 
 您还可以按照上、右、下、左的顺序分别设置各边的内边距，各边均可以使用不同的单位或百分比值：
 
-```
+```js
 h1 {padding: 10px 0.25em 2ex 20%;} 
 ```
 
@@ -64,7 +64,7 @@ h1 {padding: 10px 0.25em 2ex 20%;}
 
 在 html 文件中写入一个表格,加上边框属性:
 
-```
+```js
 <table border="1">
     <tr>
         <td>
@@ -80,7 +80,7 @@ h1 {padding: 10px 0.25em 2ex 20%;}
 
 下面我们在 CSS 文件中加入
 
-```
+```js
 h1 {
     padding-left: 5cm;
     padding-right: 5cm;
@@ -91,7 +91,7 @@ h1 {
 
 HTML 代码更新为：
 
-```
+```js
 <table border="1">
     <tr>
         <td>
@@ -119,13 +119,13 @@ HTML 代码更新为：
 
 可以通过如下的内容
 
-```
+```js
 td {border-style: solid; border-width: 15px 5px 15px 5px;} 
 ```
 
 同样,这里我们也可以设置单边边框的宽度,
 
-```
+```js
 border-top-width
 border-right-width
 border-bottom-width
@@ -134,7 +134,7 @@ border-left-width
 
 下面我们在 CSS 文件中加入
 
-```
+```js
  border-style: dashed;
   border-top-width: 15px;
   border-right-width: 5px;
@@ -150,7 +150,7 @@ border-left-width
 
 在 CSS 文档中添加以下内容:
 
-```
+```js
  border-color: blue rgb(25%,35%,45%) #909090 red; 
 ```
 
@@ -172,13 +172,13 @@ margin 的默认值是 0，所以如果没有为 margin 声明一个值，就不
 
 值复制 还记得吗？我们曾经在前两节中提到过值复制。下面我们为您讲解如何使用值复制。 有时，我们会输入一些重复的值：
 
-```
+```js
 p {margin: 0.5em 1em 0.5em 1em;} 
 ```
 
 通过值复制，您可以不必重复地键入这对数字。上面的规则与下面的规则是等价的：
 
-```
+```js
 p {margin: 0.5em 1em;} 
 ```
 
@@ -194,7 +194,7 @@ p {margin: 0.5em 1em;}
 
 下面我们来举例说明:
 
-```
+```js
 h1 {margin: 0.25em 1em 0.5em;}  
 /* 等价于 0.25em 1em 0.5em 1em */
 h2 {margin: 0.5em 1em;} 
@@ -205,7 +205,7 @@ p {margin: 1px;}
 
 这里来一个简单的示例: html 文件内容如下:
 
-```
+```js
 <div class="wb">
     <div class="bk">
         <div class="nj">
@@ -219,7 +219,7 @@ p {margin: 1px;}
 
 CSS 文件内容如下:
 
-```
+```js
 .wb{
     margin: 100px;
 }
@@ -261,7 +261,7 @@ CSS 文件内容如下:
 
 实现 html 内容为:
 
-```
+```js
 <div class="top">
     <div class="topcenter"><h1>topcenter</h1></div>
 </div> 
@@ -269,7 +269,7 @@ CSS 文件内容如下:
 
 CSS 内容为:
 
-```
+```js
 .top{
     background-color: steelblue;
     width: 100%;
@@ -295,7 +295,7 @@ CSS 内容为:
 
 HTML 内容如下:
 
-```
+```js
 <div class="middle">
     <div class="middle1"><br/><h2>middle1</h2></div>
     <br/>
@@ -305,7 +305,7 @@ HTML 内容如下:
 
 CSS 内容如下:
 
-```
+```js
 .middle{
     width: 75%;
     height: 700px;
@@ -334,13 +334,13 @@ CSS 内容如下:
 
 最后我们再加上个底边: HTML:
 
-```
+```js
 <div class="bottom"></div> 
 ```
 
 CSS:
 
-```
+```js
 .bottom{
     margin: 0px auto;
     height: 50px;

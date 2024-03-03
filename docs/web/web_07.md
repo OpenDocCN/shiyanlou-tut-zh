@@ -60,7 +60,7 @@ JavaScript 的语法和 C/C++、Java 等大家都了解的语言很类似，如�
 
 在学习一门新语言的时候，大家都喜欢用“hello world”作为第一个程序，那么现在我们写一个 JavaScript 版本的：
 
-```
+```js
 <html>
 <head></head>
 <body>
@@ -91,7 +91,7 @@ JavaScript 代码放在 `<script>……</script>` 标签里，这段代码的效
 
 我们除了可以把包含代码的 `<script>` 标签放在 `<body>……</body>` 标签里，还可以把它放在 `<head>……</head>` 标签里，比如这样：
 
-```
+```js
 <html>
 
 <head>
@@ -117,13 +117,13 @@ alert("hello word!");
 
 在实验楼环境中，把以下代码保存并命名为“out.js”，放在桌面上：
 
-```
+```js
 alert("hello word!"); 
 ```
 
 把以下代码保存并命名为“test2.html”，放在桌面：
 
-```
+```js
 <html>
 <head>
 <h1> my JavaScript code in "out.js" </h1>
@@ -150,7 +150,7 @@ alert("hello word!");
 
 参考如下，观察弹框顺序：
 
-```
+```js
 <html>
 
 <head>

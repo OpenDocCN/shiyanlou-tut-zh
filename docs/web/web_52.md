@@ -8,7 +8,7 @@
 
 导航条分为四个部分。第一部分导航头，第二部分导航列，第三部分 form 查询表单，第四部分导航列。
 
-```
+```js
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myCollapse">
@@ -66,7 +66,7 @@
 
 通过向链接或按钮添加 data-toggle="dropdown"可以打开或关闭下拉菜单。
 
-```
+```js
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 <ul class="dropdown-menu">
@@ -91,13 +91,13 @@
 
 通过将 data-toggle 属性值设置为空，或者直接删除 data-toggle 属性，那么再次点击就不会出现下来菜单了，接下来我们通过给这个 a 标签添加一个 onclick 事件。
 
-```
+```js
 <a href="#" class="dropdown-toggle" id="myDropDown" data-toggle="" onClick="Test()">Dropdown <b class="caret"></b></a> 
 ```
 
 并添加相应的 JavaScript 的函数代码
 
-```
+```js
 <script type="text/javascript">
     function Test()
     {
@@ -112,7 +112,7 @@
 
 可以绑定事件，然后在元素进行相应处理的时候会自动绑定到元素，并进行执行相关的代码。
 
-```
+```js
 $('#myDropdown').on('show.bs.dropdown', function () {
   // 在显示的时候做一些处理代码
 }) 

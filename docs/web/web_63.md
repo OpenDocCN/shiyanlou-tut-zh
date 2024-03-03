@@ -6,7 +6,7 @@
 
 派生选择器允许你根据文档的上下文关系来确定某个标签的样式。通过合理地使用派生选择器，我们可以使 HTML 代码变得更加整洁。 比方说，你希望列表中的 strong 元素变为红色，而不是通常的黑色，可以这样定义一个派生选择器：
 
-```
+```js
 li strong{
     color: red;
 } 
@@ -14,7 +14,7 @@ li strong{
 
 请注意在 HTML 中标记为<li><strong> 的代码的上下文关系
 
-```
+```js
 <p><strong>我是黑色，因为我不在列表当中，所以这个规则对我不起作用</strong></p>
         <u1>
             <li><strong>我是红色。这是因为 strong 元素位于 li 元素内。</li>
@@ -27,7 +27,7 @@ li strong{
 
 index.html
 
-```
+```js
 <!doctype html>
 <html>
     <head>
@@ -46,7 +46,7 @@ index.html
 
 mycss.css
 
-```
+```js
 li strong{
     color: red;
 } 
@@ -70,7 +70,7 @@ li strong{
 
 index.html 代码 body 中的 p 标签和 div 标签包含了两个 id 属性，值分别为 pid 和 divid，在 css 文件中会以#+属性值引用。注意：id 属性值只能在每个 HTML 文档中出现一次。
 
-```
+```js
 <!doctype html>
 <html>
     <head>
@@ -88,7 +88,7 @@ index.html 代码 body 中的 p 标签和 div 标签包含了两个 id 属性，
 
 MyCss.css `#divid{}`就是一个独立的 id 选择器，而`#pid a{}`就是我们前文提到的 id 选择器用于建立派生选择器,相当于是一个嵌套。
 
-```
+```js
 #pid a{
     color:#00755f;
 }
@@ -106,7 +106,7 @@ MyCss.css `#divid{}`就是一个独立的 id 选择器，而`#pid a{}`就是我�
 
 ### (1)在 CSS 中，类选择器以一个点号显示：
 
-```
+```js
 .divclass {
     color: red;
 } 
@@ -114,7 +114,7 @@ MyCss.css `#divid{}`就是一个独立的 id 选择器，而`#pid a{}`就是我�
 
 在下面的 html 代码中，div 元素含有 divclass 类，意味着它要遵守`.divclass`的规则。
 
-```
+```js
 <div class="divclass">
 hello div
 </div> 
@@ -124,7 +124,7 @@ hello div
 
 ### (2)和 id 一样，class 也可被用作派生选择器：
 
-```
+```js
 .pclass a{
     color: green; 
 ```
@@ -135,7 +135,7 @@ hello div
 
 index.html
 
-```
+```js
 <!doctype html>
 <html>
     <head>
@@ -153,7 +153,7 @@ index.html
 
 MyCss.css
 
-```
+```js
 .pclass a{
     color: green;
 }
@@ -170,7 +170,7 @@ MyCss.css
 
 ### (1)下面的例子为带有 title 属性的所有元素设置样式：
 
-```
+```js
 [title]
 {
 color:red;
@@ -181,7 +181,7 @@ color:red;
 
 下面的例子为 title="te" 的所有元素设置样式：
 
-```
+```js
 [title=te]{
                 color: red;
             } 
@@ -191,7 +191,7 @@ color:red;
 
 index.html
 
-```
+```js
 <!doctype html>
 <html>
     <head>

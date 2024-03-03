@@ -20,7 +20,7 @@
 
 从结构图上我们可以看出,这个部分要实现的功能比较多,首先我们要定义一个 div 来承载这样一个标题(这个超简单), html:
 
-```
+```js
 <div class="headtitle"><h2>Colorful Life</h2></div> 
 ```
 
@@ -28,7 +28,7 @@
 
 html:
 
-```
+```js
 <div class="headlead">
                <ul>
                   <li><a href="./cabin.jpg">Working</a></li>
@@ -41,7 +41,7 @@ html:
 
 css:
 
-```
+```js
 li{
     padding: 2px;
     display: inline;
@@ -53,7 +53,7 @@ li{
 
 css:
 
-```
+```js
 a:link,a{
     color: snow;
     text-align: center;
@@ -70,7 +70,7 @@ a:hover{
 
 html:
 
-```
+```js
 <div class="headimage">
                <img src="profile.jpg">
            </div> 
@@ -78,7 +78,7 @@ html:
 
 css:
 
-```
+```js
 .headimage{
 
     float: right;
@@ -96,7 +96,7 @@ css:
 
 html:
 
-```
+```js
  <div class="headform">
                <form>
                    <input type="text">
@@ -106,7 +106,7 @@ html:
 
 css
 
-```
+```js
 .headform form{
     float: right;
     height: 26px;
@@ -137,7 +137,7 @@ form input{
 
 html:
 
-```
+```js
  <div class="bdytitle">
                <h3>enjoy everyday of us</h3>
                <p>let's study with us ,improve with us,we need you</p>
@@ -146,7 +146,7 @@ html:
 
 在 css 中我们设定字体颜色模块边距等:
 
-```
+```js
 .bdytitle{
     color: snow;
 
@@ -161,7 +161,7 @@ html:
 
 html:
 
-```
+```js
 <div class="img1">
                <img src="cabin.jpg">
                <p>Working</p>
@@ -170,7 +170,7 @@ html:
 
 css:
 
-```
+```js
 .img1{
     border: 2px solid lightgray;
     float: left;
@@ -202,7 +202,7 @@ css:
 
 html:
 
-```
+```js
  <div class="foot">
         shiyanlou
 
@@ -211,7 +211,7 @@ html:
 
 css:
 
-```
+```js
 .foot{
     text-align: center;
     background-color: lightgray;
@@ -235,6 +235,6 @@ css:
 
 补充:整个实验的工程可以用以下方式下载
 
-```
+```js
 git clone http://git.shiyanlou.com/shiyanlou/cssfinaltest 
 ```

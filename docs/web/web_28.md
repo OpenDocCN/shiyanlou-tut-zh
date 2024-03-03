@@ -16,7 +16,7 @@
 
 我们经常使用 javascript 动态的创建元素, 有很多程序员通过直接更改某一个容器的 HTML 内容。比如:
 
-```
+```js
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html >
     <head>
@@ -51,7 +51,7 @@
 
 关于使用 HTML DOM 创建元素本文不做详细介绍, 下面举一个简单的例子:
 
-```
+```js
 //使用 Dom 标准创建元素
 var select = document.createElement("select");
 select.options[0] = new Option("加载项 1", "value1");
@@ -66,7 +66,7 @@ var object = testDiv.appendChild(select);
 
 在 jQuery 中创建对象更加简单, 比如创建一个 Div 元素:
 
-```
+```js
 $("<div style=\"border:solid 1px #FF0000\">动态创建的 div</div>") 
 ```
 
@@ -80,14 +80,14 @@ $("<div style=\"border:solid 1px #FF0000\">动态创建的 div</div>")
 
 当 HTML 字符串是没有属性的元素是, 内部使用 document.createElement 创建元素, 比如:
 
-```
+```js
 //jQuery 内部使用 document.createElement 创建元素:
 $("<div/>").css("border","solid 1px #FF0000").html("动态创建的 div").appendTo(testDiv); 
 ```
 
 否则使用 innerHTML 方法创建元素:
 
-```
+```js
 //jQuery 内部使用 innerHTML 创建元素:
 $("<div style=\"border:solid 1px #FF0000\">动态创建的 div</div>").appendTo(testDiv); 
 ```
@@ -98,7 +98,7 @@ $("<div style=\"border:solid 1px #FF0000\">动态创建的 div</div>").appendTo(
 
 传统上, 使用 window.onload 完成上述目的:
 
-```
+```js
 //DOM 加载完毕后添加元素
 //传统方法
 window.onload = function() { testDiv.innerHTML = "<div style=\"border:solid 1px #FF0000\">动态创建的 div</div>"; } 
@@ -108,7 +108,7 @@ window.onload = function() { testDiv.innerHTML = "<div style=\"border:solid 1px 
 
 解决办法就是等 DOM 被解析后, 在图像和外部资源加载之前执行我们的函数。在 jQuery 中让这一实现变得可行:
 
-```
+```js
 //jQuery 使用动态创建的$(document).ready(function)方法
 $(document).ready(
         function() { testDiv.innerHTML = "<div style=\"border:solid 1px #FF0000\">使用动态创建的$(document).ready(function)方法</div>"; }
@@ -117,7 +117,7 @@ $(document).ready(
 
 或者使用简便语法:
 
-```
+```js
 //jQuery 使用$(function)方法
 $(function() { 
     testDiv.innerHTML += "<div style=\"border:solid 1px #FF0000\">使用$(function)方法</div>"; }); 

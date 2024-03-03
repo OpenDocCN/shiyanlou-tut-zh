@@ -24,7 +24,7 @@ HTML 元素指的是从开始标签（start tag）到结束标签（end tag）�
 
 这就是一个元素：
 
-```
+```js
 <p>shiyanlou</p> 
 ```
 
@@ -39,7 +39,7 @@ HTML 元素指的是从开始标签（start tag）到结束标签（end tag）�
 
 **3.HTML 元素嵌套示例** 再把前面的例子拿出来，大家先看看，下面这个例子中有几个元素：
 
-```
+```js
 <html>
     <body>
         <p>let's go to shiyanlou</p>
@@ -83,13 +83,13 @@ HTML 元素指的是从开始标签（start tag）到结束标签（end tag）�
 
 我们先举例：
 
-```
+```js
 <a href="http://www.shiyanlou.com">shiyanlou</a> 
 ```
 
 ![图片描述信息](img/userid20407labid118time1423199530914.jpg)
 
-```
+```js
 我们将就上面的< a>标签，再来换个属性，玩一个邮件编写，当你点击以后，你就可以登录你自己的邮箱，给指定的地址编写邮件来发送。
 
 ![图片描述信息](img/userid20407labid118time1423210714610)

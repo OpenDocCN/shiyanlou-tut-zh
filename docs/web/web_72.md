@@ -52,7 +52,7 @@ win7 或以上系统的用户请直接下载 [xampp-win32-1.8.3-VC11-installer](
 
 下面是更改后的 get_lrc.php：
 
-```
+```js
 <?php
 header('content="text/html;charset=utf-8"');
 $lrc_file_name = $_GET['name'];
@@ -149,14 +149,14 @@ if($method == "get_lyric_data"){                //获取指定歌词名的歌词
 
 第三次是 59 行和 60 行：
 
-```
+```js
 //echo "\"" iconv("gb2312", "utf-8", $list[$i])."\"";
 echo "\"".$list[$i]."\""; 
 ```
 
 我们把 59 行的注释去掉，给 60 行添加注释
 
-```
+```js
 echo "\"".iconv("gb2312", "utf-8", $list[$i])."\"";
 //echo "\"".$list[$i]."\""; 
 ```
@@ -167,7 +167,7 @@ echo "\"".iconv("gb2312", "utf-8", $list[$i])."\"";
 
 在浏览器输入
 
-```
+```js
 localhost/play/index.html 
 ```
 

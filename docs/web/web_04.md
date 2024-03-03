@@ -10,7 +10,7 @@
 
 打开命令行终端，来到桌面：使用`wget`获取小游戏所需要的图片：
 
-```
+```js
 cd Desktop
 
 wget http://labfile.oss.aliyuncs.com/courses/376/editor.zip 
@@ -18,7 +18,7 @@ wget http://labfile.oss.aliyuncs.com/courses/376/editor.zip
 
 解压，在命令行执行：
 
-```
+```js
 unzip editor.zip 
 ```
 
@@ -30,7 +30,7 @@ unzip editor.zip
 
 首先来说明一下`filter`，在 CSS 里面要实现`filter`，其实很简单，使用类似下面的声明方式：
 
-```
+```js
 .example {
   filter: <filter-function> [<filter-function>];
 } 
@@ -38,7 +38,7 @@ unzip editor.zip
 
 比如说，我们给图片添加一点`灰度(grayscale)`特效，就可以这样：
 
-```
+```js
 .example {
   filter: grayscale(90%);
 } 
@@ -46,7 +46,7 @@ unzip editor.zip
 
 当然，为了浏览器兼容，我们最好这样写：
 
-```
+```js
 .example {
   -webkit-filter: grayscale(90%);
   filter: grayscale(90%);
@@ -55,7 +55,7 @@ unzip editor.zip
 
 需要注意的是：`filter`的属性值的单位通常可能是从`0`到`1`之间，但是有些不是这样的，比如`blur`是使用像素`'px'`来作为单位的，而`hue-rotate`则使用角度`deg`来作为基本单位；
 
-```
+```js
 .example {
   filter: blur(10px);
 }
@@ -67,7 +67,7 @@ unzip editor.zip
 
 但是如果每次只能使用一个`filter`就比较麻烦了，所以 CSS 提供了更加方便的书写形式，直接并排着写：
 
-```
+```js
 .example {
   filter: grayscale(0.5) blur(10px);
 } 
@@ -81,7 +81,7 @@ unzip editor.zip
 
 在这里我们创建一个`index.html`，代码也比较简单：
 
-```
+```js
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -172,7 +172,7 @@ unzip editor.zip
 
 上面的`index.html`还要说明的是，在最上面我们提供一个输入框，用于给用户输入图片的 URL，当用户点击回车的时候，我们就将这张图片显示到编辑区域。使用的是下面的简单`js`代码：
 
-```
+```js
 function addImage(e) {
     var imgUrl = $("#imgUrl").val();
     if (imgUrl.length) {
@@ -189,13 +189,13 @@ $("#urlBox").submit(addImage);
 
 每次用户在滑动进度条的时候，我们就可以将效果展示给用户看，于是我们来监听用户的`mousemove`事件（请注意看下面）：
 
-```
+```js
 $("input[type=range]").mousemove(editImage); 
 ```
 
 也就是说，每次用户在移动控制条的时候，我们都执行`editImage`函数。 但是这样的体验可能还不是最好，因为在最后用户的鼠标离开控制条的时候，我们还可以监听`change`事件，把这一刻的变化也交给`editImage`函数处理，所以可以将上面的代码写成这样：
 
-```
+```js
 $("input[type=range]").mousemove(editImage).change(editImage); 
 ```
 
@@ -203,7 +203,7 @@ $("input[type=range]").mousemove(editImage).change(editImage);
 
 上面我们将`input[type=range]`的`mousemove`和`change`事件交给了`editImage`函数处理，所以，我们来编写一下`editImage`的函数代码：
 
-```
+```js
 function editImage() {
     var gs = $("#gs").val(); // grayscale
     var blur = $("#blur").val(); // blur
@@ -240,19 +240,19 @@ function editImage() {
 
 其实很简单，我们在每次用户滑动控制条的时候，我们就通过类似`var gs = $("#gs").val();`的语句取得相对应地值，然后通过 Jquery 的`css()`方法直接为图片加上`filter`效果，而且相信你也看得出来，这个函数的后半段就是实现浏览器兼容的
 
-```
+```js
 $("#imageContainer img").css("-webkit-filter",...) 
 ```
 
 这段代码其实就是在`img`元素实现了类似下面的效果；
 
-```
+```js
 <img src="images/aviary_heibai.jpg" style="-webkit-filter: grayscale(0%) blur(0px) brightness(100%) contrast(100%) hue-rotate(0deg) opacity(100%) invert(0%) saturate(100%) sepia(0%);"> 
 ```
 
 最后，如果你不想将某些特效加到图片上面去，你可以点`reset`然后将图片重置到原始状态：
 
-```
+```js
 $('#imageEditor').on('reset', function () {
     setTimeout(function() {
         editImage();
@@ -262,7 +262,7 @@ $('#imageEditor').on('reset', function () {
 
 这里需要说明一下的是，这里的`setTimeout`函数就是为了将`reset`的效果最快地展现出来，如果写成下面的形式：
 
-```
+```js
 $('#imageEditor').on('reset', function () {
 
         editImage();

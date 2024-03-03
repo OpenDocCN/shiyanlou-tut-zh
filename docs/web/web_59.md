@@ -12,7 +12,7 @@ Transition.js 是针对 is a basic helper for transitionEnd 事件的一个基�
 
 对为支持折叠功能的组件，例如 accordions 和导航，赋予基本样式和灵活的支持。
 
-```
+```js
 插件依赖
 
 折叠插件依赖过渡效果插件。 
@@ -28,7 +28,7 @@ Transition.js 是针对 is a basic helper for transitionEnd 事件的一个基�
 
 接下来看一下代码的实现。
 
-```
+```js
 <div class="container" style="margin-top:140px;">
  <div class="panel-group" id="accordion">
   <div class="panel panel-default">
@@ -81,7 +81,7 @@ Transition.js 是针对 is a basic helper for transitionEnd 事件的一个基�
 
 第二步：看一下几个简单的组
 
-```
+```js
 <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -107,7 +107,7 @@ panel-header 和 pandl-body,然后 panel-header 里面可以包含标题，链�
 
 你可以通过另一个方式来展示折叠的效果。
 
-```
+```js
  <div class="container" style="margin-top:140px;">
  <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">
   simple collapsible
@@ -132,7 +132,7 @@ panel-header 和 pandl-body,然后 panel-header 里面可以包含标题，链�
 
 为了给一组可折叠页面元素添加控制器，添加 data-parent="#selector"即可。请参考上面的例子即可。 **通过 JavaScript**
 
-```
+```js
 <button type="button" class="btn btn-danger" onClick="Open()">打开</button>
 <button type="button" class="btn btn-danger" onClick="Hide()">折叠</button>
 
@@ -140,7 +140,7 @@ panel-header 和 pandl-body,然后 panel-header 里面可以包含标题，链�
      <div class="panel-group" id="accordion" style="margin-top:240px;"> 
 ```
 
-```
+```js
  <script type="text/javascript">
     $(function(){
          $("#demo").collapse({
@@ -164,7 +164,7 @@ panel-header 和 pandl-body,然后 panel-header 里面可以包含标题，链�
 
 赋予页面元素可折叠功能。接受一个可选的 object 作为参数。
 
-```
+```js
 $("#demo").collapse({toggle: false}) 
 ```
 

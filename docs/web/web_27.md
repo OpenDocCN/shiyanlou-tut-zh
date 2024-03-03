@@ -16,7 +16,7 @@
 
 在传统的 JavaScript 开发中，我们都是首先获取 Dom 对象，比如：
 
-```
+```js
 var div = document.getElementById("testDiv");
 var divs = document.getElementsByTagName("div"); 
 ```
@@ -31,7 +31,7 @@ var divs = document.getElementsByTagName("div");
 
 jQuery 包装集可以说是 Dom 对象的扩充。在 jQuery 的世界中将所有的对象，无论是一个还是一组，都封装成一个 jQuery 包装集，比如获取包含一个元素的 jQuery 包装集：
 
-```
+```js
 var jQueryObject = $("#testDiv"); 
 ```
 
@@ -43,7 +43,7 @@ jQuery 包装集都是作为一个对象一起调用的。jQuery 包装集拥有
 
 如果要使用 jQuery 提供的函数，就要首先构造 jQuery 包装集。我们可以使用本文即将介绍的 jQuery 选择器直接构造 jQuery 包装集，比如：
 
-```
+```js
 $("#testDiv"); 
 ```
 
@@ -51,13 +51,13 @@ $("#testDiv");
 
 或者我们已经获取了一个 Dom 元素,比如:
 
-```
+```js
 var div = document.getElementById("testDiv"); 
 ```
 
 上面的代码中 div 是一个 Dom 元素, 我们可以将 Dom 元素转换成 jQuery 包装集:
 
-```
+```js
 var domToJQueryObject = $(div); 
 ```
 
@@ -65,7 +65,7 @@ var domToJQueryObject = $(div);
 
 jQuery 包装集是一个集合, 所以我们可以通过索引器访问其中的某一个元素:
 
-```
+```js
 var domObject = $("#testDiv")[0]; 
 ```
 
@@ -73,7 +73,7 @@ var domObject = $("#testDiv")[0];
 
 jQuery 包装集的某些遍历方法,比如 each()中, 可以传递遍历函数, 在遍历函数中的 this 也是 Dom 元素,比如:
 
-```
+```js
 $("#testDiv").each(function() {
   alert(this)
 }); 
@@ -81,7 +81,7 @@ $("#testDiv").each(function() {
 
 如果我们要使用 jQuery 的方法操作 Dom 对象,怎么办? 用上面介绍过的转换方法即可:
 
-```
+```js
 $("#testDiv").each(function() {
   $(this).html("修改内容")
 }); 
@@ -97,7 +97,7 @@ $("#testDiv").each(function() {
 
 首先来看看什么是选择器:
 
-```
+```js
 //根据 ID 获取 jQuery 包装集
 var jQueryObject = $("#testDiv"); 
 ```
@@ -138,7 +138,7 @@ A shorthand for $(document).ready().
 
 上面这个方法就是我们选择器使用的核心方法。可以用`"$"`代替 jQuery 让语法更简洁, 比如下面两句话的效果相同:
 
-```
+```js
 //根据 ID 获取 jQuery 包装集
 var jQueryObject = $("#testDiv");
 //$是 jQuery 对象的引用:

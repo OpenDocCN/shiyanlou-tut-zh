@@ -24,7 +24,7 @@
 
 本课程中的所有源码可以通过以下方式下载：
 
-```
+```js
 http://git.shiyanlou.com/shiyanlou/js-minesweeper 
 ```
 
@@ -58,13 +58,13 @@ http://git.shiyanlou.com/shiyanlou/js-minesweeper
 
 创建 index.html 文件
 
-```
+```js
 $ vim index.html 
 ```
 
 添加如下代码并保存：
 
-```
+```js
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,13 +99,13 @@ $ vim index.html
 
 然后需要调整面板上游戏信息的位置，所以创建样式文件 index.css（**跟 index.html 在同一目录**）:
 
-```
+```js
 $ vim index.css 
 ```
 
 添加如下代码并保存：
 
-```
+```js
 .main {
     margin:10px auto;
     padding:20px;
@@ -224,13 +224,13 @@ $ vim index.css
 
 创建 jms.js 文件：
 
-```
+```js
 $ vim jms.js 
 ```
 
 添加如下代码并保存：
 
-```
+```js
 //在 jms.js 中
 (function () {
     var JMS = function (id,rowCount,colCount, minLandMineCount, maxLandMineCount) {
@@ -308,13 +308,13 @@ $ vim jms.js
 
 创建 index.js 文件：
 
-```
+```js
 $ vim index.js 
 ```
 
 添加如下代码并保存：
 
-```
+```js
 //在 index.js 中
 var jms = null,
     timeHandle = null;
@@ -350,7 +350,7 @@ function init(rowCount, colCount, minLandMineCount, maxLandMineCount) {
 
 在 index.html 的 body 结束标记前加上对两个 js 文件的引用：
 
-```
+```js
  <script src="jms.js"></script>
     <script src="index.js"></script>
 </body>
@@ -373,7 +373,7 @@ function init(rowCount, colCount, minLandMineCount, maxLandMineCount) {
 
 在 jms.js 中 JMS.prototype 内加入如下代码：
 
-```
+```js
 //在 jms.js 中 JMS.prototype 内加入
 //初始化，一是设置数组默认值为 0，二是确定地雷个数
 init: function () {
@@ -467,7 +467,7 @@ getRowCol: function (val) {
 
 jms.js 中的这部分代码如下：
 
-```
+```js
 //在 jms.js 中 JMS.prototype 内加入
 //获取元素
 $: function (id) {
@@ -589,7 +589,7 @@ disableAll: function () {
 
 在 jms.js 中添加游戏入口和开始功能：
 
-```
+```js
 //在 jms.js 中 JMS.prototype 内加入
 //游戏开始
 begin: function () {
@@ -630,7 +630,7 @@ play: function () {
 
 在 index.js 中给开始按钮添加事件，开始游戏，并显示游戏时间和剩余地雷个数：
 
-```
+```js
 //在 index.js 的 init 中加入
 jms.endCallBack = function () {
     clearInterval(timeHandle);

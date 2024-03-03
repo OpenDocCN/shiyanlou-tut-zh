@@ -24,7 +24,7 @@
 
 牢记, 在 javascript 中我们可以直接获取或设置"DOM 属性":
 
-```
+```js
 <script type="text/javascript">
     $(function() {
         var img1 = document.getElementById("hibiscus");
@@ -37,7 +37,7 @@
 
 所以如果要设置元素的 CSS 样式类, 要使用的是 DOM 属性"className"而不是元素属性"class:
 
-```
+```js
 img1.className = "classB"; 
 ```
 
@@ -45,7 +45,7 @@ img1.className = "classB";
 
 在 jQuery 中没有包装操作"DOM 属性"的函数,因为使用 javascript 获取和设置"DOM 属性"都很简单. 在 jQuery 提供了`each()`函数用于遍历 jQuery 包装集,其中的`this`指针是一个 DOM 对象,所以我们可以应用这一点配合原生 javascript 来操作元素的 DOM 属性:
 
-```
+```js
 $("img").each(function(index) {
     alert("index:" + index + ", id:" + this.id + ", alt:" + this.alt);
     this.alt = "changed";
@@ -63,7 +63,7 @@ $("img").each(function(index) {
 
 当使用 id 选择器时常常返回只有一个对象的 jQuery 包装集,这个时侯常使用 attr(name)函数获得它的元素属性:
 
-```
+```js
 function testAttr1(event) {
    alert($("#hibiscus").attr("class"));
 } 
@@ -71,14 +71,14 @@ function testAttr1(event) {
 
 注意 attr(name)函数只返回第一个匹配元素的特定元素属性值.而 attr(key, name)会设置所有包装集中的元素属性:
 
-```
+```js
 //修改所有 img 元素的 alt 属性
 $("img").attr("alt", "修改后的 alt 属性"); 
 ```
 
 而 attr( properties ) 可以一次修改多个元素属性:
 
-```
+```js
 $("img").attr({title:"修改后的 title", alt: "同时修改 alt 属性"}); 
 ```
 
@@ -86,7 +86,7 @@ $("img").attr({title:"修改后的 title", alt: "同时修改 alt 属性"});
 
 比如将一个`input`元素的`readonly`元素属性去掉,会导致对应的 DOM 属性变成`false`(即`input`变成可编辑状态):
 
-```
+```js
 $("#inputTest").removeAttr("readonly"); 
 ```
 
@@ -108,7 +108,7 @@ jQuery 让这一切变得异常简单。
 
 注意`addClass(class)`和`removeClass(classes)`的参数可以一次传入多个 css 类, 用空格分割,比如:
 
-```
+```js
 $("#btnAdd").bind("click", function(event) {
     $("p").addClass("colorRed borderBlue");
 }); 
@@ -116,7 +116,7 @@ $("#btnAdd").bind("click", function(event) {
 
 removeClass 方法的参数可选, 如果不传入参数则移除全部 CSS 类:
 
-```
+```js
 $("p").removeClass(); 
 ```
 
@@ -130,7 +130,7 @@ $("p").removeClass();
 
 虽然我们可以通过获取属性,特性以及 CSS 样式来取得元素的几乎所有信息, 但是注意下面的实验:
 
-```
+```js
 <!doctype html>
 <html lang="zh">
 <head>

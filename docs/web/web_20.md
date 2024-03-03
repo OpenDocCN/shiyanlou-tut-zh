@@ -16,7 +16,7 @@
 
 实验中的代码可以通过命令下载在实验楼环境中下载运行测试
 
-```
+```js
 git clone http://git.shiyanlou.com/shiyanlou/finaltest 
 ```
 
@@ -52,7 +52,7 @@ git clone http://git.shiyanlou.com/shiyanlou/finaltest
 
 下面就是具体的代码，在这个 style 中，顺便设置了一些对这个块的总体设置（所占宽度，高度，对齐等）：
 
-```
+```js
 <style>
         #container{width:1300px}
         #header {background-color: darkslategray;height: 130px;font-size: 16px;}
@@ -72,7 +72,7 @@ git clone http://git.shiyanlou.com/shiyanlou/finaltest
 
 **header：**
 
-```
+```js
  <div id="header" >
         <br/>
         <h1 style="color: aliceblue;text-align: center">Colorful Shi yan Lou</h1>
@@ -84,7 +84,7 @@ git clone http://git.shiyanlou.com/shiyanlou/finaltest
 
 **paragraph：**
 
-```
+```js
 <div id="paragraph">
       <br/>
       <p>
@@ -100,7 +100,7 @@ git clone http://git.shiyanlou.com/shiyanlou/finaltest
 
 **中间模块**：
 
-```
+```js
 <div id="leftside" align="center">
       <h1 style="color: lightslategray">Working</h1>
       <img src="./cabin.jpg" height="260" width="300">
@@ -132,7 +132,7 @@ git clone http://git.shiyanlou.com/shiyanlou/finaltest
 
 以前我们讲到过使用< a>标签实现邮件发送，就是在标签中加入 mailto 属性，其实表单实现邮件发送也是很相似的在 form 标签中 action 加入 mailto。这里还有要注意的就是，表单输入到类型以前讲的很清楚，要是大家有疑惑可以回头看看。下面时具体的代码内容
 
-```
+```js
 <div id="footer1" >
 
        <br/>

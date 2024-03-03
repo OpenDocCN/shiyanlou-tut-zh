@@ -36,7 +36,7 @@ z-index 设置元素的堆叠顺序
 
 html:
 
-```
+```js
 <div class="position1"></div>
 <p>this is shiyanlou</p>
 <p>this is shiyanlou</p>
@@ -46,7 +46,7 @@ html:
 
 CSS:
 
-```
+```js
 .position1{
     width: 100px;
     height: 100px;
@@ -61,7 +61,7 @@ CSS:
 
 当我们在 CSS 中加入 position 赋值为相对的,向左偏移 60px
 
-```
+```js
  position: relative;
  left: 60px; 
 ```
@@ -72,7 +72,7 @@ CSS:
 
 下面我们再将 position 设置为绝对的:
 
-```
+```js
 position: absolute; 
 ```
 
@@ -86,14 +86,14 @@ position: absolute;
 
 当我们再加一个块在前面 div 后面的时候: HTML
 
-```
+```js
 <div class="position1"></div>
 <div class="position2"></div> 
 ```
 
 CSS 添加:
 
-```
+```js
 .position2{
     width: 100px;
     height: 100px;
@@ -110,13 +110,13 @@ CSS 添加:
 
 接下来我们就修改下 CSS 文件来交换他们的前后顺序: position1 中加入
 
-```
+```js
 z-index: 2; 
 ```
 
 position2 中加入:
 
-```
+```js
 z-index: 1; 
 ```
 
@@ -136,7 +136,7 @@ left:元素向左浮动 right:元素向右浮动 none:不浮动 inherit:从父�
 
 html:
 
-```
+```js
  <div class="qd"></div>
     <div class="wd"></div>
     <div class="ed"></div> 
@@ -144,7 +144,7 @@ html:
 
 CSS
 
-```
+```js
 .qd{
     width: 100px;
     height: 100px;
@@ -171,7 +171,7 @@ CSS
 
 在这个基础上我们他们全加上 float 属性,前两个往左,后一个向右,看看会有什么效果:
 
-```
+```js
 float: left;
 float: right; 
 ```
@@ -182,7 +182,7 @@ float: right;
 
 就像几个小东西在一个房间里面跑,你可以规定它跑的方向,他们会跑到边框为止,为了测试,我们不妨来限定一个空间给它们(将这三个 div 全放到一个 div 中).就像这样:
 
-```
+```js
 <div class="container">
     <div class="qd"></div>
     <div class="wd"></div>
@@ -196,7 +196,7 @@ float: right;
 
 但是有时我们不需要浮动,就像下面这样,我们想在上面效果下面加上一句话,然后我们就直接加入了一个
 
-```
+```js
 <div class="text">hello shiyanlou</div> 
 ```
 
@@ -206,7 +206,7 @@ float: right;
 
 这说明,这个 div 也继承了浮动的属性,要想让字体到下面去,我么就必须取消字体 div 浮动.那么我们就在 CSS 中添加如下如下内容:
 
-```
+```js
 .text{
     clear: both;
 } 
@@ -224,7 +224,7 @@ height-- 设置元素的高度。 line-height --设置行高。 max-height-- 设
 
 下面我们就写个 html 和 CSS 文件来具体比较下
 
-```
+```js
 .p1{
     line-height: normal;
     width: 400px;
@@ -256,7 +256,7 @@ height-- 设置元素的高度。 line-height --设置行高。 max-height-- 设
 
 首先我们以列表的形式作为最基础的承载,然后我们再其中加入本地或外部的链接,就像下面这样:
 
-```
+```js
 <ul>
     <li><a href="http://www.shiyanlou.com">shiyanlou1 link</a></li>
     <li><a href="http://www.shiyanlou.com">shiyanlou2 link</a></li>
@@ -274,7 +274,7 @@ height-- 设置元素的高度。 line-height --设置行高。 max-height-- 设
 
 首先,我们要去掉前面的点
 
-```
+```js
 ul{
     list-style: none;
 } 
@@ -282,7 +282,7 @@ ul{
 
 接下来我们就去掉下划线(不管是未被点击的状态还是已被点击的状态都去掉),然后加上个背景颜色,再将其显示作为块来显示:
 
-```
+```js
 a:link,a:visited{
    text-decoration: none;
    background-color: lightgray;
@@ -292,7 +292,7 @@ a:link,a:visited{
 
 最后我们再给导航栏加个鼠标移动到上面时,改变背景颜色:
 
-```
+```js
 a:active,a:hover{
     background-color: cadetblue;
 
@@ -307,13 +307,13 @@ a:active,a:hover{
 
 首先我们要将前面的显示效果删除,就是这句:
 
-```
+```js
  display: block; 
 ```
 
 然我们只需要在 li 标签中改变显示方式就可以:
 
-```
+```js
 li{
     display: inline;
 } 
@@ -329,7 +329,7 @@ li{
 
 首先我们先引入一张图片,加上一句描述语,使用 div 承载.
 
-```
+```js
  <div></div>
     <a href="./1348306907524.jpg" target="_self">
         <img src="1348306907524.jpg" width="150px" height="150px">
@@ -345,7 +345,7 @@ li{
 
 图片加边框,修改描述字体中对其,修改字体大小,将整个 div 向左浮动,使边框与图片进行贴合:
 
-```
+```js
 .image{
     border: 2px solid darkgrey;
     width: auto;
@@ -371,7 +371,7 @@ img{
 
 之后我么再设计图片的透明度: 这个比较简单,就只需要在图片 CSS 设置中加入:
 
-```
+```js
 opacity: 0.5; 
 ```
 

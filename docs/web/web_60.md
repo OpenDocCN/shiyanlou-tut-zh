@@ -4,7 +4,7 @@
 
 ![](img/163.jpg)
 
-```
+```js
 <body style="width:900px; margin-left:auto; margin-right:auto;">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -43,7 +43,7 @@
  </body> 
 ```
 
-```
+```js
 Internet Explorer 8 & 9 不支持过渡动画效果
 
 Bootstrap 基于 CSS3 实现动画效果，但是 Internet Explorer 8 & 9 不支持这些必要的 CSS 属性。因此，使用这两种浏览器时将会丢失过渡动画效果。而且，Bootstrap 并不打算使用基于 jQuery 实现替代功能。 
@@ -53,7 +53,7 @@ Bootstrap 基于 CSS3 实现动画效果，但是 Internet Explorer 8 & 9 不支
 
 在任何.item 中均可以通过添加.carousel-caption 从而为每帧幻灯片添加说明文字。也可以添加任何 HTML 代码，这些 HTML 代码将会被自动排列和格式化。
 
-```
+```js
 <div class="item active">
   <img alt="First slide" src="http://placehold.it/900x500/78EB09/FFEB09/&text=First slide" ></img>
   <div class="carousel-caption">
@@ -67,7 +67,7 @@ Bootstrap 基于 CSS3 实现动画效果，但是 Internet Explorer 8 & 9 不支
 
 ![](img/164.jpg)
 
-```
+```js
 可访问性问题
 
 轮播组件并不兼容可访问性标准。如果需要兼容，请考虑其他展示幻灯片的方案。 
@@ -85,7 +85,7 @@ data-ride="carousel"属性用来标记在页面加载之后即开始启动的轮
 
 在最外层的轮播容器中添加即可
 
-```
+```js
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
 ```
 
@@ -93,7 +93,7 @@ data-ride="carousel"属性用来标记在页面加载之后即开始启动的轮
 
 手动启动轮播组件（上面我们通过使用 data-ride 属性进行自动开启轮播组件。）：
 
-```
+```js
 $('.carousel').carousel() 
 ```
 
@@ -105,13 +105,13 @@ $('.carousel').carousel()
 
 **方法**
 
-```
+```js
 $("").carousel(options) 
 ```
 
 初始化轮播组件，接受一个可选的 object 类型的 options 参数，并开始幻灯片循环。
 
-```
+```js
 $('.carousel').carousel({
   interval: 2000
 }) 

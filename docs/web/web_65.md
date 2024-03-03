@@ -10,7 +10,7 @@ a:link --普通的、未被访问的链接 a:visited --用户已访问的链接 
 
 下面我们就来动手先设置下这几个对应行为的颜色属性： 还是和以前的流程一样我们先创建一个 index.html，然后再建立一个 test.css 文件，将其链接到 html 中。 下面是 html 文件内容：
 
-```
+```js
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -29,7 +29,7 @@ a:link --普通的、未被访问的链接 a:visited --用户已访问的链接 
 
 下面是 CSS 文件内容：
 
-```
+```js
 a:link {color:#FF0000;}    /* 未被访问的链接 */
 a:visited {color:#00FF00;} /* 已被访问的链接 */
 a:hover {color:#FF00FF;}   /* 鼠标指针移动到链接上 */
@@ -58,7 +58,7 @@ a:active {color:#0000FF;}  /* 正在被点击的链接 */
 
 这个一样的简单，修改对应的属性 background-color 就好。 我们动手实验的话，就将刚才的 CSS 文件替换或者添加：
 
-```
+```js
 a:link {background-color:#B2FF99;}
 a:visited {background-color:#FFFF85;}
 a:hover {background-color:#FF704D;}
@@ -81,7 +81,7 @@ CSS 列表允许防止、改变列表标志，或者将图片作为列表项标�
 
 我们知道，列表有无序，有序之分，无序列表又可以用不同的标记来区分。而 list-style-type 这个属性我们就可以用来控制标记类型。下面我们就动手实验一把 在 html 文件中添加：
 
-```
+```js
 <ul class="circle">
     <li>shiyanlou</li>
     <li>shiyanlou</li>
@@ -105,7 +105,7 @@ CSS 列表允许防止、改变列表标志，或者将图片作为列表项标�
 
 在 CSS 文件中添加：
 
-```
+```js
 ul.circle {list-style-type:circle}
 ul.square {list-style-type:square}
 ol.upper-roman {list-style-type:upper-roman}
@@ -122,7 +122,7 @@ ol.lower-alpha {list-style-type:lower-alpha}
 
 下载一个小图标放入工程文件夹，然后在 CSS 中添加：
 
-```
+```js
 ul.img1{list-style-image:url("4.ico")}
 ul.img2{list-style-image: url("11.ico")} 
 ```
@@ -131,7 +131,7 @@ url 中是图片名称
 
 在 html 中我们需要修改添加的就是：
 
-```
+```js
 <ul class="img1">
     <li>shiyanlou</li>
     <li>shiyanlou</li>
@@ -157,7 +157,7 @@ url 中是图片名称
 
 所谓的简写列表样式就是说，把所有用于列表的属性设置于一个声明中。 就像下面这样
 
-```
+```js
 li {list-style : url(example.jpg) square} 
 ```
 
@@ -179,7 +179,7 @@ table-layout ---设置显示单元、行和列的算法。
 
 这里我们只用最常用的属性，下面我们就边讲边做实验 首先呢，我们先创建一个表格，加入如下内容：
 
-```
+```js
 <table id="tb">
     <tr>
         <th>name</th>
@@ -216,7 +216,7 @@ table-layout ---设置显示单元、行和列的算法。
 
 当然这是无边框的效果，下面我们就在 CSS 中加入边框并指定颜色（外边框和内边框）：
 
-```
+```js
 #tb,tr,th,td{
     border: 1px solid green;
 } 
@@ -228,7 +228,7 @@ table-layout ---设置显示单元、行和列的算法。
 
 这些都是默认的属性，下面我们就通过 CSS 来定制列表。首先，我们先使用 border—collapse 让整个列表边框合并为单线，再使用 width，height 来定制表格大小，之后用 background-color 加上背景颜色，text-align 设置字符对其方式，padding 设置内边据：
 
-```
+```js
 #tb td,th{
     border: 1px solid green;
     padding: 5px;
@@ -260,7 +260,7 @@ table-layout ---设置显示单元、行和列的算法。
 
 轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。 CSS outline 属性规定元素轮廓的样式、颜色和宽度。涉及到的属性有：
 
-```
+```js
 outline 在一个声明中设置所有的轮廓属性。    
 outline-color   设置轮廓的颜色。    
 outline-style   设置轮廓的样式。    
@@ -269,14 +269,14 @@ outline-width   设置轮廓的宽度。
 
 为了演示我们先在原来的 html 中加入两个 p 标签：
 
-```
+```js
 <p id="p1">shiyanlou is my home</p>
 <p id="p2">shiyanlou is my home</p> 
 ```
 
 然后在 CSS 中加入这几个属性的具体设置，设置参数就不过多的赘述：
 
-```
+```js
 p1{
     outline-color: #FF704D;
     outline-style: groove;

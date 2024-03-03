@@ -27,7 +27,7 @@
 
 用 jQuery，我们可以轻松地实现此实例：
 
-```
+```js
 <!doctype html>
 <html lang="zh">
 <head>
@@ -91,7 +91,7 @@ jQuery 的动画函数主要分为三类：
 
 基本的动画函数主要分为`show`，`hide`和`toggle`三个，都提供了无参数的版本，表示不适用动画切换元素的显示状态：
 
-```
+```js
 $("#divPop").show();
 $("#divPop").hide();
 $("#divPop").toggle(); 
@@ -99,7 +99,7 @@ $("#divPop").toggle();
 
 提供了两个参数的重载,因为回调函数可以省略,所以可以像开篇实例中使用的, 传入一个数值作为唯一参数,则会在参数规定的时间内用动画效果显示/隐藏元素:
 
-```
+```js
 $("#divPop").show(200);
 $("#divPop").hide("fast");
 $("#divPop").toggle("slow"); 
@@ -109,7 +109,7 @@ $("#divPop").toggle("slow");
 
 三个函数都可以传入回调函数`callback`,签名如下:
 
-```
+```js
 function callback() {
   this; // dom element
 } 
@@ -125,7 +125,7 @@ function callback() {
 
 我们将开篇实例稍作修改即可实现这个效果:
 
-```
+```js
 <!doctype html>
 <html lang="zh">
 <head>
@@ -181,7 +181,7 @@ function callback() {
 
 `slideDown`就是`show`的滑动效果版本， `slideUp`就是`hide`的滑动效果版本， `slideToggle`就是`toggle`的滑动效果版本。
 
-```
+```js
 $("#divPop").slideDown(200);
 $("#divPop").slideUp("fast");
 $("#divPop").slideToggle("slow"); 
@@ -197,7 +197,7 @@ $("#divPop").slideToggle("slow");
 
 `fadeIn`和`fadeOut`两个函数对应`show`和`hide`，用于将对象以透明度渐变的效果显示和隐藏：
 
-```
+```js
 $("#divPop").fadeIn(200);
 $("#divPop").fadeOut("fast"); 
 ```
@@ -218,7 +218,7 @@ $("#divPop").fadeOut("fast");
 
 核心代码如下:
 
-```
+```js
 //设置弹出层的透明度
 $("#divPop").fadeTo(0, 0.66);
 
@@ -294,7 +294,7 @@ if ($("#divPop").css("display") == "none"){
 
 这个示例让一个图层从屏幕最上方掉落到最下方, 并且消失。
 
-```
+```js
 <!doctype html>
 <html lang="zh">
 <head>
@@ -326,7 +326,7 @@ if ($("#divPop").css("display") == "none"){
 
 这个示例让一个 div 越来越大，最后消失：
 
-```
+```js
 <!doctype html>
 <html lang="zh">
 <head>
@@ -378,7 +378,7 @@ if ($("#divPop").css("display") == "none"){
 
 比如下面的代码会执行一个禁用的动画:
 
-```
+```js
 jQuery.fx.off = true;
 $("#divPop").show(1000); 
 ```

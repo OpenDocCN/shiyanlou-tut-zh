@@ -64,7 +64,7 @@ http://www.dotnetapi.com/JSLib/
 
 本文的实例的所有引用都使用 WebConfig.ResourceServer 这个属性：
 
-```
+```js
 public class WebConfig
 {
     public static string ResourceServer = @"http://www.dotnetapi.com/";
@@ -97,7 +97,7 @@ Dialog 组件的主要特点是可以拖动(Draggable)，可以改变大小(Resi
 
 示例完整代码如下：
 
-```
+```js
 <%@ Page Language="C#" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -253,7 +253,7 @@ Dialog 组件的主要特点是可以拖动(Draggable)，可以改变大小(Resi
 
 提示类弹出框最重要的是计算弹出框的位置。 通过事件对象获取到事件源， 使用 offset()函数计算事件源相对于 document 的位置：
 
-```
+```js
  var top = $(event.target).offset().top;
            var left = $(event.target).offset().left; 
 ```
@@ -266,13 +266,13 @@ Dialog 组件的主要特点是可以拖动(Draggable)，可以改变大小(Resi
 
 如果我们为 document 对象绑定了单击后关闭弹出层的事件，那么就一定要取消事件的冒泡。使用 event 对象的 stopPropagation()方法可以取消冒泡。
 
-```
+```js
 event.stopPropagation(); 
 ```
 
 对于具有默认行为的元素，比如提交按钮的提交表单行为，**< a >**元素的超链接行为等，我们如果在这些元素上应用事件，还需要取消它们的默认行为：
 
-```
+```js
 event.preventDefault(); 
 ```
 
@@ -280,13 +280,13 @@ event.preventDefault();
 
 通过设置 dialog 的配置项的 show 属性， 可以设置显示 dialog 时候的动画效果：
 
-```
+```js
 $('.selector').dialog({ show: 'slide' }); 
 ```
 
 show 默认为 null 即无动画， 可以是使用下列值：
 
-```
+```js
 'blind', 'clip', 'drop', 'explode', 'fold', 'puff', 'slide', 'scale', 'size', 'pulsate'. 
 ```
 
@@ -294,7 +294,7 @@ show 默认为 null 即无动画， 可以是使用下列值：
 
 当一个动画效果执行时， 如果用户在此对这个元素进行操作， 就会出现各种问题， 比如定位不准确等。 所以如果应用了动画， 我们在对其操作时需要使用 stop()函数来停止动画， 通常是停止虽有元素的动画：
 
-```
+```js
 $("*").stop(); 
 ```
 
@@ -304,7 +304,7 @@ $("*").stop();
 
 动态提示类弹出层的数据是不同的， 本文实例使用的是将数据存储在元素属性 data 上：
 
-```
+```js
 <span id="spanShowDataTip1" data="颜色是红色">红色</span> 
 ```
 
@@ -318,7 +318,7 @@ http://www.cnblogs.com/zhangziqiu/archive/2009/05/06/jQuery-Learn-5.html
 
 大家注意实例中的弹出层没有为其编辑任何样式， 但是显示出来后已经被美化过了。 这是因为我引用了 jQuery UI 的主题：
 
-```
+```js
  <!--black-tie,blitzer,blitzer,dot-luv,excite-bike,hot-sneaks,humanity,mint-choc,redmond,smoothness,south-street,start,swanky-purse,trontastic,ui-darkness,ui-lightness,vader-->
     <link rel="stylesheet" type="text/css" href="<%=WebConfig.ResourceServer +"/JsLib/jquery/themes/redmond/style.css"%>" /> 
 ```
@@ -343,7 +343,7 @@ http://jqueryui.com/themeroller/#themeGallery
 
 源代码：
 
-```
+```js
 <%@ Page Language="C#" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html >
@@ -471,7 +471,7 @@ http://jqueryui.com/themeroller/#themeGallery
 
 **(2) 使用 Ajax 可以不指定内容容器， 但是也可以将 Ajax 内容放入指定容器中。**
 
-```
+```js
 <li><a href="hello/world.html" title="Todo Overview"> ... </a></li>
 
 <div id="Todo_Overview"> ... </div> 
@@ -485,7 +485,7 @@ select, load, show, add, remove, enable, disable
 
 使用这些事件可以完成很多复杂任务。 需要注意事件的签名：
 
-```
+```js
 $('#example').bind('tabsselect', function(event, ui) {
 
     // Objects available in the function context:
@@ -500,7 +500,7 @@ $('#example').bind('tabsselect', function(event, ui) {
 
 比如我们可以在事件中做验证：
 
-```
+```js
 $('#example').tabs({
     select: function(event, ui) {
         var isValid = ... // form validation returning true or false
@@ -511,7 +511,7 @@ $('#example').tabs({
 
 或者当添加一个 tab 时立刻切换到选中状态：
 
-```
+```js
 var $tabs = $('#example').tabs({
     add: function(event, ui) {
         $tabs.tabs('select', '#' + ui.panel.id);
@@ -535,7 +535,7 @@ accordion 文档地址： http://jqueryui.com/demos/accordion/
 
 ### 2.实例代码
 
-```
+```js
 <%@ Page Language="C#" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

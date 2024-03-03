@@ -2,7 +2,7 @@
 
 之前通过组件只是简单的学习过
 
-```
+```js
 <ul class="nav nav-tabs">
   <li class="active"><a href="#">Home</a></li>
   <li><a href="#">Profile</a></li>
@@ -18,7 +18,7 @@
 
 我们给上面的先预定义一些 href 的标签 ID
 
-```
+```js
 <ul class="nav nav-tabs">
   <li><a href="#home" >Home</a></li>
   <li><a href="#profile" >Profile</a></li>
@@ -40,7 +40,7 @@
 
 然后现在我们继续的修正代码
 
-```
+```js
 <ul class="nav nav-tabs">
   <li><a href="#home" data-toggle="tab">Home</a></li>
   <li><a href="#profile" data-toggle="tab">Profile</a></li>
@@ -72,7 +72,7 @@
 
 容器里面定义 div，然后在 div 上添加 id 属性，和上面的 href 的标签 ID 对应，并添加 tab-pane 的样式类，其中一个如下，当然这个里面还添加了一个 active 的样式类，目的就是默认激活
 
-```
+```js
 <div class="tab-pane active" id="home"> 
 ```
 
@@ -88,7 +88,7 @@
 
 通过 JavaScript 启动可切换标签页（每个标签页单独被激活）：
 
-```
+```js
 $('#myTab a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
@@ -97,7 +97,7 @@ $('#myTab a').click(function (e) {
 
 将所有代码贴上
 
-```
+```js
 <!DOCTYPE html>
 <html>
 <head>
@@ -153,7 +153,7 @@ $('#myTab a').click(function (e) {
 
 可以有以下几种方式单独激活标签页：
 
-```
+```js
 $('#myTab a[href="#profile"]').tab('show') 
 $('#myTab a:first').tab('show') 
 $('#myTab a:last').tab('show')
@@ -166,7 +166,7 @@ $('#myTab li:eq(2) a').tab('show')
 
 可以通过 jQuery 来执行首次的加载
 
-```
+```js
 <script>
   $(function () {
     $('#myTab a:first').tab('show')
@@ -178,7 +178,7 @@ $('#myTab li:eq(2) a').tab('show')
 
 ![](img/143.jpg)
 
-```
+```js
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
   e.target //通过此参数可以获得激活的 tab 信息 
   e.relatedTarget // 激活之前的那一个 tab 的信息

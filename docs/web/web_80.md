@@ -19,13 +19,13 @@
 
 *   在线环境默认未开启数据库服务，输入以下命令开启：
 
-    ```
+    ```js
     $ sudo service mysql start 
     ```
 
 *   由于本项目比较简单，所以我们可以直接使用 PHP 内置的服务器。通过以下命令就可使用：
 
-    ```
+    ```js
     $ php -S localhost:8080        #端口可自定义 
     ```
 
@@ -35,7 +35,7 @@
 
 由于本项目需要前端页面制作，但是我们不可能在文章中一行一行的编写 HTML 代码，所以为了节约时间，我把完整的项目源码已打包，使用下面的方法获取：
 
-```
+```js
 $ cd /home/shiyanlou/Code
 $ wget http://labfile.oss.aliyuncs.com/courses/321/Beauty.tar
 $ tar -vxf Beauty.tar 
@@ -81,7 +81,7 @@ $ tar -vxf Beauty.tar
 
 首先按照上面提供的方法开启数据库服务。进入并创建数据库：
 
-```
+```js
 $ mysql -u root
 $ mysql> CREATE DATABASE beauty DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
 $ mysql> use beauty; 
@@ -91,7 +91,7 @@ $ mysql> use beauty;
 
 数据库存储女生信息.（id，姓名，图片，颜值）
 
-```
+```js
 CREATE TABLE `stu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `stu` varchar(255) DEFAULT NULL,
@@ -104,7 +104,7 @@ SET FOREIGN_KEY_CHECKS=1;
 
 填充部分示例数据：
 
-```
+```js
 INSERT INTO `stu` VALUES ('1', 'Mary', 'imgs/1.jpg', '1400'),
  ('2', 'Nancy', 'imgs/2.jpg', '1400'),
  ('3', 'Kacy', 'imgs/3.jpg', '1400'),
@@ -121,7 +121,7 @@ INSERT INTO `stu` VALUES ('1', 'Mary', 'imgs/1.jpg', '1400'),
 
 **index.php** ：
 
-```
+```js
  <div class="container">
       <div class="main">
         <!-- 首次访问的提示语 -->
@@ -155,7 +155,7 @@ INSERT INTO `stu` VALUES ('1', 'Mary', 'imgs/1.jpg', '1400'),
 
 展示之前需要查询相关数据，所以在 `index.php` 的顶部，需要加入如下 PHP 代码段：
 
-```
+```js
 <?php 
 require_once 'DBMysql.php';        //引入数据库操作文件
 $db = DBMysql::connect();        //连接数据库
@@ -171,7 +171,7 @@ while ($row = $result->fetch_assoc()) {
 
 **ranklist.php** :
 
-```
+```js
  <tbody>
           <?php foreach ($results as $key => $value) {  ?>
             <tr>
@@ -185,7 +185,7 @@ while ($row = $result->fetch_assoc()) {
 
 在 `ranklist.php` 顶部也需要加入 php 查询代码段：
 
-```
+```js
 <?php 
 require_once 'DBMysql.php';
 $db = DBMysql::connect();
@@ -203,7 +203,7 @@ while ($row = $result->fetch_assoc()) {
 
 `index.php` 中的 JS 代码段：
 
-```
+```js
  <script>
         $(document).ready(function() {
                   //获取 cookie 方法
@@ -267,7 +267,7 @@ while ($row = $result->fetch_assoc()) {
 
 **DBMysql.php** ：
 
-```
+```js
 <?php
 
 class DBMysql
@@ -286,7 +286,7 @@ class DBMysql
 
 此类根据[埃洛等级分系统](http://baike.baidu.com/link?url=5TaQ9N_gZjq6Mr876rdfeYWCaoUIA3yf8VtRjrIvp1UD6PHdUpqWFStWNwxKSrAUwH_cqokSSeGuJeDNEz0P2a)设计算法，实现读取、计算、更新颜值的操作。
 
-```
+```js
 <?php 
 /**
 * 排名算法

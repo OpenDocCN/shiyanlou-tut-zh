@@ -4,7 +4,7 @@
 
 css 允许应用纯色作为背景，也允许使用背景图像创建相当复杂的效果
 
-```
+```js
 属性|描述
 ----|----
 background-attachment|背景图像是否固定或者随着页面的其余部分滚动
@@ -18,7 +18,7 @@ background-repeat|设置背景图片是否及如何重复
 
 index.html
 
-```
+```js
 <!doctype html>
 <html>
     <head>
@@ -34,7 +34,7 @@ index.html
 
 style.css
 
-```
+```js
 /\*背景颜色设置为红色\*/
 body{
    background-color: red;
@@ -55,7 +55,7 @@ p{
 
 index.html
 
-```
+```js
 <!doctype html>
 <html>
     <head>
@@ -71,7 +71,7 @@ index.html
 
 style.css
 
-```
+```js
 /\*把 python.jpg 设置为背景图片\*/
 body{
    background-image: url("python.jpg")
@@ -84,7 +84,7 @@ body{
 
 大家可以看到显示出来的背景图有很多个 python 图片，这是因为默认情况下背景图显示重复，我们可以`background-repeat`属性来设置图片是否可重复。 css.css 添加以下内容
 
-```
+```js
 body{
    background-image: url("python.jpg");
    background-repeat: no-repeat;
@@ -97,7 +97,7 @@ body{
 
 `background-position`用来设置图片的起始位置 下面的例子在 body 元素中将一个背景图从中间顶部放置：
 
-```
+```js
 body{
    background-image: url("python.jpg");
    background-repeat: no-repeat;
@@ -112,7 +112,7 @@ body{
 
 **背景关联** 如果网页比较长，那么当网页向下滚动时，背景图像也会随之滚动。当网页滚动到超过图像的位置时，图像就会消失。 我们可以通过`background-attachment`属性防止这种滚动。通过这个属性，可以声明图像相对于可视区是固定的（fixed），因此不会受到滚动的影响：
 
-```
+```js
 body{
    background-image: url("python.jpg");
    background-repeat: no-repeat;
@@ -124,7 +124,7 @@ body{
 
 ## 2.css3 背景
 
-```
+```js
 属性|描述
 ---|---
 background-size|规定背景图片的尺寸
@@ -134,7 +134,7 @@ background-clip|规定背景的绘制区域
 
 我们还是引用上面的例子来讲述这些属性。
 
-```
+```js
 body{
    background-image: url("python.jpg");
    background-repeat: no-repeat;
@@ -153,7 +153,7 @@ body{
 
 **CSS 文本属性可定义文本的外观。 通过文本属性，您可以改变文本的颜色、字符间距，对齐文本，装饰文本，对文本进行缩进，等等。**
 
-```
+```js
 属性|描述
 --|--
 color|文本颜色
@@ -175,7 +175,7 @@ word-spacing|字间距
 
 index.html
 
-```
+```js
 <!doctype html>
 <html>
     <head>
@@ -192,7 +192,7 @@ index.html
 
 style.css
 
-```
+```js
 body{
    color: aqua;
 } 
@@ -212,7 +212,7 @@ body{
 
 西方语言都是从左向右读，所有`text-align`的默认值是 left。文本在左边界对齐，右边界呈锯齿状（称为“从左到右”文本）。 index.html
 
-```
+```js
 <!doctype html>
 <html>
     <head>
@@ -228,7 +228,7 @@ body{
 
 style.css
 
-```
+```js
 body{
    color: red;
    text-align: center;
@@ -241,13 +241,13 @@ body{
 
 缩进文本 把 Web 页面上的段落的第一行缩进，这是一种最常用的文本格式化效果。 CSS 提供了`text-indent`属性，该属性可以方便地实现文本缩进。 通过使用`text-indent`属性，所有元素的第一行都可以缩进一个给定的长度，甚至该长度可以是负值。 这个属性最常见的用途是将段落的首行缩进，下面的规则会使所有段落的首行缩进 5 em：
 
-```
+```js
 p {text-indent: 5em;} 
 ```
 
 下面的 index.html 中代码为：
 
-```
+```js
 <!doctype html>
 <html>
     <head>
@@ -272,7 +272,7 @@ p {text-indent: 5em;}
 
 我们的 style.css 代码中加入以下内容缩进让实验楼三个字缩进 2 个字节。
 
-```
+```js
  h3{
    text-indent: 5em;
  } 

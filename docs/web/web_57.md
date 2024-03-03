@@ -4,7 +4,7 @@
 
 通过这个插件可以为所有警告框增加关闭功能。
 
-```
+```js
 <div id="alert1"  class="alert alert-warning fade in">
 <button id='alert1' type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
@@ -15,7 +15,7 @@
 
 再来一个小例子
 
-```
+```js
 <div class="alert alert-danger fade in">
 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 <h4>Oh snap! You got an error!</h4>
@@ -37,7 +37,7 @@
 
 我们来修改一下第一简单的小例子
 
-```
+```js
 <div id="alert1"  class="alert alert-warning fade in">
 <button id='alert1' type="button" class="close" onclick="Test()" aria-hidden="true">&times;</button>
 <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good.
@@ -48,7 +48,7 @@
 
 来看一下如何通过 JavaScript 来关闭警示框
 
-```
+```js
  <script type="text/javascript">
  function Test()
  {

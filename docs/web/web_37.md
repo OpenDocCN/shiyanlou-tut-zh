@@ -23,7 +23,7 @@
 
 本课程中的所有源码可以通过以下方式 git clone 到本地:
 
-```
+```js
 git clone http://git.shiyanlou.com/shiyanlou/course 
 ```
 
@@ -51,7 +51,7 @@ Bootstrap 是 Twitter 推出的一个开源的用于前端开发的工具包。�
 
 使用命令获取：
 
-```
+```js
 $wget http://labfile.oss.aliyuncs.com/bootstrap-3.3.0-dist.zip 
 ```
 
@@ -59,7 +59,7 @@ $wget http://labfile.oss.aliyuncs.com/bootstrap-3.3.0-dist.zip
 
 解压文件：
 
-```
+```js
 $ unzip bootstrap-3.3.0-dist.zip 
 ```
 
@@ -67,7 +67,7 @@ $ unzip bootstrap-3.3.0-dist.zip
 
 可以来查看三个文件夹中的文件
 
-```
+```js
 dist
 ├── css
 │   ├── bootstrap.css
@@ -99,7 +99,7 @@ dist
 
 下载 jQuery 另存到与 Bootstrap 文件夹下的 js 文件夹里面。
 
-```
+```js
 $wget http://labfile.oss.aliyuncs.com/jquery-2.0.3.js 
 ```
 
@@ -109,7 +109,7 @@ $wget http://labfile.oss.aliyuncs.com/jquery-2.0.3.js
 
 我们创建了一个最简单的基本模版
 
-```
+```js
 <!DOCTYPE html>
 <html>
   <head>
@@ -135,26 +135,26 @@ $wget http://labfile.oss.aliyuncs.com/jquery-2.0.3.js
 
 1.首先我们可以将 Bootstrap 的样式文件引用到网页中
 
-```
+```js
 <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"> 
 ```
 
 2.如果你需要使用 Bootstrap 架构提供 JavaScript 插件的话，那么需要将架构的 js 文件链接引用到网页中，上面也有提到过 JavaScript 插件都是依赖与 jQuery 库的，所以我们当然也需要链接引用 jquery 的库文件
 
-```
+```js
 <script src="js/jquery-2.0.3.js"></script>
 <script src="js/bootstrap.min.js"></script> 
 ```
 
 3.viewport 的<meta>标签，这个标签可以修改在大部分的移动设备上面的显示，为了确保适当的绘制和触屏缩放。
 
-```
+```js
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 ```
 
 4.我们使用的 html5 的一些新的标签，那么在 IE9 以下的浏览器并不支持这些标签，也不能为这些标签进行添加样式。那么修复这个问题我们需要链接引用的文件如下
 
-```
+```js
 <!--[if lt IE 9]>
     <script src="http://labfile.oss.aliyuncs.com/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="http://labfile.oss.aliyuncs.com/respond.js/1.3.0/respond.min.js"></script>

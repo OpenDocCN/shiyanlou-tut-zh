@@ -29,13 +29,13 @@ amo.js 是一个用于创建 CSS3 动画的 JS 库，源码只有 400 余行，�
 
 ### 1\. 引入 amo.js，适用于 webkit 内核浏览器
 
-```
+```js
 <script src="./src/amo.js"></script> 
 ```
 
 ### 2\. 如何使用
 
-```
+```js
 <script>
 //1\. 找到需要产生动画的对象，这是个实体
 var node = document.getElementById('animate-node');
@@ -70,7 +70,7 @@ Amo.keyframe 和 css 的 [@keyframe](http://www.w3school.com.cn/cssref/pr_keyfra
 
 Demo1
 
-```
+```js
 <script>
 /*js*/
 Amo.keyframes({
@@ -81,7 +81,7 @@ Amo.keyframes({
 </script> 
 ```
 
-```
+```js
 <style>
 /* css */
 @keyframes mymove {
@@ -93,7 +93,7 @@ Amo.keyframes({
 
 Demo2
 
-```
+```js
 <script>
 /* js*/
 Amo.keyframes({
@@ -110,7 +110,7 @@ Amo.keyframes({
 </script> 
 ```
 
-```
+```js
 <style>
 /* css */
 @keyframes mymove {
@@ -126,7 +126,7 @@ Amo.keyframes({
 
 Demo3
 
-```
+```js
 <script>
 /* js*/
 var mymove = Amo.keyframes({
@@ -157,7 +157,7 @@ myAnim.run($('#test'), function() {
 </script> 
 ```
 
-```
+```js
 <style>
 /* css */
 @keyframes mymove {
@@ -173,7 +173,7 @@ myAnim.run($('#test'), function() {
 
 ### 3\. animate instance 实例
 
-```
+```js
 <script>
 var myAnimIns = myAnim.run($('#test'), function() {
     console.log('animation over'); 
@@ -198,7 +198,7 @@ myAnimIns.reset();
 
 ![enter image description here](img/1.jpg)
 
-```
+```js
 <script>
 //create keyframes
 var rotateAnim = Amo.keyframes({
@@ -221,7 +221,7 @@ rotateAnim.run(document.getElementById('demo-1'));
 
 ![enter image description here](img/2.jpg)
 
-```
+```js
 <script>
 //create keyframes
 var moveAnim = Amo.keyframes({
@@ -251,7 +251,7 @@ $('#btn-stop').on('click', function(){
 
 ![enter image description here](img/3.jpg)
 
-```
+```js
 <script>
 //create keyframes
 var sizeAnim = Amo.keyframes({
@@ -281,7 +281,7 @@ sizeAnim.run($('#demo-3'), function() {
 
 ![enter image description here](img/4.jpg)
 
-```
+```js
 <script>
 //create keyframes
 var colorAnim = Amo.keyframes({
@@ -318,7 +318,7 @@ var demo4Ins = colorAnim.run($('.demo-4'));
 
 test.html
 
-```
+```js
 <!doctype html>
 <html>
     <head>
@@ -348,7 +348,7 @@ test.html
 
 ### 2\. 引入 amo.js
 
-```
+```js
 <script src="../src/amo.js"></script> 
 ```
 
@@ -356,7 +356,7 @@ test.html
 
 这里我们使红色和绿色的两个 div 进行旋转 360 度，同时正方形的边长从 100 到 200 像素。重复五次，每次持续 5 秒。可以很清楚的看到动画的对象（animNode ）和过程进行了分离（rotateAnim ）。
 
-```
+```js
 <script>
             var animNode = document.getElementsByTagName('div');
 
@@ -385,7 +385,7 @@ test.html
 
 然后我们在红色的 test1 上绑定事件，点击后 toggle 动画的停止和继续。
 
-```
+```js
 <script>
             var t = false;
             document.getElementById('test').addEventListener('click', function() {
@@ -405,7 +405,7 @@ test.html
 
 完整代码如下：
 
-```
+```js
 <!doctype html>
 <html>
     <head>

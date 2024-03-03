@@ -16,7 +16,7 @@ http://www.cnblogs.com/Travel/p/4624929.html
 
 首先获取实验所需要的图片，在命令行中执行：
 
-```
+```js
 cd Desktop
 
 wget http://labfile.oss.aliyuncs.com/courses/363/aviary_heibai.jpg 
@@ -28,7 +28,7 @@ wget http://labfile.oss.aliyuncs.com/courses/363/aviary_heibai.jpg
 
 我们首先需要创建一个`index.html`文件，里面写上一些简单的`html`和`css`代码：
 
-```
+```js
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,7 +66,7 @@ body{text-align:center;}
 
 ## 实现图片裁剪的 init 函数：
 
-```
+```js
 var postFile = { 
         init: function() {
         var t = this;
@@ -88,7 +88,7 @@ var postFile = {
 
 我们将所有的函数和变量都是封装在`postFile`这个对象里面的，上面的 init 函数主要是设置一些初始值
 
-```
+```js
 t.px = 0;    
 t.py = 0;    
 t.sx = 15;   
@@ -101,7 +101,7 @@ t.sWidth = 100
 
 并且我们通过`document.getElementById`获取了多个稍后需要操作的元素，注意到：
 
-```
+```js
 document.getElementById('post_file').addEventListener("change", t.handleFiles, false); 
 ```
 
@@ -109,7 +109,7 @@ document.getElementById('post_file').addEventListener("change", t.handleFiles, f
 
 ## 实现 handleFiles，获取文件，读取文件并生成 url
 
-```
+```js
  handleFiles: function() {
         var fileList = this.files[0];
         var oFReader = new FileReader();
@@ -124,7 +124,7 @@ document.getElementById('post_file').addEventListener("change", t.handleFiles, f
 
 如果你对`var fileList = this.files[0];`有疑问，不妨在在这里打印出来看看：
 
-```
+```js
 console.log(this.files); 
 ```
 
@@ -140,7 +140,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader
 
 ## 实现 paintImage 方法
 
-```
+```js
  paintImage: function(url) {
         var t = this;
         var createCanvas = t.getImage.getContext("2d");
@@ -176,7 +176,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader
 
 以上最重要的就是根据容器的大小使用 canvas 绘制图片。在上一步使用 File API 的 FileReader 已经得到了需要上传图片的地址了(oFREvent.target.result 这个值)，接下来需要使用 canvas 把这个图片绘制出来。我们首先使用到 getImage.getContext 来获取<canvas id="get_image"></canvas>的 2d 内容，简单理解就是图像内容，然后利用 new Image()来得到一个<img>标签，设置 src 属性的值，如果你 console.log(img),得到的大概是这样的结果：
 
-```
+```js
 <img src="images/background.jpg" > 
 ```
 
@@ -196,7 +196,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/drawIm
 
 在上一张图片中，我们其实很清楚地看到了两个明暗不一的层，这是因为我们根据背景图的坐标和尺寸来绘制遮罩层覆盖在背景上面，并且使用 canvas 的`clearRect`方法清空出一块裁剪区域，使之与不裁剪的地方做明暗对比，这样的目的一个是为了更好地看到对比，一个就是为了用户体验：
 
-```
+```js
 cutImage: function() {
     var t = this;
 
@@ -231,7 +231,7 @@ cutImage: function() {
 
 ![此处输入图片的描述](img/document-uid7682labid1164timestamp1436943781687.jpg)
 
-```
+```js
  drag: function() {
         var t = this;
         var draging = false;
@@ -289,20 +289,20 @@ cutImage: function() {
 
 这个方法里要理解一下几个主要的点：
 
-```
+```js
 var pageX = e.pageX - ( t.regional.offsetLeft + this.offsetLeft );
 var pageY = e.pageY - ( t.regional.offsetTop + this.offsetTop ); 
 ```
 
 我们通过上面两行代码来获取`鼠标距离背景图片的距离`，e.pageX 代表鼠标到浏览器左边缘的距离，t.regional.offsetLeft + this.offsetLeft 可以计算出图片到浏览器的左边边缘的距离。上边的距离同理可得。
 
-```
+```js
  if ( pageX > t.sx && pageX < t.sx + t.sWidth && pageY > t.sy && pageY < t.sy + t.sHeight ) 
 ```
 
 在理解了`鼠标距离背景图片的距离`距离之后，这个应该很容易理解：就是判断鼠标是否在图片的区域内部。
 
-```
+```js
 t.ex = t.sx; 
 t.ey = t.sy;
 
@@ -312,7 +312,7 @@ startY = e.pageY - ( t.regional.offsetTop + this.offsetTop );
 
 这两段代码也是要拿出来说说的，头两行是为了记录上一次截图时候的坐标（没有上一次就是初始化的时候的坐标）；后两行记录鼠标按下时候的坐标。你都可以通过`console.log()`来分别查看这几个值。
 
-```
+```js
 if (draging) {
 
     if ( t.ex + (pageX - startX) < 0 ) {
@@ -343,7 +343,7 @@ if (draging) {
 
 从一开始，我们就有一个`save`按钮在页面上，我们的目的就是在用户点击 save 按钮的时候，将裁剪出来的图片保存到预览右边的方框内，于是，我们在`init`方法里面添加下面的代码：
 
-```
+```js
 document.getElementById('save_button').onclick = function() {
     t.editPic.height = t.sHeight;
     t.editPic.width = t.sWidth;
@@ -367,13 +367,13 @@ document.getElementById('save_button').onclick = function() {
 
 最后别忘了在开始之前调用`init`方法，在 js 文件的最后一行加上：
 
-```
+```js
 postFile.init(); 
 ```
 
 最后的代码布局应该时这样的：
 
-```
+```js
 var postFile = {
 
     init: function() {

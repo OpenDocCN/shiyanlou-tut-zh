@@ -14,7 +14,7 @@ Ajax 让用户页面丰富起来,增强了用户体验。使用 Ajax 是所有 W
 
 首先通过实例，来看一下 jQuery 实现 Ajax 有多简单。下面是一个使用原始 Ajax 的示例：
 
-```
+```js
 <!doctype html>
 <html lang="zh">
 <head>
@@ -73,13 +73,13 @@ Ajax 让用户页面丰富起来,增强了用户体验。使用 Ajax 是所有 W
 
 而用 jQuery 的`Load`方法，只需要一句话：
 
-```
+```js
 $("#divResult").load("data/AjaxGetCityInfo.aspx", { "resultType": "html" }); 
 ```
 
 现在只是用 jQuery 的 Ajax 函数, 我的页面变得简洁了:
 
-```
+```js
 <!doctype html>
 <html lang="zh">
 <head>
@@ -124,7 +124,7 @@ load 方法能够载入远程 HTML 文件代码并插入至 DOM 中。
 
 不过不可否认`load`接口设计巧妙并且使用简单。下面通过示例来演示`load`接口的使用:
 
-```
+```js
 <!doctype html>
 <html lang="zh">
 <head>
@@ -188,13 +188,13 @@ load 方法能够载入远程 HTML 文件代码并插入至 DOM 中。
 
 此函数发送 Get 请求, 参数可以直接在 url 中拼接, 比如:
 
-```
+```js
 $.get("../data/AjaxGetMethod.aspx?param=btnAjaxGet_click"); 
 ```
 
 或者通过 data 参数传递：
 
-```
+```js
 $.get("../data/AjaxGetMethod.aspx", { "param": "btnAjaxGet2_click" }); 
 ```
 
@@ -204,7 +204,7 @@ $.get("../data/AjaxGetMethod.aspx", { "param": "btnAjaxGet2_click" });
 
 回调函数签名如下：
 
-```
+```js
 function (data, textStatus) {
     // data could be xmlDoc, jsonObj, html, text, etc...
     this; // the options for this ajax request
@@ -239,7 +239,7 @@ type 参数是指 data 数据的类型, 可能是下面的值: **"xml", "html", 
 
 getJSON 函数仅仅将 get 函数的 type 参数设置为"JSON"而已. 在回调函数中获取的数据已经是按照 JSON 格式解析后的对象了:
 
-```
+```js
 $.getJSON(
 "../data/AjaxGetCityInfo.aspx", 
 { "resultType": "json" },
@@ -265,7 +265,7 @@ jQuery 1.2 版本之前，`getScript` 只能调用同域 JS 文件。 1.2 中，
 
 首先了解此函数的 jQuery 内部实现, 仍然使用`get`函数, jQuery 所有的 Ajax 函数包括`get`最后都是用的是`jQuery.ajax()`, getScript 将传入值为"script"的 type 参数, 最后在 Ajax 函数中对 type 为 script 的请求做了如下处理:
 
-```
+```js
 var head = document.getElementsByTagName("head")[0];            
 var script = document.createElement("script");
 script.src = s.url; 
@@ -277,7 +277,7 @@ script.src = s.url;
 
 当脚本加载完毕后，再从 head 中删除：
 
-```
+```js
 // Handle Script loading
 if ( !jsonp ) {
     var done = false;
@@ -297,7 +297,7 @@ if ( !jsonp ) {
 
 演示如何使用 getScript 函数:
 
-```
+```js
 $("#btnAjaxGetScript").click(function(event){
     $.getScript("../scripts/getScript.js", function(data, textStatus){
         alert(data);
@@ -371,7 +371,7 @@ jQuery 提供了一些相关函数能够辅助 Ajax 函数。
 
 比如在页面加载时, 我使用下面的代码设置 Ajax 的默认 option 选项:
 
-```
+```js
  $.ajaxSetup({
     url: "../data/AjaxGetMethod.aspx",
     data: { "param": "ziqiu.zhang" },
@@ -383,7 +383,7 @@ jQuery 提供了一些相关函数能够辅助 Ajax 函数。
 
 此后我们可以使用无参数的`get()`,`post()`或者`ajax()`方法发送 ajax 请求.完整的示例代码如下:
 
-```
+```js
 <!doctype html>
 <html lang="zh">
 <head>
@@ -465,7 +465,7 @@ jQuery 提供了一些相关函数能够辅助 Ajax 函数。
 
 用一个示例讲解各个事件的触发顺序：
 
-```
+```js
 <!doctype html>
 <html lang="zh">
 <head>
@@ -503,7 +503,7 @@ jQuery 提供了一些相关函数能够辅助 Ajax 函数。
 
 使用服务器端方法获取 param 参数:
 
-```
+```js
 if (!String.IsNullOrEmpty(HttpContext.Current.Request["Param"])) {
     param = HttpContext.Current.Request["Param"];
 } 

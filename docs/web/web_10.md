@@ -18,7 +18,7 @@ JavaScript 是 **基于对象** 的语言。这与 Java 不同，Java 是 **面�
 
 比如点击页面的某个按钮这是一个很常见的事件，执行对应的事件处理程序，弹出提示小窗口，代码如下：
 
-```
+```js
 <html>
 <head>
   <script>
@@ -66,7 +66,7 @@ JavaScript 是 **基于对象** 的语言。这与 Java 不同，Java 是 **面�
 
 其中，onmouseover 和 onmouseout 事件可用于在鼠标移至 HTML 元素上和移出元素时触发函数。比如这一例子：
 
-```
+```js
 <html>
 <head></head>
 
@@ -89,7 +89,7 @@ onmouseout="this.innerHTML='you have moved out'"
 
 onmousedown, onmouseup 是鼠标 **压下** 和 **松开** 的事件。首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件。举例说明：
 
-```
+```js
 <html>
 <head>
   <script>

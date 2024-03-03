@@ -6,7 +6,7 @@
 
 将下拉菜单触发器和下拉菜单都包裹在.dropdown 里，然后添加组成菜单的 HTML 代码。
 
-```
+```js
 <div class="dropdown">
   <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
     Dropdown
@@ -38,7 +38,7 @@
 
 给下拉菜单.dropdown-menu 加上.text-right 使文字右对齐。
 
-```
+```js
 <div class="dropdown">
 <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
 Dropdown
@@ -62,7 +62,7 @@ Dropdown
 
 在任何下拉菜单中均可通过添加标题来标明一组动作。
 
-```
+```js
 <h1>下拉菜单</h1>
 <div class="dropdown">
 <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
@@ -91,7 +91,7 @@ Dropdown
 
 继续修改上面的代码将 Something else here 行的代码进行替换
 
-```
+```js
 <li class="disabled" role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li> 
 ```
 
@@ -101,7 +101,7 @@ Dropdown
 
 ## 二、按钮组
 
-```
+```js
 按钮组中的工具提示和弹出框需要特别的设置
 
 当为.btn-group 中的元素应用工具提示或弹出框时，必须指定 container: 'body'选项，这样可以避免不必要的副作用（例如工具提示或弹出框触发时，会让页面元素变宽和/或失去圆角）。 
@@ -111,7 +111,7 @@ Dropdown
 
 把一系列的.btn 按钮放入.btn-group。
 
-```
+```js
 <div class="btn-group">
   <button type="button" class="btn btn-default">Left</button>
   <button type="button" class="btn btn-default">Middle</button>
@@ -127,7 +127,7 @@ Dropdown
 
 把一组< div class="btn-group">组合进一个< div class="btn-toolbar">做成更复杂的组件。
 
-```
+```js
 <div class="btn-toolbar" role="toolbar">
   <div class="btn-group">
       <button type="button" class="btn btn-default">1</button>
@@ -153,7 +153,7 @@ Dropdown
 
 只要给.btn-group 加上.btn-group-*，而不是给组中每个按钮都应用大小类。
 
-```
+```js
 <div class="btn-group btn-group-lg">
   <button type="button" class="btn btn-default">1</button>
   <button type="button" class="btn btn-default">2</button>
@@ -177,7 +177,7 @@ Dropdown
 
 想要把下拉菜单混合到一系列按钮中，就把.btn-group 放入另一个.btn-group 中。
 
-```
+```js
 <div class="btn-group">
   <button type="button" class="btn btn-default">1</button>
   <button type="button" class="btn btn-default">2</button>
@@ -201,7 +201,7 @@ Dropdown
 
 让一组按钮竖直显示而不是水平显示。
 
-```
+```js
 <div class="btn-group btn-group-vertical">
   <a href="#">
   <button type="button" class="btn btn-default">1</button>
@@ -229,13 +229,13 @@ Dropdown
 
 让一组按钮拉长为相同的尺寸，适应父元素的宽度。
 
-```
+```js
 特定元素的用法
 
 这只适用 <a> 元素因为 <button> 不能应用这些样式。 
 ```
 
-```
+```js
 <div class="btn-group btn-group-justified">
       <button type="button" class="btn btn-default">Left</button>
       <button type="button" class="btn btn-default">Middle</button>
@@ -253,7 +253,7 @@ Dropdown
 
 只要改变一些基本的标记，就能把按钮变成下拉菜单开关。
 
-```
+```js
 <div class="btn-group">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
     Action <span class="caret"></span>
@@ -274,7 +274,7 @@ Dropdown
 
 相似地，分裂式按钮下拉菜单也需要同样的改变标记，但只要多一个分开的按钮。
 
-```
+```js
 <div class="btn-group">
   <button type="button" class="btn btn-danger">Action</button>
   <div class="dropdown">
@@ -299,7 +299,7 @@ Dropdown
 
 下拉菜单按钮适用所有尺寸的按钮。
 
-```
+```js
 <div class="btn-group">
   <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
     Large button <span class="caret"></span>
@@ -336,7 +336,7 @@ Dropdown
 
 给父元素添加.dropup 就能使触发的下拉菜单在元素上方。
 
-```
+```js
 <div class="btn-group dropup">
   <button type="button" class="btn btn-default">Dropup</button>
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">

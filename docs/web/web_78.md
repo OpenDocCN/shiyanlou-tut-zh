@@ -37,7 +37,7 @@ PS：您最好对 HTML 和 CSS 有一定的了解，但如果你是小白也没�
 
 填写以下代码：
 
-```
+```js
 <!doctype html>
 <html>
 
@@ -96,7 +96,7 @@ PS：您最好对 HTML 和 CSS 有一定的了解，但如果你是小白也没�
 
 由于「大白」是白色的，为了更容易辨识，我们把背景设为深色。然后首先是头部：
 
-```
+```js
 <style>
 
 body {
@@ -147,7 +147,7 @@ body {
 
 赶紧再来添加眼睛和嘴吧！
 
-```
+```js
 #eye,
 #eye2 {
     width: 11px;
@@ -187,7 +187,7 @@ body {
 
 接下来是躯干和腹部：
 
-```
+```js
 #torso,
 #belly {
     margin: 0 auto;
@@ -222,7 +222,7 @@ body {
 
 赋予「大白」象征生命的心脏：
 
-```
+```js
 #heart{
   width:25px; 
   height:25px; 
@@ -245,7 +245,7 @@ body {
 
 还没有手和脚，怪萌怪萌的...「大白」需要温暖的手臂：
 
-```
+```js
 #left-arm,
 #right-arm {
     height: 270px;
@@ -269,7 +269,7 @@ body {
 
 还没有手指头呢：
 
-```
+```js
 #l-bigfinger,
 #r-bigfinger {
     height: 50px;
@@ -313,7 +313,7 @@ body {
 
 迫不及待要给「大白」加上腿了吧：
 
-```
+```js
 #left-leg,
 #right-leg {
     height: 170px;
@@ -340,7 +340,7 @@ body {
 
 **最后贴出完整的代码：**
 
-```
+```js
 <!doctype html>
 <html>
 

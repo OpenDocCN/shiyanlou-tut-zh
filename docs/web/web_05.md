@@ -22,7 +22,7 @@
 
 打开命令行终端，来到桌面：使用`wget`获取小游戏所需要的图片：
 
-```
+```js
 cd Desktop
 
 wget http://labfile.oss.aliyuncs.com/courses/361/games.zip 
@@ -30,7 +30,7 @@ wget http://labfile.oss.aliyuncs.com/courses/361/games.zip
 
 解压，在命令行执行：
 
-```
+```js
 unzip games.zip 
 ```
 
@@ -38,7 +38,7 @@ unzip games.zip
 
 在`game.html`里面有以下几行简单的 HTML 代码：
 
-```
+```js
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -57,7 +57,7 @@ unzip games.zip
 
 在 game.js 里面，我们首先需要为游戏的舞台创建一张画布(canvas):
 
-```
+```js
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = 512;
@@ -73,7 +73,7 @@ https://developer.mozilla.org/en/canvas_tutorial
 
 游戏需要加载我们之前存放在 images 文件夹下面的三张图片：
 
-```
+```js
 // Background image
 var bgReady = false;
 var bgImage = new Image();
@@ -101,7 +101,7 @@ monsterImage.src = "images/monster.jpg";
 
 以上三张图片都是通过创建简单的图片对象来实现加载的，类似 bgReady 的三个变量用来标识图片是否已经加载完成，如果在图片加载未完成情况下进行绘制是会报错的。如果你不太确定`new Image()`到底是个什么东西，你可以在`bgImage.src = "images/background.jpg";`之后使用`console.log(bgImage);`来查看，你看到的将是类似：
 
-```
+```js
 <img src="images/background.jpg" > 
 ```
 
@@ -109,7 +109,7 @@ monsterImage.src = "images/monster.jpg";
 
 我们需要定义一些对象，以便我们在后面会用到：
 
-```
+```js
 var hero = {
     speed: 256 // movement in pixels per second
 };
@@ -123,7 +123,7 @@ var monstersCaught = 0;
 
 游戏是给人玩的，那么我们怎么知道用户到底在这个过程中干了什么？按了键盘？点了鼠标？这些都是用户在玩游戏的时候的输入，所以我们一旦捕获到这些输入，我们就可以根据游戏的逻辑对用户的输入进行处理了：
 
-```
+```js
 // Handle keyboard controls
 var keysDown = {};
 
@@ -149,7 +149,7 @@ addEventListener("keyup", function (e) {
 
 游戏在结束的时候，我们需要开始新的一轮游戏，所以在`game.js`添加`reset`函数
 
-```
+```js
 // Reset the game when the player catches a monster
 var reset = function () {
     hero.x = canvas.width / 2;
@@ -168,7 +168,7 @@ var reset = function () {
 
 在游戏的过程中，不管是用户在玩（有正确输入的状态）还是游戏结束，我们都是需要及时更新游戏的对象：
 
-```
+```js
 var update = function (modifier) {
     if (38 in keysDown) { // Player holding up
         hero.y -= hero.speed * modifier;
@@ -204,7 +204,7 @@ var update = function (modifier) {
 
 这里需要说明一下下面的判断怪物和英雄是什么根据：
 
-```
+```js
  if (
         hero.x <= (monster.x + 31)
         && monster.x <= (hero.x + 31)
@@ -221,7 +221,7 @@ var update = function (modifier) {
 
 之前写的代码都是在准备前期工作和处理一些游戏的状态等，下面将进入正题：我们需要将所有的东西画出来
 
-```
+```js
 // Draw everything
 var render = function () {
     if (bgReady) {
@@ -253,7 +253,7 @@ var render = function () {
 
 我们实现了将画面画出来以后，我们紧接着需要实现的就是游戏的循环结构，于是将它放在`main`函数里：
 
-```
+```js
 // The main game loop
 var main = function () {
     var now = Date.now();
@@ -276,7 +276,7 @@ var main = function () {
 
 在上面的`main`函数中，我们通过`requestAnimationFrame()`调用了`main`函数，所以我们需要声明：
 
-```
+```js
 var w = window;
 requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame; 
 ```
@@ -287,7 +287,7 @@ requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame
 
 万事具备，只欠东风。到此，所有的游戏代码基本就写完了，我们现在需要做的就是调用相应的函数来启动游戏：
 
-```
+```js
 // Let's play this game!
 var then = Date.now();
 reset();
