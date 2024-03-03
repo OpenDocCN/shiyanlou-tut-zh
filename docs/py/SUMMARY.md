@@ -111,7 +111,7 @@
 +   [第 3 节 实现 Python 解释器](py_109.md)
 +   [python 生成汉字图片字库](py_110.md)
 +   [第 1 节 python 生成汉字图片字库](py_111.md)
-+   [二百、行 Python 代码实现 2048](py_112.md)
++   [二百行 Python 代码实现 2048](py_112.md)
 +   [第 1 节 200 行 Python 代码实现 2048](py_113.md)
 +   [Python 破解验证码](py_114.md)
 +   [第 1 节 Python 破解验证码](py_115.md)

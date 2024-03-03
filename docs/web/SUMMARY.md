@@ -2,7 +2,7 @@
 +   [使用 Electron 编写跨平台桌面应用](web_00.md)
 +   [SCSS（SASS）画小黄人](web_01.md)
 +   [HTML5 本地裁剪图片](web_02.md)
-+   [一百二十、行代码实现简单的即时搜索](web_03.md)
++   [一百二十行代码实现简单的即时搜索](web_03.md)
 +   [用 CSS 和 jQuery 打造一个简单的图片编辑器](web_04.md)
 +   [HTML5 的 Canvas 小游戏](web_05.md)
 +   [Javascript 基础（新版）](web_06.md)

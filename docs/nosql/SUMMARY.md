@@ -5,4 +5,4 @@
 +   [第 2 节 Redis 数据类型](nosql_3.md)
 +   [第 3 节 Redis 系统管理](nosql_4.md)
 +   [第 4 节 Redis 的高级应用](nosql_5.md)
-+   [一百二十、行代码实现简单的即时搜索](nosql_6.md)
++   [一百二十行代码实现简单的即时搜索](nosql_6.md)
